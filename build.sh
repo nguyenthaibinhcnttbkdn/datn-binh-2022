@@ -4,4 +4,3 @@ git pull origin dev-be
 chmod -R 777 .
 composer install
 php artisan migrate --seed
-php artisan l5-swagger:generate
