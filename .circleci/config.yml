@@ -32,7 +32,7 @@ jobs:
             - "08:a0:a1:cf:03:70:5e:39:c0:a2:08:12:03:2b:18:67"
       - run:
           name: Deploy Over SSH
-          command: ssh -tt root@103.200.20.171 "cd /var/www/html/datn && bash build.sh"
+          command: ssh -tt root@103.200.20.171 "cd /var/www/html/datn && git pull origin master"
 
 workflows:
   version: 2
