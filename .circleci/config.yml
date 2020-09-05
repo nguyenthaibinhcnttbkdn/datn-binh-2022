@@ -1,0 +1,26 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/php:7.2-apache-stretch-node-browsers
+
+    steps:
+      - checkout
+      - run: sudo apt update
+      - run: sudo docker-php-ext-install zip
+
+      # Composer
+      - restore_cache:
+          name: Restore composer cache
+          keys:
+            - composer-{{ checksum "composer.json" }}
+            - composer-
+      - run: composer install -n --prefer-dist
+      - save_cache:
+          name: Store composer cache
+          key: composer-{{ checksum "composer.json" }}
+          paths:
+            - vendor
+
+      # Test for CI
+
