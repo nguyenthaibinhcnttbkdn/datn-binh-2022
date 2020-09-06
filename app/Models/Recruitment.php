@@ -1,0 +1,35 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Recruitment extends Model
+{
+    protected $guarded = [];
+
+    public function employer()
+    {
+        return $this->belongsTo(Employer::class);
+    }
+
+    public function rank()
+    {
+        return $this->belongsTo(Rank::class);
+    }
+
+    public function type_of_work()
+    {
+        return $this->belongsTo(TypeOfWork::class);
+    }
+
+    public function city()
+    {
+        return $this->belongsTo(City::class);
+    }
+
+    public function career()
+    {
+        return $this->belongsTo(Career::class);
+    }
+}
