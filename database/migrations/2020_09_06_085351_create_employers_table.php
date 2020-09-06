@@ -15,11 +15,10 @@ class CreateEmployersTable extends Migration
     {
         Schema::create('employers', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('contact')->nullable();;
-            $table->string('company')->nullable();;
-            $table->string('phone')->nullable();;
-            $table->string('address')->nullable();;
-            $table->string('city')->nullable();;
+            $table->string('contact')->nullable();
+            $table->string('company')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('address')->nullable();
             $table->string('website')->nullable();
             $table->string('description')->nullable();
             $table->text('avatar')->nullable();

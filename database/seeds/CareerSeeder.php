@@ -22,6 +22,8 @@ class CareerSeeder extends Seeder
             ["name" => "C++"],
             ["name" => "REACT"],
             ["name" => "LARAVEL"],
+            ["name" => "C"],
+            ["name" => "HTML/CSS"],
         ];
         foreach ($careers as $item) {
             App\Models\Career::create([
