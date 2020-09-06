@@ -19,3 +19,4 @@ use Illuminate\Http\Request;
 
 
 Route::get('getcandidateorder', 'Client\CandidateController@getCandidateOrder');
+Route::get('getemployerorder', 'Client\EmployerController@getEmployerOrder');

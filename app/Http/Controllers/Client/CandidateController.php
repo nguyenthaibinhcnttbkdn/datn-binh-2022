@@ -3,9 +3,7 @@
 namespace App\Http\Controllers\Client;
 
 use App\Repositories\Interfaces\CandidateRepositoryInterface;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Response;
 
 class CandidateController extends Controller
 {

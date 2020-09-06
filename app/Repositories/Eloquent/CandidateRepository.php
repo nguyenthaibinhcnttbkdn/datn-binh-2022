@@ -22,10 +22,10 @@ class CandidateRepository extends BaseRepository implements CandidateRepositoryI
 
     public function getCandidateOrder()
     {
-        $candidate = DB::table('candidates')
+        $candidates = DB::table('candidates')
             ->select()
             ->where('candidates.order', '<>', null)
             ->orderBy('candidates.order', 'asc');;
-        return $candidate;
+        return $candidates;
     }
 }
