@@ -97,7 +97,7 @@ class EmployerSeeder extends Seeder
                 "website"     => "http://magrabbit.com",
                 "description" => "Gia công phần mềm cho Mỹ ",
                 "photo"       => "https://scontent-hkg4-2.xx.fbcdn.net/v/t1.0-9/118766513_327444045241688_1576216182692820333_o.jpg?_nc_cat=104&_nc_sid=e007fa&_nc_ohc=7IevZwG2W_oAX-dx1Nm&_nc_ht=scontent-hkg4-2.xx&oh=7842b14025a46e5ba3b26919f87ca041&oe=5F7A0672",
-                "order"       => 4,
+                "order"       => null,
             ],
             [
                 "contact"     => "Vũ Thùy Linh",

@@ -173,7 +173,7 @@ class CandidateSeeder extends Seeder
                 "position"   => "Internship",
                 "address"    => "Biệt thự số 48 Tràng Thi Q.Hoàn Kiếm – TP. Hà Nội",
                 "experience" => "dưới 2 năm",
-                "order"      => 4,
+                "order"      => null,
             ],
             [
                 "name"       => "Phạm Đặng Gia Như",
