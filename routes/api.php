@@ -30,4 +30,9 @@ Route::get('getcandidateorder', 'Client\CandidateController@getCandidateOrder');
 Route::resource('employers', 'Client\EmployerController');
 Route::get('getemployerorder', 'Client\EmployerController@getEmployerOrder');
 
+Route::resource('ranks', 'Client\RankController');
+Route::resource('cities', 'Client\CityController');
+
+
+
 
