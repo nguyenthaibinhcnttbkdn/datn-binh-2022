@@ -17,7 +17,17 @@ use Illuminate\Http\Request;
 //    return $request->user();
 //});
 
-
-Route::get('getcandidateorder', 'Client\CandidateController@getCandidateOrder');
-Route::get('getemployerorder', 'Client\EmployerController@getEmployerOrder');
+Route::resource('recruitments', 'Client\RecruitmentController');
 Route::get('getrecruitmentorder', 'Client\RecruitmentController@getRecruitmentOrder');
+Route::get('getrecruitmentsbyemployerid/{id}', 'Client\RecruitmentController@getRecruitmentsByEmployerId');
+Route::get('getrecruitmentsbyuserid/{id}', 'Client\RecruitmentController@getRecruitmentByUserId');
+
+
+Route::resource('candidates', 'Client\CandidateController');
+Route::get('getcandidateorder', 'Client\CandidateController@getCandidateOrder');
+
+
+Route::resource('employers', 'Client\EmployerController');
+Route::get('getemployerorder', 'Client\EmployerController@getEmployerOrder');
+
+

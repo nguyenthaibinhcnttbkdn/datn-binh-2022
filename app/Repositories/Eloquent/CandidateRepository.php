@@ -28,4 +28,12 @@ class CandidateRepository extends BaseRepository implements CandidateRepositoryI
             ->orderBy('candidates.order', 'asc');;
         return $candidates;
     }
+
+    public function getCandidate()
+    {
+        $candidates = DB::table('candidates')
+            ->select()
+            ->orderBy('candidates.id', 'desc');;
+        return $candidates;
+    }
 }

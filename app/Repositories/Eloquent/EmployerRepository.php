@@ -28,4 +28,12 @@ class EmployerRepository extends BaseRepository implements EmployerRepositoryInt
             ->orderBy('employers.order', 'asc');;
         return $employers;
     }
+
+    public function getEmployer()
+    {
+        $employers = DB::table('employers')
+            ->select()
+            ->orderBy('employers.id', 'desc');
+        return $employers;
+    }
 }
