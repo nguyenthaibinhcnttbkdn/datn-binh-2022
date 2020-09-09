@@ -25,7 +25,7 @@ class CandidateRepository extends BaseRepository implements CandidateRepositoryI
         $candidates = DB::table('candidates')
             ->select()
             ->where('candidates.order', '<>', null)
-            ->orderBy('candidates.order', 'asc');;
+            ->orderBy('candidates.order', 'asc');
         return $candidates;
     }
 
@@ -33,6 +33,7 @@ class CandidateRepository extends BaseRepository implements CandidateRepositoryI
     {
         $candidates = DB::table('candidates')
             ->select()
+            ->where('candidates.active', 1)
             ->orderBy('candidates.id', 'desc');;
         return $candidates;
     }

@@ -84,7 +84,8 @@ class RecruitmentRepository extends BaseRepository implements RecruitmentReposit
                 'employers.company as company',
                 'employers.avatar as avatar'
             )
-            ->where('recruitments.active', 1);
+            ->where('recruitments.active', 1)
+            ->orderBy('recruitments.id', 'desc');
 
         return $recruitments;
     }
@@ -158,7 +159,7 @@ class RecruitmentRepository extends BaseRepository implements RecruitmentReposit
 
     public function getRecruitmentByUserId($id)
     {
-        $imployerId  = Employer::where('user_id', $id)->get()->toArray();
+        $imployerId   = Employer::where('user_id', $id)->get()->toArray();
         $recruitments = DB::table('recruitments')
             ->leftJoin('ranks', 'recruitments.rank_id', '=', 'ranks.id')
             ->leftJoin('type_of_works', 'recruitments.type_of_work_id', '=', 'type_of_works.id')

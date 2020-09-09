@@ -25,6 +25,7 @@ class EmployerSeeder extends Seeder
                 "website"     => "www.axonactive.vn",
                 "description" => "Gia công phần mềm cho Châu Âu",
                 "photo"       => "https://scontent.fdad2-1.fna.fbcdn.net/v/t1.0-9/118701322_327443818575044_7030866659611778423_n.jpg?_nc_cat=101&_nc_sid=e007fa&_nc_ohc=NBH9wPg4cwQAX9TDiUQ&_nc_ht=scontent.fdad2-1.fna&oh=e4e97f937126f5d268947d1e559f840a&oe=5F79E010",
+                "active"      => 1,
                 "order"       => null,
             ],
             [
@@ -37,6 +38,7 @@ class EmployerSeeder extends Seeder
                 "website"     => "fpt-software.com",
                 "description" => "Gia công phần mềm cho Mỹ, Nhật",
                 "photo"       => "https://scontent-hkg4-2.xx.fbcdn.net/v/t1.0-9/118850782_327443835241709_4149752478679889139_o.jpg?_nc_cat=111&_nc_sid=e007fa&_nc_ohc=H2FB7yDh1KEAX_P6bv5&_nc_ht=scontent-hkg4-2.xx&oh=21bcfc5a507754c00c1416b5e54bab25&oe=5F7B25C1",
+                "active"      => 1,
                 "order"       => null,
             ],
             [
@@ -49,6 +51,7 @@ class EmployerSeeder extends Seeder
                 "website"     => "Logigear.vn",
                 "description" => "Dịch vụ kiểm thử phần mềm.",
                 "photo"       => "https://scontent-hkg4-1.xx.fbcdn.net/v/t1.0-9/118728831_327443811908378_8436943692261709949_o.jpg?_nc_cat=105&_nc_sid=e007fa&_nc_ohc=3pVSfceUuuYAX-mMzBh&_nc_ht=scontent-hkg4-1.xx&oh=8b3d56640842d17327f50a5535b0b4b1&oe=5F7C30EC",
+                "active"      => 1,
                 "order"       => null,
             ],
             [
@@ -61,6 +64,7 @@ class EmployerSeeder extends Seeder
                 "website"     => "http://sioux.asia",
                 "description" => "Phát triển phần mềm",
                 "photo"       => "https://scontent-hkg4-1.xx.fbcdn.net/v/t1.0-9/118655911_327443918575034_2803283870374675811_o.jpg?_nc_cat=103&_nc_sid=e007fa&_nc_ohc=uRWJaIB2ajkAX9C9kRE&_nc_ht=scontent-hkg4-1.xx&oh=14895e17a30e9b0dc651ce4de677b0de&oe=5F7B1FD0",
+                "active"      => 1,
                 "order"       => 1,
             ],
             [
@@ -73,6 +77,7 @@ class EmployerSeeder extends Seeder
                 "website"     => "http://www.nttdata.com.vn/",
                 "description" => "Gia công phần mềm cho Nhật",
                 "photo"       => "https://scontent.fdad2-1.fna.fbcdn.net/v/t1.0-9/118750212_327443908575035_6933840159898355137_o.jpg?_nc_cat=101&_nc_sid=e007fa&_nc_ohc=3WRQSqSNOe4AX_mHFc_&_nc_ht=scontent.fdad2-1.fna&oh=2699b11fead1a99166d499cb94866a28&oe=5F7B7352",
+                "active"      => 1,
                 "order"       => 2,
             ],
             [
@@ -85,6 +90,7 @@ class EmployerSeeder extends Seeder
                 "website"     => "http://evizi.com/",
                 "description" => "Gia công phần mềm cho thị trường Mỹ",
                 "photo"       => "https://scontent-hkg4-1.xx.fbcdn.net/v/t1.0-9/118840158_327443948575031_3789638544463439860_o.jpg?_nc_cat=105&_nc_sid=e007fa&_nc_ohc=de9m3Xp3_YIAX8zeQ3_&_nc_ht=scontent-hkg4-1.xx&oh=7662edeb445c926cb7de0c8673972241&oe=5F78A995",
+                "active"      => 1,
                 "order"       => 3,
             ],
             [
@@ -97,6 +103,7 @@ class EmployerSeeder extends Seeder
                 "website"     => "http://magrabbit.com",
                 "description" => "Gia công phần mềm cho Mỹ ",
                 "photo"       => "https://scontent-hkg4-2.xx.fbcdn.net/v/t1.0-9/118766513_327444045241688_1576216182692820333_o.jpg?_nc_cat=104&_nc_sid=e007fa&_nc_ohc=7IevZwG2W_oAX-dx1Nm&_nc_ht=scontent-hkg4-2.xx&oh=7842b14025a46e5ba3b26919f87ca041&oe=5F7A0672",
+                "active"      => 1,
                 "order"       => null,
             ],
             [
@@ -109,6 +116,7 @@ class EmployerSeeder extends Seeder
                 "website"     => "http://www.globalcybersoft.com/",
                 "description" => "Gia công phần mềm cho Nhật, Mỹ",
                 "photo"       => "https://scontent.fdad2-1.fna.fbcdn.net/v/t1.0-9/118787694_327443985241694_5269978730813679467_o.jpg?_nc_cat=101&_nc_sid=e007fa&_nc_ohc=Gf8ppJcwe2MAX_Gd8ST&_nc_ht=scontent.fdad2-1.fna&oh=9d69e132f6f5141ee4ce9e8b49b648c0&oe=5F78B031",
+                "active"      => 1,
                 "order"       => null,
             ],
             [
@@ -121,6 +129,7 @@ class EmployerSeeder extends Seeder
                 "website"     => "http://www.gameloft-sea.com/",
                 "description" => "Test và phát triển Game (đã đóng cửa tại ĐN)",
                 "photo"       => "https://scontent-hkg4-2.xx.fbcdn.net/v/t1.0-9/118777182_327444071908352_6588158979569724043_o.jpg?_nc_cat=104&_nc_sid=e007fa&_nc_ohc=TATGmzyanCUAX8Vx2RJ&_nc_ht=scontent-hkg4-2.xx&oh=a3e1a9012b217d32be2c3bf8c82595cc&oe=5F7960E4",
+                "active"      => 1,
                 "order"       => null,
             ],
             [
@@ -133,6 +142,7 @@ class EmployerSeeder extends Seeder
                 "website"     => "http://toancauxanh.vn/",
                 "description" => "Phát triển Web, ứng dụng và gia công phần mềm",
                 "photo"       => "https://scontent-hkg4-1.xx.fbcdn.net/v/t1.0-9/118791500_327444058575020_4947375790977603548_n.jpg?_nc_cat=110&_nc_sid=e007fa&_nc_ohc=bm3qjRUScEAAX-06ivZ&_nc_ht=scontent-hkg4-1.xx&oh=584512d0d97c0ad79b140e3c588907f5&oe=5F797805",
+                "active"      => 1,
                 "order"       => null,
             ],
             [
@@ -145,6 +155,7 @@ class EmployerSeeder extends Seeder
                 "website"     => "tinhte.vn",
                 "description" => "Gia công phần mềm cho Nhật, Mỹ",
                 "photo"       => "https://scontent-hkg4-2.xx.fbcdn.net/v/t1.0-9/118697834_327444121908347_6900362543568731260_o.jpg?_nc_cat=111&_nc_sid=e007fa&_nc_ohc=bq04_kGk9EsAX_9SoXY&_nc_ht=scontent-hkg4-2.xx&oh=60ef4d204078eaf1160b713bb126b0b0&oe=5F78F634",
+                "active"      => 1,
                 "order"       => null,
             ],
             [
@@ -157,6 +168,7 @@ class EmployerSeeder extends Seeder
                 "website"     => "http://asiantech.vn",
                 "description" => "Gia công phần mềm cho Nhật",
                 "photo"       => "https://scontent.fdad1-1.fna.fbcdn.net/v/t1.0-9/118811053_327444818574944_580135804155529551_o.jpg?_nc_cat=100&_nc_sid=e007fa&_nc_ohc=brYRXoThLm8AX_HOQGD&_nc_ht=scontent.fdad1-1.fna&oh=b147f85e980ee0d0b4d9129f6afdefdb&oe=5F7B5457",
+                "active"      => 1,
                 "order"       => null,
             ],
             [
@@ -169,6 +181,7 @@ class EmployerSeeder extends Seeder
                 "website"     => "jd.com",
                 "description" => "Gia công phần mềm",
                 "photo"       => "https://scontent-hkg4-1.xx.fbcdn.net/v/t1.0-9/118626004_327444181908341_960866878492766956_o.jpg?_nc_cat=110&_nc_sid=e007fa&_nc_ohc=CYerxp2kXXIAX_E1fDK&_nc_ht=scontent-hkg4-1.xx&oh=d26a4531369a3e11cf154303fcc794ed&oe=5F790DF6",
+                "active"      => 1,
                 "order"       => null,
             ],
             [
@@ -181,6 +194,7 @@ class EmployerSeeder extends Seeder
                 "website"     => "weibo.com",
                 "description" => "Gia công phần mềm cho thị trường Nhật ",
                 "photo"       => "https://scontent-hkg4-2.xx.fbcdn.net/v/t1.0-9/118779316_327444325241660_6943796765693574534_o.jpg?_nc_cat=111&_nc_sid=e007fa&_nc_ohc=gWsO05Bhf9QAX-Ocosv&_nc_ht=scontent-hkg4-2.xx&oh=f9553b616ad270a4822aca7ec4757ccc&oe=5F7A065A",
+                "active"      => 1,
                 "order"       => null,
             ],
             [
@@ -193,6 +207,7 @@ class EmployerSeeder extends Seeder
                 "website"     => "http://www.mptelecom.com.vn/",
                 "description" => "Gia công phần mềm cho Nhật và dịch vụ hỗ trợ khách hàng. ",
                 "photo"       => "https://scontent-hkg4-1.xx.fbcdn.net/v/t1.0-9/118811817_327444275241665_7643593948614134701_o.jpg?_nc_cat=108&_nc_sid=e007fa&_nc_ohc=Y1r33EP0qXAAX9E-HY9&_nc_ht=scontent-hkg4-1.xx&oh=49f28592732c2c2a3872390f45631e4e&oe=5F7A9945",
+                "active"      => 1,
                 "order"       => null,
             ],
             [
@@ -205,6 +220,7 @@ class EmployerSeeder extends Seeder
                 "website"     => "http://www.jcs-corp.com/",
                 "description" => "Triển khai các hệ thống phần mềm của ITC tại VN. Gia công phần mềm cho thị trường Nhật",
                 "photo"       => "https://scontent.fdad2-1.fna.fbcdn.net/v/t1.0-9/118702101_327444295241663_457012217620796821_o.jpg?_nc_cat=101&_nc_sid=e007fa&_nc_ohc=5-67HOf1KUkAX_kiAkQ&_nc_ht=scontent.fdad2-1.fna&oh=acb706d73309b6f55320f2b7533d6544&oe=5F78DFCD",
+                "active"      => 1,
                 "order"       => null,
             ],
             [
@@ -217,6 +233,7 @@ class EmployerSeeder extends Seeder
                 "website"     => "http://i-fc.jp/",
                 "description" => "Gia công phần mềm cho thị trường Nhật . 100% vốn đầu tư của Nhật, Chủ đầu tư là Công ty cổ phần I-Factory có trụ sở chính ở Tokyo, Nhật Bản.",
                 "photo"       => "https://scontent.fdad2-1.fna.fbcdn.net/v/t1.0-9/118730292_327444335241659_6441922760455241218_n.jpg?_nc_cat=107&_nc_sid=e007fa&_nc_ohc=hRAhII7ajncAX-ZSMXw&_nc_ht=scontent.fdad2-1.fna&oh=1e8480809f4944adddaafdddbedb68e0&oe=5F7B1A4F",
+                "active"      => 1,
                 "order"       => null,
             ],
             [
@@ -229,6 +246,7 @@ class EmployerSeeder extends Seeder
                 "website"     => "http://www.esilicon.com/",
                 "description" => "Gia công phần mềm cho Úc, Mỹ",
                 "photo"       => "https://scontent.fdad1-1.fna.fbcdn.net/v/t1.0-9/118780991_327444368574989_2883576677751183317_n.jpg?_nc_cat=100&_nc_sid=e007fa&_nc_ohc=9yLQZSVVN8kAX9r9i8f&_nc_ht=scontent.fdad1-1.fna&oh=23306997e2707e3ad11fb09959216da4&oe=5F7B29AC",
+                "active"      => 1,
                 "order"       => null,
             ],
             [
@@ -241,6 +259,7 @@ class EmployerSeeder extends Seeder
                 "website"     => "http://hptek.vn/",
                 "description" => "Gia công Phần mềm cho thị trường Mỹ Làm BPO",
                 "photo"       => "https://scontent-hkg4-1.xx.fbcdn.net/v/t1.0-9/118654216_327444421908317_9141288940968772052_o.jpg?_nc_cat=108&_nc_sid=e007fa&_nc_ohc=JHeXT2M5hNUAX-7upGx&_nc_ht=scontent-hkg4-1.xx&oh=b5507e4b15fec0f11f8fc6af56eec10d&oe=5F7A6299",
+                "active"      => 1,
                 "order"       => null,
             ],
             [
@@ -253,6 +272,7 @@ class EmployerSeeder extends Seeder
                 "website"     => "http://dtt.vn/",
                 "description" => "Gia công phần mềm",
                 "photo"       => "https://scontent.fdad2-1.fna.fbcdn.net/v/t1.0-9/118787300_327444441908315_5188867429719853050_o.jpg?_nc_cat=107&_nc_sid=e007fa&_nc_ohc=DhCYygl_iGQAX9a_S4W&_nc_ht=scontent.fdad2-1.fna&oh=cc24d8af794cd7f874c20e55435ff780&oe=5F7BB69A",
+                "active"      => 1,
                 "order"       => null,
             ],
             [
@@ -265,6 +285,7 @@ class EmployerSeeder extends Seeder
                 "website"     => "http://smartdev.vn/",
                 "description" => "Gia công phần mềm - Thị trường Châu Âu",
                 "photo"       => "https://scontent.fdad1-1.fna.fbcdn.net/v/t1.0-9/118700994_327444505241642_6188019438154057469_o.jpg?_nc_cat=100&_nc_sid=e007fa&_nc_ohc=659ZnF6qZrwAX9ouB4w&_nc_ht=scontent.fdad1-1.fna&oh=35c31fece9958720e4b6895511e3b13f&oe=5F7962D7",
+                "active"      => 1,
                 "order"       => null,
             ],
             [
@@ -277,6 +298,7 @@ class EmployerSeeder extends Seeder
                 "website"     => "http://corporate.smoov.me",
                 "description" => "Mobile App, Mobile Web",
                 "photo"       => "https://scontent.fdad2-1.fna.fbcdn.net/v/t1.0-9/118711930_327444475241645_5128022299686318894_o.jpg?_nc_cat=101&_nc_sid=e007fa&_nc_ohc=bQK1infqUpkAX-P05Sa&_nc_ht=scontent.fdad2-1.fna&oh=b203d7ae2f9514498f4cc6e9720af0e1&oe=5F7AD96F",
+                "active"      => 1,
                 "order"       => null,
             ],
             [
@@ -289,6 +311,7 @@ class EmployerSeeder extends Seeder
                 "website"     => "http://smartdev.vn",
                 "description" => "Công ty 100% vốn đầu tư của Nhật, thuộc Tập đoàn SETA International Gia công cho Nhật Bản, Mỹ, Ireland",
                 "photo"       => "https://scontent-hkg4-2.xx.fbcdn.net/v/t1.0-9/118791216_327444535241639_6191539556610853118_o.jpg?_nc_cat=111&_nc_sid=e007fa&_nc_ohc=vC1gcFUiwi0AX_BG3cI&_nc_ht=scontent-hkg4-2.xx&oh=f71883d26941f8d9bd9754962b2deee8&oe=5F7C4F52",
+                "active"      => 1,
                 "order"       => null,
             ],
             [
@@ -301,6 +324,7 @@ class EmployerSeeder extends Seeder
                 "website"     => "http://livepass.jp",
                 "description" => "Công ty 100% vốn đầu tư của Nhật",
                 "photo"       => "https://scontent-hkg4-1.xx.fbcdn.net/v/t1.0-9/118700902_327444558574970_2173759816100994359_n.jpg?_nc_cat=106&_nc_sid=e007fa&_nc_ohc=nF2dsB7agyQAX_yd5W5&_nc_ht=scontent-hkg4-1.xx&oh=707cc4f9ae9729d78483ef678cb829cd&oe=5F797C23",
+                "active"      => 1,
                 "order"       => null,
             ],
             [
@@ -313,6 +337,7 @@ class EmployerSeeder extends Seeder
                 "website"     => "http://tinhvan.com",
                 "description" => "Gia công và xuất khẩu phần mềm (PM) cho Mỹ, Đức, Singapore, Nhật",
                 "photo"       => "https://scontent.fdad1-1.fna.fbcdn.net/v/t1.0-9/118772984_327444595241633_5200728250570544171_n.jpg?_nc_cat=100&_nc_sid=e007fa&_nc_ohc=XhxljkKNxSIAX_BgLsd&_nc_ht=scontent.fdad1-1.fna&oh=ff72fb255571d709afe2c825b9fd0eb3&oe=5F7BCD66",
+                "active"      => 1,
                 "order"       => null,
             ],
             [
@@ -325,6 +350,7 @@ class EmployerSeeder extends Seeder
                 "website"     => "http://tinhvan.com",
                 "description" => "Công ty cổ phần BAP chuyên làm offshore, game,app trên smartphone và web service cho thị trường nhật và việt nam.",
                 "photo"       => "https://scontent-hkg4-1.xx.fbcdn.net/v/t1.0-9/118730522_327444648574961_5767734329284556471_n.jpg?_nc_cat=105&_nc_sid=e007fa&_nc_ohc=iUsr-byf4n8AX-OBUl2&_nc_ht=scontent-hkg4-1.xx&oh=a36417bde1db5837642c04cebab8d91b&oe=5F79BE0A",
+                "active"      => 1,
                 "order"       => null,
             ],
             [
@@ -337,6 +363,7 @@ class EmployerSeeder extends Seeder
                 "website"     => "http://codeenginestudio.com/",
                 "description" => "Gia công phần mềm thị trường tiếng Anh",
                 "photo"       => "https://scontent.fdad2-1.fna.fbcdn.net/v/t1.0-9/118912555_327444631908296_8341454737713817476_o.jpg?_nc_cat=101&_nc_sid=e007fa&_nc_ohc=XPwnr74eeiEAX9iUmSD&_nc_ht=scontent.fdad2-1.fna&oh=2cfbf79b5de9acc299fa12c166df4a01&oe=5F78B363",
+                "active"      => 1,
                 "order"       => null,
             ],
             [
@@ -349,6 +376,7 @@ class EmployerSeeder extends Seeder
                 "website"     => "http://codeenginestudio.com/",
                 "description" => "Công ty của Nhật",
                 "photo"       => "https://scontent.fdad1-1.fna.fbcdn.net/v/t1.0-9/118700615_327444708574955_3154483474587379561_n.jpg?_nc_cat=100&_nc_sid=e007fa&_nc_ohc=2JgG9fGSBAMAX8B0-Cm&_nc_ht=scontent.fdad1-1.fna&oh=d9a4bba42a4473d476fa50879b5c137c&oe=5F7A5389",
+                "active"      => 0,
                 "order"       => null,
             ],
             [
@@ -361,6 +389,7 @@ class EmployerSeeder extends Seeder
                 "website"     => "http://aperia.com/",
                 "description" => "Doanh nghiệp 100% vốn đầu tư nước ngoài",
                 "photo"       => "https://scontent-hkg4-1.xx.fbcdn.net/v/t1.0-9/118794859_327444728574953_7653257655011464547_o.jpg?_nc_cat=106&_nc_sid=e007fa&_nc_ohc=Gl76zxuQT34AX8FJDwu&_nc_oc=AQnWu8ClZMHjS2ryc6CfB8tBIWQTmG2APfEuOrCH4CIlLTZcU8MjEG9Ddet-3L0AfdMY4SgT-a1j0lsrUzl1Omf8&_nc_ht=scontent-hkg4-1.xx&oh=d3dc84a57824aa68f92bda0eea88a828&oe=5F7C5ADD",
+                "active"      => 0,
                 "order"       => null,
             ],
             [
@@ -373,6 +402,7 @@ class EmployerSeeder extends Seeder
                 "website"     => "http://aperia.com/",
                 "description" => "Gia công phần mềm cho Mỹ, VP chính ở Los Angeles",
                 "photo"       => "https://scontent.fdad2-1.fna.fbcdn.net/v/t1.0-9/118701322_327443818575044_7030866659611778423_n.jpg?_nc_cat=101&_nc_sid=e007fa&_nc_ohc=NBH9wPg4cwQAX9TDiUQ&_nc_ht=scontent.fdad2-1.fna&oh=e4e97f937126f5d268947d1e559f840a&oe=5F79E010",
+                "active"      => 0,
                 "order"       => null,
             ],
         ];
@@ -387,6 +417,7 @@ class EmployerSeeder extends Seeder
                     'website'     => $item['website'],
                     'description' => $item['description'],
                     'photo'       => $item['photo'],
+                    'active'      => $item['active'],
                     'order'       => $item['order'],
                 ]
             );

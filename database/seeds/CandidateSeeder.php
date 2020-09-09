@@ -23,6 +23,7 @@ class CandidateSeeder extends Seeder
                 "position"   => "Senior",
                 "address"    => "Số 73 Quán Thánh, phường Quán Thánh, quận Ba Đình",
                 "experience" => "1 năm",
+                "active"     => 1,
                 "order"      => null,
             ],
             [
@@ -33,6 +34,7 @@ class CandidateSeeder extends Seeder
                 "position"   => "Internship",
                 "address"    => "Số 26 Nguyễn Văn Ngọc, phường Cồng Vị, quận Ba Đình",
                 "experience" => "2 năm",
+                "active"     => 1,
                 "order"      => null,
             ],
             [
@@ -43,6 +45,7 @@ class CandidateSeeder extends Seeder
                 "position"   => "Fresher",
                 "address"    => "Số 374-376 Đê La Thành, phường Ô Chợ Dừa, quận Đống Đa",
                 "experience" => "3 năm",
+                "active"     => 1,
                 "order"      => null,
             ],
             [
@@ -53,6 +56,7 @@ class CandidateSeeder extends Seeder
                 "position"   => "Senior",
                 "address"    => "28 Liễu Giai, Cống Vị, Ba Đình, Hà Nội",
                 "experience" => "4 tháng",
+                "active"     => 1,
                 "order"      => null,
             ],
             [
@@ -63,6 +67,7 @@ class CandidateSeeder extends Seeder
                 "position"   => "Junior",
                 "address"    => "3 Láng Hạ, Chợ Dừa, Ba Đình, Hà Nội",
                 "experience" => "chưa có",
+                "active"     => 1,
                 "order"      => null,
             ],
             [
@@ -73,6 +78,7 @@ class CandidateSeeder extends Seeder
                 "position"   => "Team Leader",
                 "address"    => "Số 48 Giang Văn Minh, Ba Đình, Hà Nội",
                 "experience" => "6 tháng",
+                "active"     => 1,
                 "order"      => null,
             ],
             [
@@ -83,6 +89,7 @@ class CandidateSeeder extends Seeder
                 "position"   => "Internship",
                 "address"    => "Kim Mã, Ngọc Khánh, Hà Nội",
                 "experience" => "1 tháng",
+                "active"     => 1,
                 "order"      => null,
             ],
             [
@@ -93,6 +100,7 @@ class CandidateSeeder extends Seeder
                 "position"   => "Internship",
                 "address"    => "Số 18 Văn Cao, Ba Đình, Hà nội",
                 "experience" => "2 năm",
+                "active"     => 1,
                 "order"      => null,
             ],
             [
@@ -103,6 +111,7 @@ class CandidateSeeder extends Seeder
                 "position"   => "Internship",
                 "address"    => "Số 335 Phố Kim Mã – Ba Đình – Hà Nội",
                 "experience" => "3 năm",
+                "active"     => 1,
                 "order"      => null,
             ],
             [
@@ -113,6 +122,7 @@ class CandidateSeeder extends Seeder
                 "position"   => "Internship",
                 "address"    => "Số 92C, phố Lý Thường Kiệt, phường Cửa Nam, quận Hoàn Kiếm",
                 "experience" => "4 tháng",
+                "active"     => 1,
                 "order"      => null,
             ],
             [
@@ -123,6 +133,7 @@ class CandidateSeeder extends Seeder
                 "position"   => "Internship",
                 "address"    => "số 45 Cửa Nam, Hoàn Kiếm, Hà Nội   ",
                 "experience" => "dưới 1 năm",
+                "active"     => 1,
                 "order"      => null,
             ],
             [
@@ -133,6 +144,7 @@ class CandidateSeeder extends Seeder
                 "position"   => "Internship",
                 "address"    => "Biệt thự số 48 Tràng Thi Q.Hoàn Kiếm – TP. Hà Nội",
                 "experience" => "6 năm",
+                "active"     => 1,
                 "order"      => null,
             ],
             [
@@ -143,6 +155,7 @@ class CandidateSeeder extends Seeder
                 "position"   => "Internship",
                 "address"    => "Biệt thự số 48 Tràng Thi Q.Hoàn Kiếm – TP. Hà Nội",
                 "experience" => "6 tháng",
+                "active"     => 1,
                 "order"      => null,
             ],
             [
@@ -153,6 +166,7 @@ class CandidateSeeder extends Seeder
                 "position"   => "Internship",
                 "address"    => "Biệt thự số 48 Tràng Thi Q.Hoàn Kiếm – TP. Hà Nội",
                 "experience" => "3 tháng",
+                "active"     => 1,
                 "order"      => null,
             ],
             [
@@ -163,6 +177,7 @@ class CandidateSeeder extends Seeder
                 "position"   => "Internship",
                 "address"    => "Biệt thự số 48 Tràng Thi Q.Hoàn Kiếm – TP. Hà Nội",
                 "experience" => "2 năm",
+                "active"     => 1,
                 "order"      => null,
             ],
             [
@@ -173,6 +188,7 @@ class CandidateSeeder extends Seeder
                 "position"   => "Internship",
                 "address"    => "Biệt thự số 48 Tràng Thi Q.Hoàn Kiếm – TP. Hà Nội",
                 "experience" => "dưới 2 năm",
+                "active"     => 1,
                 "order"      => null,
             ],
             [
@@ -183,6 +199,7 @@ class CandidateSeeder extends Seeder
                 "position"   => "Internship",
                 "address"    => "Biệt thự số 48 Tràng Thi Q.Hoàn Kiếm – TP. Hà Nội",
                 "experience" => "chưa có",
+                "active"     => 1,
                 "order"      => 3,
             ],
             [
@@ -193,6 +210,7 @@ class CandidateSeeder extends Seeder
                 "position"   => "Internship",
                 "address"    => "Biệt thự số 48 Tràng Thi Q.Hoàn Kiếm – TP. Hà Nội",
                 "experience" => "4 tháng",
+                "active"     => 1,
                 "order"      => 2,
             ],
             [
@@ -203,6 +221,7 @@ class CandidateSeeder extends Seeder
                 "position"   => "Internship",
                 "address"    => "Biệt thự số 48 Tràng Thi Q.Hoàn Kiếm – TP. Hà Nội",
                 "experience" => "9 tháng",
+                "active"     => 1,
                 "order"      => 1,
             ],
             [
@@ -213,6 +232,7 @@ class CandidateSeeder extends Seeder
                 "position"   => "Internship",
                 "address"    => "Biệt thự số 48 Tràng Thi Q.Hoàn Kiếm – TP. Hà Nội",
                 "experience" => "1 năm",
+                "active"     => 1,
                 "order"      => null,
             ],
             [
@@ -223,6 +243,7 @@ class CandidateSeeder extends Seeder
                 "position"   => "Internship",
                 "address"    => "Biệt thự số 48 Tràng Thi Q.Hoàn Kiếm – TP. Hà Nội",
                 "experience" => "1 năm",
+                "active"     => 1,
                 "order"      => null,
             ],
             [
@@ -233,6 +254,7 @@ class CandidateSeeder extends Seeder
                 "position"   => "Internship",
                 "address"    => "Biệt thự số 48 Tràng Thi Q.Hoàn Kiếm – TP. Hà Nội",
                 "experience" => "1 năm",
+                "active"     => 1,
                 "order"      => null,
             ],
             [
@@ -243,6 +265,7 @@ class CandidateSeeder extends Seeder
                 "position"   => "Internship",
                 "address"    => "Biệt thự số 48 Tràng Thi Q.Hoàn Kiếm – TP. Hà Nội",
                 "experience" => "1 năm",
+                "active"     => 1,
                 "order"      => null,
             ],
             [
@@ -253,6 +276,7 @@ class CandidateSeeder extends Seeder
                 "position"   => "Internship",
                 "address"    => "Biệt thự số 48 Tràng Thi Q.Hoàn Kiếm – TP. Hà Nội",
                 "experience" => "1 năm",
+                "active"     => 1,
                 "order"      => null,
             ],
             [
@@ -263,6 +287,7 @@ class CandidateSeeder extends Seeder
                 "position"   => "Internship",
                 "address"    => "Biệt thự số 48 Tràng Thi Q.Hoàn Kiếm – TP. Hà Nội",
                 "experience" => "1 năm",
+                "active"     => 1,
                 "order"      => null,
             ],
             [
@@ -273,6 +298,7 @@ class CandidateSeeder extends Seeder
                 "position"   => "Internship",
                 "address"    => "Biệt thự số 48 Tràng Thi Q.Hoàn Kiếm – TP. Hà Nội",
                 "experience" => "1 năm",
+                "active"     => 1,
                 "order"      => null,
             ],
             [
@@ -283,6 +309,7 @@ class CandidateSeeder extends Seeder
                 "position"   => "Internship",
                 "address"    => "Biệt thự số 48 Tràng Thi Q.Hoàn Kiếm – TP. Hà Nội",
                 "experience" => "1 năm",
+                "active"     => 1,
                 "order"      => null,
             ],
             [
@@ -293,6 +320,7 @@ class CandidateSeeder extends Seeder
                 "position"   => "Internship",
                 "address"    => "Biệt thự số 48 Tràng Thi Q.Hoàn Kiếm – TP. Hà Nội",
                 "experience" => "1 năm",
+                "active"     => 0,
                 "order"      => null,
             ],
             [
@@ -303,6 +331,7 @@ class CandidateSeeder extends Seeder
                 "position"   => "Internship",
                 "address"    => "Biệt thự số 48 Tràng Thi Q.Hoàn Kiếm – TP. Hà Nội",
                 "experience" => "1 năm",
+                "active"     => 0,
                 "order"      => null,
             ],
             [
@@ -313,6 +342,7 @@ class CandidateSeeder extends Seeder
                 "position"   => "Internship",
                 "address"    => "Biệt thự số 48 Tràng Thi Q.Hoàn Kiếm – TP. Hà Nội",
                 "experience" => "1 năm",
+                "active"     => 0,
                 "order"      => null,
             ],
 
@@ -326,6 +356,7 @@ class CandidateSeeder extends Seeder
                     'position'   => $item['position'],
                     'address'    => $item['address'],
                     'experience' => $item['experience'],
+                    'active'     => $item['active'],
                     'order'      => $item['order'],
                 ]
             );
