@@ -2,6 +2,11 @@
 
 use Illuminate\Http\Request;
 
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: POST, GET, OPTIONS, PUT, DELETE');
+// add any additional headers you need to support here
+header('Access-Control-Allow-Headers: Origin, Content-Type,X-Requested-With,Authorization');
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -31,16 +36,19 @@ Route::resource('recruitments', 'Client\RecruitmentController');
 Route::get('getrecruitmentorder', 'Client\RecruitmentController@getRecruitmentOrder');
 Route::get('getrecruitmentsbyemployerid/{id}', 'Client\RecruitmentController@getRecruitmentsByEmployerId');
 Route::get('getrecruitmentsbyuserid/{id}', 'Client\RecruitmentController@getRecruitmentByUserId');
+Route::get('getcandidatesbyuserid/{id}', 'Client\RecruitmentController@getCandidateByUserId');
 
 
 Route::resource('candidates', 'Client\CandidateController');
 Route::get('getcandidateorder', 'Client\CandidateController@getCandidateOrder');
-Route::get('getcandidatebyuserid/{id}', 'Client\CandidateController@getCandidateByUserId');
+Route::get('getinfocandidatebyuserid/{id}', 'Client\CandidateController@getCandidateByUserId');
+Route::get('getrecruitmentapplybyuserid/{id}', 'Client\CandidateController@getRecruitmentByUserId');
 
 
 Route::resource('employers', 'Client\EmployerController');
 Route::get('getemployerorder', 'Client\EmployerController@getEmployerOrder');
-Route::get('getemployerbyuserid/{id}', 'Client\EmployerController@getEmployerByUserId');
+Route::get('getinfoemployerbyuserid/{id}', 'Client\EmployerController@getEmployerByUserId');
+Route::get('getcandidatesavesbyuserid/{id}', 'Client\EmployerController@getCandidateSaveByUserId');
 
 Route::resource('ranks', 'Client\RankController');
 Route::resource('cities', 'Client\CityController');

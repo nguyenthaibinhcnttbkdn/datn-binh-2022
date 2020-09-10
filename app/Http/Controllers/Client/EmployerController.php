@@ -13,6 +13,7 @@ class EmployerController extends Controller
 
     public function __construct(EmployerRepositoryInterface $employerRepository)
     {
+        $this->middleware(['auth:api', 'scope:employer'], ['except' => ['index', 'show', 'addEmployer','getCandidateOrder']]);
         $this->employerRepository = $employerRepository;
     }
 
@@ -73,6 +74,30 @@ class EmployerController extends Controller
     public function getEmployerByUserId($id)
     {
         $data = $this->employerRepository->getEmployerByUserId($id)->toArray();
+        return $this->sendResult(true, 'Show Successfully', $data, 200);
+    }
+
+    public function getCandidateSaveByUserId($id, Request $request)
+    {
+        $data = $this->employerRepository->getCandidateSaveByUserId($id)->get()->toArray();
+
+        $datas = $this->employerRepository->getCandidateSaveByUserId($id);
+
+        if ($request->has('name')) {
+            if (is_null($request->get('name')) == false) {
+                $data = $datas->where('candidates.name', 'LIKE', '%' . $request->get('name') . '%')->get()->toArray();
+            } else {
+                $data = $this->employerRepository->getCandidateSaveByUserId($id)->get()->toArray();
+            }
+        }
+
+        if ($request->has('limit') && $request->has('page')) {
+            $paginate = $request->only('limit', 'page');
+            if (count($paginate) > 0) {
+                $data = $datas->paginate($paginate['limit'])->toArray();
+            }
+        }
+
         return $this->sendResult(true, 'Show Successfully', $data, 200);
     }
 }

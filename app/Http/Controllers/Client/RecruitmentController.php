@@ -12,6 +12,7 @@ class RecruitmentController extends Controller
 
     public function __construct(RecruitmentRepositoryInterface $recruitmentRepository)
     {
+        $this->middleware(['auth:api', 'scope:employer'], ['except' => ['index', 'show', 'getRecruitmentsByEmployerId', 'getRecruitmentOrder']]);
         $this->recruitmentRepository = $recruitmentRepository;
     }
 
@@ -91,6 +92,30 @@ class RecruitmentController extends Controller
                 $data = $datas->where('recruitments.active', '=', $request->get('active'))->get()->toArray();
             } else {
                 $data = $this->recruitmentRepository->getRecruitmentByUserId($id)->get()->toArray();
+            }
+        }
+
+        if ($request->has('limit') && $request->has('page')) {
+            $paginate = $request->only('limit', 'page');
+            if (count($paginate) > 0) {
+                $data = $datas->paginate($paginate['limit'])->toArray();
+            }
+        }
+
+        return $this->sendResult(true, 'Show Successfully', $data, 200);
+    }
+
+    public function getCandidateByUserId($id, Request $request)
+    {
+        $data = $this->recruitmentRepository->getCandidateByUserId($id)->get()->toArray();
+
+        $datas = $this->recruitmentRepository->getCandidateByUserId($id);
+
+        if ($request->has('name')) {
+            if (is_null($request->get('name')) == false) {
+                $data = $datas->where('candidates.name', 'LIKE', '%' . $request->get('name') . '%')->get()->toArray();
+            } else {
+                $data = $this->recruitmentRepository->getCandidateByUserId($id)->get()->toArray();
             }
         }
 

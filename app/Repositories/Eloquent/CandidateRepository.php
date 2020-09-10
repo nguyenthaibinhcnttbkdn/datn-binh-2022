@@ -3,6 +3,7 @@
 
 namespace App\Repositories\Eloquent;
 
+use App\Models\Recruitment;
 use App\Models\User;
 use App\Repositories\Eloquent\BaseRepository;
 use App\Repositories\Interfaces\CandidateRepositoryInterface;
@@ -68,5 +69,17 @@ class CandidateRepository extends BaseRepository implements CandidateRepositoryI
     {
         $candidate = Candidate::where('user_id', $id)->get();
         return $candidate;
+    }
+
+    public function getRecruitmentByUserId($id)
+    {
+        $candidateId = Candidate::where('user_id', $id)->get()->toArray()[0]['id'];
+
+        $recruiments = Recruitment::with(['rank', 'type_of_work', 'city', 'career', 'employer', 'salary'])
+            ->whereHas('candidates', function ($query) use ($candidateId) {
+                $query->where('candidate_id', $candidateId);
+            });
+
+        return ($recruiments);
     }
 }

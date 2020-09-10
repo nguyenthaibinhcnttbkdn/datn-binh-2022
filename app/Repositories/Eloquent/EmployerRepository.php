@@ -3,6 +3,7 @@
 
 namespace App\Repositories\Eloquent;
 
+use App\Models\Candidate;
 use App\Models\User;
 use App\Repositories\Eloquent\BaseRepository;
 use App\Repositories\Interfaces\EmployerRepositoryInterface;
@@ -71,5 +72,17 @@ class EmployerRepository extends BaseRepository implements EmployerRepositoryInt
     {
         $employer = Employer::where('user_id', $id)->get();
         return $employer;
+    }
+
+    public function getCandidateSaveByUserId($id)
+    {
+        $employerId = Employer::where('user_id', $id)->get()->toArray()[0]['id'];
+
+        $candidates = Candidate::select()
+            ->whereHas('employers', function ($query) use ($employerId) {
+                $query->where('employer_id', $employerId);
+            });
+
+        return ($candidates);
     }
 }

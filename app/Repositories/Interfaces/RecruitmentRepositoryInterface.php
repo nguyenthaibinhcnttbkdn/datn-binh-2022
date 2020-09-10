@@ -15,4 +15,6 @@ interface RecruitmentRepositoryInterface
     public function getRecruitmentsByEmployerId($id);
 
     public function getRecruitmentByUserId($id);
+
+    public function getCandidateByUserId($id);
 }

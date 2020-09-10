@@ -32,4 +32,14 @@ class Recruitment extends Model
     {
         return $this->belongsTo(Career::class);
     }
+
+    public function salary()
+    {
+        return $this->belongsTo(Salary::class);
+    }
+
+    public function candidates()
+    {
+        return $this->belongsToMany(\App\Models\Candidate::class, 'candidate_recruitments');
+    }
 }

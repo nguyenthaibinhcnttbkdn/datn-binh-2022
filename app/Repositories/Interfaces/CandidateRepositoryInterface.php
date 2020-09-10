@@ -1,4 +1,3 @@
-<?php
 
 
 namespace App\Repositories\Interfaces;
@@ -13,4 +12,6 @@ interface CandidateRepositoryInterface
     public function addCandidate(array $data);
 
     public function getCandidateByUserId($id);
+
+    public function getRecruitmentByUserId($id);
 }

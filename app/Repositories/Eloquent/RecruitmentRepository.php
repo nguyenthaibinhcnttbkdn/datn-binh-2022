@@ -3,6 +3,7 @@
 
 namespace App\Repositories\Eloquent;
 
+use App\Models\Candidate;
 use App\Models\Employer;
 use App\Repositories\Eloquent\BaseRepository;
 use App\Repositories\Interfaces\RecruitmentRepositoryInterface;
@@ -189,5 +190,24 @@ class RecruitmentRepository extends BaseRepository implements RecruitmentReposit
             ->where('employers.id', $imployerId[0]['id'])
             ->orderBy('recruitments.id', 'desc');
         return $recruitments;
+    }
+
+    public function getCandidateByUserId($id)
+    {
+        $jobs= Recruitment::select('id')
+            ->whereHas('employer', function ($query) use ($id) {
+                $query->where('user_id', $id);
+            })->get();
+
+        $recruimentIds = [];
+        foreach ($jobs as $key => $job) {
+            array_push($recruimentIds, $job->id);
+        }
+
+        $candidates = Candidate::with('user')
+            ->whereHas('recruitments', function ($query) use ($recruimentIds) {
+                $query->whereIn('recruitment_id', $recruimentIds);
+            });
+        return $candidates;
     }
 }

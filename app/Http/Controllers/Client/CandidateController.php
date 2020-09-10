@@ -14,6 +14,7 @@ class CandidateController extends Controller
 
     public function __construct(CandidateRepositoryInterface $candidateRepository)
     {
+        $this->middleware(['auth:api', 'scope:candidate'], ['except' => ['index', 'show', 'addCandidate','getCandidateOrder']]);
         $this->candidateRepository = $candidateRepository;
     }
 
@@ -71,8 +72,15 @@ class CandidateController extends Controller
         }
     }
 
-    public function getCandidateByUserId($id){
+    public function getCandidateByUserId($id)
+    {
         $data = $this->candidateRepository->getCandidateByUserId($id)->toArray();
+        return $this->sendResult(true, 'Show Successfully', $data, 200);
+    }
+
+    public function getRecruitmentByUserId($id)
+    {
+        $data = $this->candidateRepository->getRecruitmentByUserId($id)->get()->toArray();
         return $this->sendResult(true, 'Show Successfully', $data, 200);
     }
 }

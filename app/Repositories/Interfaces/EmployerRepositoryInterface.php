@@ -13,4 +13,6 @@ interface EmployerRepositoryInterface
     public function addEmployer(array $data);
 
     public function getEmployerByUserId($id);
+
+    public function getCandidateSaveByUserId($id);
 }
