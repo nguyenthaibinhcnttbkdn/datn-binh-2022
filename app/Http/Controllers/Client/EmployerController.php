@@ -13,7 +13,7 @@ class EmployerController extends Controller
 
     public function __construct(EmployerRepositoryInterface $employerRepository)
     {
-        $this->middleware(['auth:api', 'scope:employer'], ['except' => ['index', 'show', 'addEmployer','getCandidateOrder']]);
+        $this->middleware(['auth:api', 'scope:employer'], ['except' => ['index', 'show', 'addEmployer','getEmployerOrder']]);
         $this->employerRepository = $employerRepository;
     }
 
