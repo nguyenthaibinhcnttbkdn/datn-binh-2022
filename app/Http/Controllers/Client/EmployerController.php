@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Client;
 
+use App\Models\User;
 use App\Repositories\Interfaces\EmployerRepositoryInterface;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -49,5 +50,29 @@ class EmployerController extends Controller
     {
         $data = $this->employerRepository->find($id)->toArray();
         return $this->sendResult(true, 'Show Successfully', [$data], 200);
+    }
+
+    public function addEmployer(Request $request)
+    {
+        $user_exist = User::where('email', $request->get('email'))->get()->toArray();
+        if (count($user_exist) > 0) {
+            return $this->sendError(false, "Tài khoản đã tồn tại !", [], 401);
+        }
+
+        $data         = $request->all();
+        $data['role'] = 2;
+
+        try {
+            $data = $this->employerRepository->addEmployer($data);
+            return $this->sendResult(true, 'Insert Successfully', [], 200);
+        } catch (Exception $e) {
+            return $this->sendError(false, "Insert Failed", [], 401);
+        }
+    }
+
+    public function getEmployerByUserId($id)
+    {
+        $data = $this->employerRepository->getEmployerByUserId($id)->toArray();
+        return $this->sendResult(true, 'Show Successfully', $data, 200);
     }
 }

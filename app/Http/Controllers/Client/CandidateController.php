@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Client;
 
+use App\Models\User;
 use App\Repositories\Interfaces\CandidateRepositoryInterface;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Exception;
 
 class CandidateController extends Controller
 {
@@ -17,7 +19,7 @@ class CandidateController extends Controller
 
     public function getCandidateOrder()
     {
-        $data   = $this->candidateRepository->getCandidateOrder()->get()->toArray();
+        $data = $this->candidateRepository->getCandidateOrder()->get()->toArray();
         return $this->sendResult(true, 'Show Successfully', $data, 200);
     }
 
@@ -48,6 +50,29 @@ class CandidateController extends Controller
     public function show($id)
     {
         $data = $this->candidateRepository->find($id)->toArray();
-        return $this->sendResult(true, 'Show Successfully',[$data], 200);
+        return $this->sendResult(true, 'Show Successfully', [$data], 200);
+    }
+
+    public function addCandidate(Request $request)
+    {
+        $user_exist = User::where('email', $request->get('email'))->get()->toArray();
+        if (count($user_exist) > 0) {
+            return $this->sendError(false, "Tài khoản đã tồn tại !", [], 401);
+        }
+
+        $data         = $request->all();
+        $data['role'] = 3;
+
+        try {
+            $data = $this->candidateRepository->addCandidate($data);
+            return $this->sendResult(true, 'Insert Successfully', [], 200);
+        } catch (Exception $e) {
+            return $this->sendError(false, "Insert Failed", [], 401);
+        }
+    }
+
+    public function getCandidateByUserId($id){
+        $data = $this->candidateRepository->getCandidateByUserId($id)->toArray();
+        return $this->sendResult(true, 'Show Successfully', $data, 200);
     }
 }

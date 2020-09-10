@@ -18,6 +18,9 @@ use Illuminate\Http\Request;
 //});
 
 Route::post('login', 'Client\AuthController@login');
+Route::post('registerCandidate', 'Client\CandidateController@addCandidate');
+Route::post('registerEmployer', 'Client\EmployerController@addEmployer');
+
 
 Route::group(['middleware' => ['auth:api', 'scope:employer,candidate,admin']], function () {
     Route::post('user', 'Client\AuthController@user');
@@ -32,10 +35,12 @@ Route::get('getrecruitmentsbyuserid/{id}', 'Client\RecruitmentController@getRecr
 
 Route::resource('candidates', 'Client\CandidateController');
 Route::get('getcandidateorder', 'Client\CandidateController@getCandidateOrder');
+Route::get('getcandidatebyuserid/{id}', 'Client\CandidateController@getCandidateByUserId');
 
 
 Route::resource('employers', 'Client\EmployerController');
 Route::get('getemployerorder', 'Client\EmployerController@getEmployerOrder');
+Route::get('getemployerbyuserid/{id}', 'Client\EmployerController@getEmployerByUserId');
 
 Route::resource('ranks', 'Client\RankController');
 Route::resource('cities', 'Client\CityController');
