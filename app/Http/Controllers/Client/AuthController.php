@@ -26,9 +26,12 @@ class AuthController extends Controller
 
             if ($user->role == 2) {
                 $active = Employer::where('employers.user_id', Auth::id())->get()->toArray();
+
                 if ($active[0]['active'] == 1) {
                     $success['accessToken'] = $user->createToken('Personal Access Token', ['employer'])->accessToken;
                     $success['id']          = Auth::id();
+                    $success['name']        = $active[0]['contact'];
+                    $success['avatar']      = $active[0]['avatar'];
                     return $this->sendResult(true, "Đăng nhập thành công!", $success, 200);
                 } else {
                     return $this->sendError(false, "Tài khoản chưa được kích hoạt !", [], 401);
@@ -40,6 +43,8 @@ class AuthController extends Controller
                 if ($active[0]['active'] == 1) {
                     $success['accessToken'] = $user->createToken('Personal Access Token', ['candidate'])->accessToken;
                     $success['id']          = Auth::id();
+                    $success['name']        = $active[0]['name'];
+                    $success['avatar']      = $active[0]['avatar'];
                     return $this->sendResult(true, "Đăng nhập thành công!", $success, 200);
                 } else {
                     return $this->sendError(false, "Tài khoản chưa được kích hoạt !", [], 401);
