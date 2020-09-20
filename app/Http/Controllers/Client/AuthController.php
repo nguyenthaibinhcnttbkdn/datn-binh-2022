@@ -21,6 +21,8 @@ class AuthController extends Controller
             if ($user->role == 1) {
                 $success['accessToken'] = $user->createToken('Personal Access Token', ['admin'])->accessToken;
                 $success['id']          = Auth::id();
+                $success['name']        = "Admin";
+                $success['avatar']      = "";
                 return $this->sendResult(true, "Đăng nhập thành công!", $success, 200);
             }
 
