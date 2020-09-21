@@ -77,17 +77,13 @@ abstract class BaseRepository implements RepositoryInterface
      */
     public function update($id, array $attributes)
     {
-        $model = $this->model->find($id);
-        $fillable = $this->model->getFillable();
-        $data = array_only($attributes, $fillable);
-        foreach ($data as $key => $value) {
-            if ($value=='') {
-                unset($data[$key]);
-            }
+        $data = null;
+        $result = $this->find($id);
+        if ($result) {
+            $data =   $result->update($attributes);
+            return $data;
         }
-        $model->fill($data);
-
-        return $model->save();
+        return $data;
     }
 
     /**

@@ -6,6 +6,8 @@ use App\Models\User;
 use App\Repositories\Interfaces\EmployerRepositoryInterface;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+
 
 class EmployerController extends Controller
 {
@@ -13,7 +15,7 @@ class EmployerController extends Controller
 
     public function __construct(EmployerRepositoryInterface $employerRepository)
     {
-        $this->middleware(['auth:api', 'scope:employer'], ['except' => ['index', 'show', 'addEmployer','getEmployerOrder']]);
+        $this->middleware(['auth:api', 'scope:employer'], ['except' => ['index', 'show', 'addEmployer', 'getEmployerOrder', 'update']]);
         $this->employerRepository = $employerRepository;
     }
 
@@ -100,4 +102,47 @@ class EmployerController extends Controller
 
         return $this->sendResult(true, 'Show Successfully', $data, 200);
     }
+
+    public function saveImgBase64($param, $folder)
+    {
+        list($extension, $content) = explode(';', $param);
+        $tmpExtension = explode('/', $extension);
+        preg_match('/.([0-9]+) /', microtime(), $m);
+        $fileName       = sprintf('img%s%s.%s', date('YmdHis'), $m[1], $tmpExtension[1]);
+        $content        = explode(',', $content)[1];
+        $storage        = Storage::disk('public');
+        $checkDirectory = $storage->exists($folder);
+        if (!$checkDirectory) {
+            $storage->makeDirectory($folder);
+        }
+        $storage->put($folder . '/' . $fileName, base64_decode($content), 'public');
+        return $fileName;
+    }
+
+    public function update(Request $request, $id)
+    {
+        try {
+            $avatar      = $request->all()['avatar'];
+            $name_avatar = $this->saveImgBase64($avatar, 'uploads');
+
+            $photo      = $request->all()['photo'];
+            $name_photo = $this->saveImgBase64($photo, 'uploads');
+
+            $data['contact']     = $request->all()['contact'];
+            $data['company']     = $request->all()['company'];
+            $data['phone']       = $request->all()['phone'];
+            $data['address']     = $request->all()['address'];
+            $data['website']     = $request->all()['website'];
+            $data['description'] = $request->all()['description'];
+            $data['avatar']      = 'http://103.200.20.171/storage/uploads/' . $name_avatar;
+            $data['photo']       = 'http://103.200.20.171/storage/uploads/' . $name_photo;
+
+            $result = $this->employerRepository->update($id, $data);
+
+            return $this->sendResult(true, "Updated Successfully", [], 200);
+        } catch (Exception $e) {
+            return $this->sendError(false, "Updated Failed", [], 400);
+        }
+    }
+
 }
