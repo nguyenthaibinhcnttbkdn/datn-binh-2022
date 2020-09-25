@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Client;
 
+use App\Models\Employer;
 use App\Repositories\Interfaces\RecruitmentRepositoryInterface;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 
 class RecruitmentController extends Controller
 {
@@ -12,7 +14,7 @@ class RecruitmentController extends Controller
 
     public function __construct(RecruitmentRepositoryInterface $recruitmentRepository)
     {
-        $this->middleware(['auth:api', 'scope:employer'], ['except' => ['index', 'show', 'getRecruitmentsByEmployerId', 'getRecruitmentOrder']]);
+        $this->middleware(['auth:api', 'scope:employer'], ['except' => ['index', 'show', 'getRecruitmentsByEmployerId', 'getRecruitmentOrder', 'store']]);
         $this->recruitmentRepository = $recruitmentRepository;
     }
 
@@ -128,4 +130,38 @@ class RecruitmentController extends Controller
 
         return $this->sendResult(true, 'Show Successfully', $data, 200);
     }
+
+    public function saveImgBase64($param, $folder)
+    {
+        list($extension, $content) = explode(';', $param);
+        $tmpExtension = explode('/', $extension);
+        preg_match('/.([0-9]+) /', microtime(), $m);
+        $fileName       = sprintf('img%s%s.%s', date('YmdHis'), $m[1], $tmpExtension[1]);
+        $content        = explode(',', $content)[1];
+        $storage        = Storage::disk('public');
+        $checkDirectory = $storage->exists($folder);
+        if (!$checkDirectory) {
+            $storage->makeDirectory($folder);
+        }
+        $storage->put($folder . '/' . $fileName, base64_decode($content), 'public');
+        return $fileName;
+    }
+
+    public function store(Request $request)
+    {
+        try {
+            $data = $request->except('user_id', 'photo');
+            $employerId          = Employer::where('user_id', $request->only('user_id'))->get()->toArray();
+            $data['employer_id'] = strval($employerId[0]['id']);
+            $avatar        = $request->all()['photo'];
+            $name_photo    = $this->saveImgBase64($avatar, 'uploads');
+            $data['photo'] = 'http://103.200.20.171/storage/uploads/' . $name_photo;
+            $result = $this->recruitmentRepository->create($data);
+            return $this->sendResult(true, "Create Successfully", [], 200);
+        } catch (Exception $e) {
+            return $this->sendError(false, "Create Failed", [], 400);
+        }
+
+    }
+
 }
