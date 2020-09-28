@@ -210,4 +210,37 @@ class RecruitmentRepository extends BaseRepository implements RecruitmentReposit
             });
         return $candidates;
     }
+
+    public function getRecruitmentEdit($id)
+    {
+        $recruitments = DB::table('recruitments')
+            ->leftJoin('ranks', 'recruitments.rank_id', '=', 'ranks.id')
+            ->leftJoin('type_of_works', 'recruitments.type_of_work_id', '=', 'type_of_works.id')
+            ->leftJoin('cities', 'recruitments.city_id', '=', 'cities.id')
+            ->leftJoin('careers', 'recruitments.career_id', '=', 'careers.id')
+            ->leftJoin('salaries', 'recruitments.salary_id', '=', 'salaries.id')
+            ->leftJoin('employers', 'recruitments.employer_id', '=', 'employers.id')
+            ->select('recruitments.id',
+                'recruitments.vacancy',
+                'recruitments.quantity',
+                'recruitments.end_date',
+                'recruitments.photo',
+                'recruitments.description',
+                'recruitments.entitlements',
+                'recruitments.job_requirements',
+                'recruitments.requested_documents',
+                'recruitments.active',
+                'recruitments.order',
+                'ranks.id as rank_id',
+                'type_of_works.id as type_of_work_id',
+                'cities.id as city_id',
+                'careers.id as career_id',
+                'salaries.id as salary_id',
+                'employers.company as company',
+                'employers.avatar as avatar'
+            )
+            ->where('recruitments.id', $id);
+
+        return $recruitments;
+    }
 }

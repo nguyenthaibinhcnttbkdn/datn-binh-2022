@@ -14,7 +14,7 @@ class RecruitmentController extends Controller
 
     public function __construct(RecruitmentRepositoryInterface $recruitmentRepository)
     {
-        $this->middleware(['auth:api', 'scope:employer'], ['except' => ['index', 'show', 'getRecruitmentsByEmployerId', 'getRecruitmentOrder', 'store']]);
+        $this->middleware(['auth:api', 'scope:employer'], ['except' => ['index', 'show', 'getRecruitmentsByEmployerId', 'getRecruitmentOrder', 'store', 'update','getRecruitmentEdit']]);
         $this->recruitmentRepository = $recruitmentRepository;
     }
 
@@ -150,18 +150,37 @@ class RecruitmentController extends Controller
     public function store(Request $request)
     {
         try {
-            $data = $request->except('user_id', 'photo');
+            $data                = $request->except('user_id', 'photo');
             $employerId          = Employer::where('user_id', $request->only('user_id'))->get()->toArray();
             $data['employer_id'] = strval($employerId[0]['id']);
-            $avatar        = $request->all()['photo'];
-            $name_photo    = $this->saveImgBase64($avatar, 'uploads');
-            $data['photo'] = 'http://103.200.20.171/storage/uploads/' . $name_photo;
-            $result = $this->recruitmentRepository->create($data);
+            $avatar              = $request->all()['photo'];
+            $name_photo          = $this->saveImgBase64($avatar, 'uploads');
+            $data['photo']       = 'http://103.200.20.171/storage/uploads/' . $name_photo;
+            $result              = $this->recruitmentRepository->create($data);
             return $this->sendResult(true, "Create Successfully", [], 200);
         } catch (Exception $e) {
             return $this->sendError(false, "Create Failed", [], 400);
         }
-
     }
 
+    public function update(Request $request, $id)
+    {
+        try {
+            $data           = $request->except('photo');
+            $data['active'] = 0;
+            $avatar         = $request->all()['photo'];
+            $name_photo     = $this->saveImgBase64($avatar, 'uploads');
+            $data['photo']  = 'http://103.200.20.171/storage/uploads/' . $name_photo;
+            $result         = $this->recruitmentRepository->update($id, $data);
+            return $this->sendResult(true, "Create Successfully", [], 200);
+        } catch (Exception $e) {
+            return $this->sendError(false, "Create Failed", [], 400);
+        }
+    }
+
+    public function getRecruitmentEdit($id)
+    {
+        $data = $this->recruitmentRepository->getRecruitmentEdit($id)->get()->toArray();
+        return $this->sendResult(true, 'Show Successfully', $data, 200);
+    }
 }
