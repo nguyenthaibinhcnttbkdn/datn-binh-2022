@@ -91,7 +91,6 @@ class EmployerRepository extends BaseRepository implements EmployerRepositoryInt
         $employers = DB::table('employers')
             ->select(
                 'employers.id',
-                'employers.avatar as key',
                 'employers.contact',
                 'employers.company',
                 'employers.phone',
