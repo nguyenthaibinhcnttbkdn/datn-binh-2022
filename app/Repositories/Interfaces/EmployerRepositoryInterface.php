@@ -15,4 +15,6 @@ interface EmployerRepositoryInterface
     public function getEmployerByUserId($id);
 
     public function getCandidateSaveByUserId($id);
+
+    public function getEmployerAdmin();
 }

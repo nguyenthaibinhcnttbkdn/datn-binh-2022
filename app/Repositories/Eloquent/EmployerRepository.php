@@ -85,4 +85,25 @@ class EmployerRepository extends BaseRepository implements EmployerRepositoryInt
 
         return ($candidates);
     }
+
+    public function getEmployerAdmin()
+    {
+        $employers = DB::table('employers')
+            ->select(
+                'employers.id',
+                'employers.id as key',
+                'employers.contact',
+                'employers.company',
+                'employers.phone',
+                'employers.address',
+                'employers.website',
+                'employers.description',
+                'employers.avatar',
+                'employers.photo',
+                'employers.active',
+                'employers.order'
+            )
+            ->orderBy('employers.id', 'desc');
+        return $employers;
+    }
 }

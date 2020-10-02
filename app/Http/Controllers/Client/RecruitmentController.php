@@ -7,6 +7,8 @@ use App\Repositories\Interfaces\RecruitmentRepositoryInterface;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
+use Exception;
+
 
 class RecruitmentController extends Controller
 {

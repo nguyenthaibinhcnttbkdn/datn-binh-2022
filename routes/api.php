@@ -50,6 +50,7 @@ Route::resource('employers', 'Client\EmployerController');
 Route::get('getemployerorder', 'Client\EmployerController@getEmployerOrder');
 Route::get('getinfoemployerbyuserid/{id}', 'Client\EmployerController@getEmployerByUserId');
 Route::get('getcandidatesavesbyuserid/{id}', 'Client\EmployerController@getCandidateSaveByUserId');
+Route::get('getemployeradmin', 'Client\EmployerController@getEmployerAdmin');
 
 Route::resource('ranks', 'Client\RankController');
 Route::resource('cities', 'Client\CityController');
