@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Client;
 
+use App\Models\Employer;
 use App\Models\User;
 use App\Repositories\Interfaces\EmployerRepositoryInterface;
 use App\Http\Controllers\Controller;
@@ -15,7 +16,7 @@ class EmployerController extends Controller
 
     public function __construct(EmployerRepositoryInterface $employerRepository)
     {
-        $this->middleware(['auth:api', 'scope:employer'], ['except' => ['index', 'show', 'addEmployer', 'getEmployerOrder', 'update','getEmployerByUserId','getEmployerAdmin']]);
+        $this->middleware(['auth:api', 'scope:employer'], ['except' => ['index', 'show', 'addEmployer', 'getEmployerOrder', 'update', 'getEmployerByUserId', 'getEmployerAdmin', 'changeActive']]);
         $this->employerRepository = $employerRepository;
     }
 
@@ -145,9 +146,25 @@ class EmployerController extends Controller
         }
     }
 
-    public function getEmployerAdmin(){
+    public function getEmployerAdmin()
+    {
         $data = $this->employerRepository->getEmployerAdmin()->get()->toArray();
         return $this->sendResult(true, 'Show Successfully', $data, 200);
     }
 
+    public function changeActive($id)
+    {
+        try {
+            $active = Employer::where('id', $id)->get()->toArray()[0]['active'];
+            if ($active == 0) {
+                $data['active'] = 1;
+            } else {
+                $data['active'] = 0;
+            }
+            $result = $this->employerRepository->update($id, $data);
+            return $this->sendResult(true, "Updated Successfully", [], 200);
+        } catch (Exception $e) {
+            return $this->sendError(false, "Updated Failed", [], 400);
+        }
+    }
 }
