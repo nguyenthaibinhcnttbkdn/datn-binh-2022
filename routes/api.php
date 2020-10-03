@@ -40,6 +40,7 @@ Route::get('getcandidatesbyuserid/{id}', 'Client\RecruitmentController@getCandid
 Route::get('getrecruitmentedit/{id}', 'Client\RecruitmentController@getRecruitmentEdit');
 Route::get('getrecruitmentadmin', 'Client\RecruitmentController@getRecruitmentAdmin');
 Route::put('changeactiverecruitment/{id}', 'Client\RecruitmentController@changeActive');
+Route::put('changeorderrecruitment/{id}', 'Client\RecruitmentController@changeOrder');
 
 
 Route::resource('candidates', 'Client\CandidateController');
@@ -48,6 +49,7 @@ Route::get('getinfocandidatebyuserid/{id}', 'Client\CandidateController@getCandi
 Route::get('getrecruitmentapplybyuserid/{id}', 'Client\CandidateController@getRecruitmentByUserId');
 Route::get('getcandidateadmin', 'Client\CandidateController@getCandidateAdmin');
 Route::put('changeactivecandidate/{id}', 'Client\CandidateController@changeActive');
+Route::put('changeordercandidate/{id}', 'Client\CandidateController@changeOrder');
 
 
 Route::resource('employers', 'Client\EmployerController');

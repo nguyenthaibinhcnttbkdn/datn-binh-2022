@@ -114,4 +114,19 @@ class CandidateController extends Controller
         }
     }
 
+    public function changeOrder($id)
+    {
+        try {
+            $order = Candidate::where('id', $id)->get()->toArray()[0]['order'];
+            if ($order == 0) {
+                $data['order'] = 1;
+            } else {
+                $data['order'] = 0;
+            }
+            $result = $this->candidateRepository->update($id, $data);
+            return $this->sendResult(true, "Updated Successfully", [], 200);
+        } catch (Exception $e) {
+            return $this->sendError(false, "Updated Failed", [], 400);
+        }
+    }
 }
