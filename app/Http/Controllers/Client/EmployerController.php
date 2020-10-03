@@ -16,7 +16,7 @@ class EmployerController extends Controller
 
     public function __construct(EmployerRepositoryInterface $employerRepository)
     {
-        $this->middleware(['auth:api', 'scope:employer'], ['except' => ['index', 'show', 'addEmployer', 'getEmployerOrder', 'update', 'getEmployerByUserId', 'getEmployerAdmin', 'changeActive']]);
+        $this->middleware(['auth:api', 'scope:employer'], ['except' => ['index', 'show', 'addEmployer', 'getEmployerOrder', 'update', 'getEmployerByUserId', 'getEmployerAdmin', 'changeActive','changeOrder']]);
         $this->employerRepository = $employerRepository;
     }
 
@@ -167,6 +167,22 @@ class EmployerController extends Controller
                 $data['active'] = 1;
             } else {
                 $data['active'] = 0;
+            }
+            $result = $this->employerRepository->update($id, $data);
+            return $this->sendResult(true, "Updated Successfully", [], 200);
+        } catch (Exception $e) {
+            return $this->sendError(false, "Updated Failed", [], 400);
+        }
+    }
+
+    public function changeOrder($id)
+    {
+        try {
+            $order = Employer::where('id', $id)->get()->toArray()[0]['order'];
+            if ($order == 0) {
+                $data['order'] = 1;
+            } else {
+                $data['order'] = 0;
             }
             $result = $this->employerRepository->update($id, $data);
             return $this->sendResult(true, "Updated Successfully", [], 200);
