@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Client;
 
 use App\Models\Employer;
+use App\Models\Recruitment;
 use App\Repositories\Interfaces\RecruitmentRepositoryInterface;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -16,7 +17,7 @@ class RecruitmentController extends Controller
 
     public function __construct(RecruitmentRepositoryInterface $recruitmentRepository)
     {
-        $this->middleware(['auth:api', 'scope:employer'], ['except' => ['index', 'show', 'getRecruitmentsByEmployerId', 'getRecruitmentOrder', 'store', 'update','getRecruitmentEdit']]);
+        $this->middleware(['auth:api', 'scope:employer'], ['except' => ['index', 'show', 'getRecruitmentsByEmployerId', 'getRecruitmentOrder', 'store', 'update','getRecruitmentEdit','getRecruitmentAdmin']]);
         $this->recruitmentRepository = $recruitmentRepository;
     }
 
@@ -184,5 +185,33 @@ class RecruitmentController extends Controller
     {
         $data = $this->recruitmentRepository->getRecruitmentEdit($id)->get()->toArray();
         return $this->sendResult(true, 'Show Successfully', $data, 200);
+    }
+
+    public function getRecruitmentAdmin(Request $request){
+        $data = $this->recruitmentRepository->getRecruitmentAdmin()->get()->toArray();
+        $datas = $this->recruitmentRepository->getRecruitmentAdmin();
+        if ($request->has('limit') && $request->has('page')) {
+            $paginate = $request->only('limit', 'page');
+            if (count($paginate) > 0) {
+                $data = $datas->paginate($paginate['limit'])->toArray();
+            }
+        }
+        return $this->sendResult(true, 'Show Successfully', $data, 200);
+    }
+
+    public function changeActive($id)
+    {
+        try {
+            $active = Recruitment::where('id', $id)->get()->toArray()[0]['active'];
+            if ($active == 0) {
+                $data['active'] = 1;
+            } else {
+                $data['active'] = 0;
+            }
+            $result = $this->recruitmentRepository->update($id, $data);
+            return $this->sendResult(true, "Updated Successfully", [], 200);
+        } catch (Exception $e) {
+            return $this->sendError(false, "Updated Failed", [], 400);
+        }
     }
 }

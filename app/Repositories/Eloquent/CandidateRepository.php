@@ -26,8 +26,8 @@ class CandidateRepository extends BaseRepository implements CandidateRepositoryI
     {
         $candidates = DB::table('candidates')
             ->select()
-            ->where('candidates.order', '<>', null)
-            ->orderBy('candidates.order', 'asc');
+            ->where('candidates.order', 1)
+            ->orderBy('candidates.id', 'asc');
         return $candidates;
     }
 
@@ -36,7 +36,7 @@ class CandidateRepository extends BaseRepository implements CandidateRepositoryI
         $candidates = DB::table('candidates')
             ->select()
             ->where('candidates.active', 1)
-            ->orderBy('candidates.id', 'desc');;
+            ->orderBy('candidates.id', 'desc');
         return $candidates;
     }
 
@@ -81,5 +81,13 @@ class CandidateRepository extends BaseRepository implements CandidateRepositoryI
             });
 
         return ($recruiments);
+    }
+
+    public function getCandidateAdmin()
+    {
+        $candidates = DB::table('candidates')
+            ->select()
+            ->orderBy('candidates.id', 'desc');
+        return $candidates;
     }
 }

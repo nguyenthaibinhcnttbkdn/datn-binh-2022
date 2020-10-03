@@ -146,9 +146,16 @@ class EmployerController extends Controller
         }
     }
 
-    public function getEmployerAdmin()
+    public function getEmployerAdmin(Request $request)
     {
         $data = $this->employerRepository->getEmployerAdmin()->get()->toArray();
+        $datas = $this->employerRepository->getEmployerAdmin();
+        if ($request->has('limit') && $request->has('page')) {
+            $paginate = $request->only('limit', 'page');
+            if (count($paginate) > 0) {
+                $data = $datas->paginate($paginate['limit'])->toArray();
+            }
+        }
         return $this->sendResult(true, 'Show Successfully', $data, 200);
     }
 

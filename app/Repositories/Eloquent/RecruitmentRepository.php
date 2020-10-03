@@ -51,8 +51,8 @@ class RecruitmentRepository extends BaseRepository implements RecruitmentReposit
                 'employers.company as company',
                 'employers.avatar as avatar'
             )
-            ->where('recruitments.order', '<>', null)
-            ->orderBy('recruitments.order', 'asc');;
+            ->where('recruitments.order', 1)
+            ->orderBy('recruitments.id', 'asc');;
 
         return $recruitments;
     }
@@ -240,6 +240,39 @@ class RecruitmentRepository extends BaseRepository implements RecruitmentReposit
                 'employers.avatar as avatar'
             )
             ->where('recruitments.id', $id);
+
+        return $recruitments;
+    }
+
+    public function getRecruitmentAdmin()
+    {
+        $recruitments = DB::table('recruitments')
+            ->leftJoin('ranks', 'recruitments.rank_id', '=', 'ranks.id')
+            ->leftJoin('type_of_works', 'recruitments.type_of_work_id', '=', 'type_of_works.id')
+            ->leftJoin('cities', 'recruitments.city_id', '=', 'cities.id')
+            ->leftJoin('careers', 'recruitments.career_id', '=', 'careers.id')
+            ->leftJoin('salaries', 'recruitments.salary_id', '=', 'salaries.id')
+            ->leftJoin('employers', 'recruitments.employer_id', '=', 'employers.id')
+            ->select('recruitments.id',
+                'recruitments.vacancy',
+                'recruitments.quantity',
+                'recruitments.end_date',
+                'recruitments.photo',
+                'recruitments.description',
+                'recruitments.entitlements',
+                'recruitments.job_requirements',
+                'recruitments.requested_documents',
+                'recruitments.active',
+                'recruitments.order',
+                'ranks.name as rank',
+                'type_of_works.name as type_of_work',
+                'cities.name as city',
+                'careers.name as career',
+                'salaries.name as salary',
+                'employers.company as company',
+                'employers.avatar as avatar'
+            )
+            ->orderBy('recruitments.id', 'desc');
 
         return $recruitments;
     }

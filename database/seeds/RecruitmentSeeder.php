@@ -31,7 +31,7 @@ class RecruitmentSeeder extends Seeder
                 "career_id"           => 1,
                 "salary_id"           => 1,
                 "active"              => 1,
-                "order"               => null,
+                "order"               => 0,
             ],
             [
                 "vacancy"             => "Back-end Developer (.Net/Java/NodeJS)",
@@ -49,7 +49,7 @@ class RecruitmentSeeder extends Seeder
                 "career_id"           => 2,
                 "salary_id"           => 2,
                 "active"              => 1,
-                "order"               => null,
+                "order"               => 0,
             ],
             [
                 "vacancy"             => "Jr/Sr React Native/ReactJS (Up to $2500)",
@@ -67,7 +67,7 @@ class RecruitmentSeeder extends Seeder
                 "career_id"           => 3,
                 "salary_id"           => 3,
                 "active"              => 1,
-                "order"               => null,
+                "order"               => 0,
             ],
             [
                 "vacancy"             => "Middle/Senior Android Dev (Java, Kotlin)",
@@ -85,7 +85,7 @@ class RecruitmentSeeder extends Seeder
                 "career_id"           => 4,
                 "salary_id"           => 4,
                 "active"              => 1,
-                "order"               => null,
+                "order"               => 0,
             ],
             [
                 "vacancy"             => "iOS Developer (Swift, OOP, MVC)",
@@ -103,7 +103,7 @@ class RecruitmentSeeder extends Seeder
                 "career_id"           => 4,
                 "salary_id"           => 5,
                 "active"              => 1,
-                "order"               => null,
+                "order"               => 0,
             ],
             [
                 "vacancy"             => "02 PHP Developers (MySQL,NoSQL)",
@@ -121,7 +121,7 @@ class RecruitmentSeeder extends Seeder
                 "career_id"           => 1,
                 "salary_id"           => 1,
                 "active"              => 1,
-                "order"               => null,
+                "order"               => 0,
             ],
             [
                 "vacancy"             => "05 C/C++ Developers",
@@ -157,7 +157,7 @@ class RecruitmentSeeder extends Seeder
                 "career_id"           => 2,
                 "salary_id"           => 3,
                 "active"              => 1,
-                "order"               => 2,
+                "order"               => 1,
             ],
             [
                 "vacancy"             => "Mobile Dev (Android/iOS/React Native)",
@@ -175,7 +175,7 @@ class RecruitmentSeeder extends Seeder
                 "career_id"           => 1,
                 "salary_id"           => 1,
                 "active"              => 1,
-                "order"               => 3,
+                "order"               => 1,
             ],
             [
                 "vacancy"             => "Tester Manager (QA/ AC)",
@@ -193,7 +193,7 @@ class RecruitmentSeeder extends Seeder
                 "career_id"           => 1,
                 "salary_id"           => 4,
                 "active"              => 1,
-                "order"               => 4,
+                "order"               => 1,
             ],
             [
                 "vacancy"             => "10 Mid-Senior-Tech Lead - PHP Developers",
@@ -211,7 +211,7 @@ class RecruitmentSeeder extends Seeder
                 "career_id"           => 1,
                 "salary_id"           => 4,
                 "active"              => 1,
-                "order"               => null,
+                "order"               => 1,
             ],
             [
                 "vacancy"             => "Senior PHP Developer (PHP, MySQL)",
@@ -229,7 +229,7 @@ class RecruitmentSeeder extends Seeder
                 "career_id"           => 1,
                 "salary_id"           => 4,
                 "active"              => 1,
-                "order"               => null,
+                "order"               => 1,
             ],
             [
                 "vacancy"             => "3 PHP Dev (JavaScript, HTML5) Upto 1500$",
@@ -247,7 +247,7 @@ class RecruitmentSeeder extends Seeder
                 "career_id"           => 1,
                 "salary_id"           => 4,
                 "active"              => 1,
-                "order"               => null,
+                "order"               => 0,
             ],
             [
                 "vacancy"             => "PHP Developer (Laravel, ReactJS)",
@@ -265,7 +265,7 @@ class RecruitmentSeeder extends Seeder
                 "career_id"           => 1,
                 "salary_id"           => 4,
                 "active"              => 1,
-                "order"               => null,
+                "order"               => 0,
             ],
             [
                 "vacancy"             => "Dev Operations Application (C#, PHP)",
@@ -283,7 +283,7 @@ class RecruitmentSeeder extends Seeder
                 "career_id"           => 1,
                 "salary_id"           => 4,
                 "active"              => 1,
-                "order"               => null,
+                "order"               => 0,
             ],
             [
                 "vacancy"             => "Web Engineer (Java, PHP, Japanese N2)",
@@ -301,7 +301,7 @@ class RecruitmentSeeder extends Seeder
                 "career_id"           => 1,
                 "salary_id"           => 4,
                 "active"              => 1,
-                "order"               => null,
+                "order"               => 0,
             ],
             [
                 "vacancy"             => "Web PHP Developer (Laravel, Wordpress)",
@@ -319,7 +319,7 @@ class RecruitmentSeeder extends Seeder
                 "career_id"           => 1,
                 "salary_id"           => 4,
                 "active"              => 1,
-                "order"               => null,
+                "order"               => 0,
             ],
             [
                 "vacancy"             => "03 PHP Team Leaders",
@@ -337,7 +337,7 @@ class RecruitmentSeeder extends Seeder
                 "career_id"           => 1,
                 "salary_id"           => 4,
                 "active"              => 0,
-                "order"               => null,
+                "order"               => 0,
             ],
             [
                 "vacancy"             => "02 PHP Developers (MySQL,NoSQL)",
@@ -355,7 +355,7 @@ class RecruitmentSeeder extends Seeder
                 "career_id"           => 1,
                 "salary_id"           => 4,
                 "active"              => 0,
-                "order"               => null,
+                "order"               => 0,
             ],
             [
                 "vacancy"             => "Senior Dev/Team Leader (PHP, JavaScipt)",
@@ -373,7 +373,7 @@ class RecruitmentSeeder extends Seeder
                 "career_id"           => 1,
                 "salary_id"           => 4,
                 "active"              => 0,
-                "order"               => null,
+                "order"               => 0,
             ],
         ];
 

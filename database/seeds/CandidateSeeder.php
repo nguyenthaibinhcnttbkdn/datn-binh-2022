@@ -24,7 +24,7 @@ class CandidateSeeder extends Seeder
                 "address"    => "Số 73 Quán Thánh, phường Quán Thánh, quận Ba Đình",
                 "experience" => "1 năm",
                 "active"     => 1,
-                "order"      => null,
+                "order"      => 1,
             ],
             [
                 "name"       => "Hoàng Đức Anh",
@@ -35,7 +35,7 @@ class CandidateSeeder extends Seeder
                 "address"    => "Số 26 Nguyễn Văn Ngọc, phường Cồng Vị, quận Ba Đình",
                 "experience" => "2 năm",
                 "active"     => 1,
-                "order"      => null,
+                "order"      => 1,
             ],
             [
                 "name"       => "Lưu Trang Anh",
@@ -46,7 +46,7 @@ class CandidateSeeder extends Seeder
                 "address"    => "Số 374-376 Đê La Thành, phường Ô Chợ Dừa, quận Đống Đa",
                 "experience" => "3 năm",
                 "active"     => 1,
-                "order"      => null,
+                "order"      => 1,
             ],
             [
                 "name"       => "Phạm Hoàng Anh",
@@ -57,7 +57,7 @@ class CandidateSeeder extends Seeder
                 "address"    => "28 Liễu Giai, Cống Vị, Ba Đình, Hà Nội",
                 "experience" => "4 tháng",
                 "active"     => 1,
-                "order"      => null,
+                "order"      => 1,
             ],
             [
                 "name"       => "Phạm Thị Hiền Anh",
@@ -68,7 +68,7 @@ class CandidateSeeder extends Seeder
                 "address"    => "3 Láng Hạ, Chợ Dừa, Ba Đình, Hà Nội",
                 "experience" => "chưa có",
                 "active"     => 1,
-                "order"      => null,
+                "order"      => 1,
             ],
             [
                 "name"       => "Phạm Khắc Việt Anh",
@@ -79,7 +79,7 @@ class CandidateSeeder extends Seeder
                 "address"    => "Số 48 Giang Văn Minh, Ba Đình, Hà Nội",
                 "experience" => "6 tháng",
                 "active"     => 1,
-                "order"      => null,
+                "order"      => 1,
             ],
             [
                 "name"       => "Đỗ Hoàng Gia Bảo",
@@ -90,7 +90,7 @@ class CandidateSeeder extends Seeder
                 "address"    => "Kim Mã, Ngọc Khánh, Hà Nội",
                 "experience" => "1 tháng",
                 "active"     => 1,
-                "order"      => null,
+                "order"      => 0,
             ],
             [
                 "name"       => "Trần Thị Minh Châu",
@@ -101,7 +101,7 @@ class CandidateSeeder extends Seeder
                 "address"    => "Số 18 Văn Cao, Ba Đình, Hà nội",
                 "experience" => "2 năm",
                 "active"     => 1,
-                "order"      => null,
+                "order"      => 0,
             ],
             [
                 "name"       => "Tăng Phương Chi",
@@ -112,7 +112,7 @@ class CandidateSeeder extends Seeder
                 "address"    => "Số 335 Phố Kim Mã – Ba Đình – Hà Nội",
                 "experience" => "3 năm",
                 "active"     => 1,
-                "order"      => null,
+                "order"      => 0,
             ],
             [
                 "name"       => "Gan Feng Du",
@@ -123,7 +123,7 @@ class CandidateSeeder extends Seeder
                 "address"    => "Số 92C, phố Lý Thường Kiệt, phường Cửa Nam, quận Hoàn Kiếm",
                 "experience" => "4 tháng",
                 "active"     => 1,
-                "order"      => null,
+                "order"      => 0,
             ],
             [
                 "name"       => "Phạm Tiến Dũng",
@@ -134,7 +134,7 @@ class CandidateSeeder extends Seeder
                 "address"    => "số 45 Cửa Nam, Hoàn Kiếm, Hà Nội   ",
                 "experience" => "dưới 1 năm",
                 "active"     => 1,
-                "order"      => null,
+                "order"      => 0,
             ],
             [
                 "name"       => "Nguyễn Thái Dương",
@@ -145,7 +145,7 @@ class CandidateSeeder extends Seeder
                 "address"    => "Biệt thự số 48 Tràng Thi Q.Hoàn Kiếm – TP. Hà Nội",
                 "experience" => "6 năm",
                 "active"     => 1,
-                "order"      => null,
+                "order"      => 0,
             ],
             [
                 "name"       => "Trần Kim Ngân",
@@ -156,7 +156,7 @@ class CandidateSeeder extends Seeder
                 "address"    => "Biệt thự số 48 Tràng Thi Q.Hoàn Kiếm – TP. Hà Nội",
                 "experience" => "6 tháng",
                 "active"     => 1,
-                "order"      => null,
+                "order"      => 0,
             ],
             [
                 "name"       => "Đỗ Minh Ngọc",
@@ -167,7 +167,7 @@ class CandidateSeeder extends Seeder
                 "address"    => "Biệt thự số 48 Tràng Thi Q.Hoàn Kiếm – TP. Hà Nội",
                 "experience" => "3 tháng",
                 "active"     => 1,
-                "order"      => null,
+                "order"      => 0,
             ],
             [
                 "name"       => "Bùi Khánh Ngọc",
@@ -178,7 +178,7 @@ class CandidateSeeder extends Seeder
                 "address"    => "Biệt thự số 48 Tràng Thi Q.Hoàn Kiếm – TP. Hà Nội",
                 "experience" => "2 năm",
                 "active"     => 1,
-                "order"      => null,
+                "order"      => 0,
             ],
             [
                 "name"       => "Trần Uyên Nhi",
@@ -189,7 +189,7 @@ class CandidateSeeder extends Seeder
                 "address"    => "Biệt thự số 48 Tràng Thi Q.Hoàn Kiếm – TP. Hà Nội",
                 "experience" => "dưới 2 năm",
                 "active"     => 1,
-                "order"      => null,
+                "order"      => 0,
             ],
             [
                 "name"       => "Phạm Đặng Gia Như",
@@ -200,7 +200,7 @@ class CandidateSeeder extends Seeder
                 "address"    => "Biệt thự số 48 Tràng Thi Q.Hoàn Kiếm – TP. Hà Nội",
                 "experience" => "chưa có",
                 "active"     => 1,
-                "order"      => 3,
+                "order"      => 0,
             ],
             [
                 "name"       => "Lê Tất Hoàng Phát",
@@ -211,7 +211,7 @@ class CandidateSeeder extends Seeder
                 "address"    => "Biệt thự số 48 Tràng Thi Q.Hoàn Kiếm – TP. Hà Nội",
                 "experience" => "4 tháng",
                 "active"     => 1,
-                "order"      => 2,
+                "order"      => 0,
             ],
             [
                 "name"       => "Đào Tuấn Phong",
@@ -222,7 +222,7 @@ class CandidateSeeder extends Seeder
                 "address"    => "Biệt thự số 48 Tràng Thi Q.Hoàn Kiếm – TP. Hà Nội",
                 "experience" => "9 tháng",
                 "active"     => 1,
-                "order"      => 1,
+                "order"      => 0,
             ],
             [
                 "name"       => "Nguyễn Hoàng Tùng",
@@ -233,7 +233,7 @@ class CandidateSeeder extends Seeder
                 "address"    => "Biệt thự số 48 Tràng Thi Q.Hoàn Kiếm – TP. Hà Nội",
                 "experience" => "1 năm",
                 "active"     => 1,
-                "order"      => null,
+                "order"      => 0,
             ],
             [
                 "name"       => "Nguyễn Hoàng Tùng",
@@ -244,7 +244,7 @@ class CandidateSeeder extends Seeder
                 "address"    => "Biệt thự số 48 Tràng Thi Q.Hoàn Kiếm – TP. Hà Nội",
                 "experience" => "1 năm",
                 "active"     => 1,
-                "order"      => null,
+                "order"      => 0,
             ],
             [
                 "name"       => "Nguyễn Hoàng Tùng",
@@ -255,7 +255,7 @@ class CandidateSeeder extends Seeder
                 "address"    => "Biệt thự số 48 Tràng Thi Q.Hoàn Kiếm – TP. Hà Nội",
                 "experience" => "1 năm",
                 "active"     => 1,
-                "order"      => null,
+                "order"      => 0,
             ],
             [
                 "name"       => "Nguyễn Hoàng Tùng",
@@ -266,7 +266,7 @@ class CandidateSeeder extends Seeder
                 "address"    => "Biệt thự số 48 Tràng Thi Q.Hoàn Kiếm – TP. Hà Nội",
                 "experience" => "1 năm",
                 "active"     => 1,
-                "order"      => null,
+                "order"      => 0,
             ],
             [
                 "name"       => "Nguyễn Hoàng Tùng",
@@ -277,7 +277,7 @@ class CandidateSeeder extends Seeder
                 "address"    => "Biệt thự số 48 Tràng Thi Q.Hoàn Kiếm – TP. Hà Nội",
                 "experience" => "1 năm",
                 "active"     => 1,
-                "order"      => null,
+                "order"      => 0,
             ],
             [
                 "name"       => "Nguyễn Hoàng Tùng",
@@ -288,7 +288,7 @@ class CandidateSeeder extends Seeder
                 "address"    => "Biệt thự số 48 Tràng Thi Q.Hoàn Kiếm – TP. Hà Nội",
                 "experience" => "1 năm",
                 "active"     => 1,
-                "order"      => null,
+                "order"      => 0,
             ],
             [
                 "name"       => "Nguyễn Hoàng Tùng",
@@ -299,7 +299,7 @@ class CandidateSeeder extends Seeder
                 "address"    => "Biệt thự số 48 Tràng Thi Q.Hoàn Kiếm – TP. Hà Nội",
                 "experience" => "1 năm",
                 "active"     => 1,
-                "order"      => null,
+                "order"      => 0,
             ],
             [
                 "name"       => "Nguyễn Hoàng Tùng",
@@ -310,7 +310,7 @@ class CandidateSeeder extends Seeder
                 "address"    => "Biệt thự số 48 Tràng Thi Q.Hoàn Kiếm – TP. Hà Nội",
                 "experience" => "1 năm",
                 "active"     => 1,
-                "order"      => null,
+                "order"      => 0,
             ],
             [
                 "name"       => "Nguyễn Hoàng Tùng",
@@ -321,7 +321,7 @@ class CandidateSeeder extends Seeder
                 "address"    => "Biệt thự số 48 Tràng Thi Q.Hoàn Kiếm – TP. Hà Nội",
                 "experience" => "1 năm",
                 "active"     => 0,
-                "order"      => null,
+                "order"      => 0,
             ],
             [
                 "name"       => "Nguyễn Hoàng Tùng",
@@ -332,7 +332,7 @@ class CandidateSeeder extends Seeder
                 "address"    => "Biệt thự số 48 Tràng Thi Q.Hoàn Kiếm – TP. Hà Nội",
                 "experience" => "1 năm",
                 "active"     => 0,
-                "order"      => null,
+                "order"      => 0,
             ],
             [
                 "name"       => "Nguyễn Hoàng Tùng",
@@ -343,7 +343,7 @@ class CandidateSeeder extends Seeder
                 "address"    => "Biệt thự số 48 Tràng Thi Q.Hoàn Kiếm – TP. Hà Nội",
                 "experience" => "1 năm",
                 "active"     => 0,
-                "order"      => null,
+                "order"      => 0,
             ],
 
         ];

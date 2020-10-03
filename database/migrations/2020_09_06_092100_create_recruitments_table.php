@@ -36,7 +36,7 @@ class CreateRecruitmentsTable extends Migration
             $table->unsignedBigInteger('salary_id');
             $table->foreign('salary_id')->references('id')->on('salaries');
             $table->boolean('active')->default(false);
-            $table->integer('order')->nullable();
+            $table->boolean('order')->default(false);
             $table->timestamps();
         });
     }

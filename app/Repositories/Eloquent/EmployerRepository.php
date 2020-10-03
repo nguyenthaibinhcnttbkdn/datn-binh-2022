@@ -26,8 +26,8 @@ class EmployerRepository extends BaseRepository implements EmployerRepositoryInt
     {
         $employers = DB::table('employers')
             ->select()
-            ->where('employers.order', '<>', null)
-            ->orderBy('employers.order', 'asc');;
+            ->where('employers.order', 1)
+            ->orderBy('employers.id', 'asc');;
         return $employers;
     }
 

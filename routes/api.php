@@ -38,12 +38,16 @@ Route::get('getrecruitmentsbyemployerid/{id}', 'Client\RecruitmentController@get
 Route::get('getrecruitmentsbyuserid/{id}', 'Client\RecruitmentController@getRecruitmentByUserId');
 Route::get('getcandidatesbyuserid/{id}', 'Client\RecruitmentController@getCandidateByUserId');
 Route::get('getrecruitmentedit/{id}', 'Client\RecruitmentController@getRecruitmentEdit');
+Route::get('getrecruitmentadmin', 'Client\RecruitmentController@getRecruitmentAdmin');
+Route::put('changeactiverecruitment/{id}', 'Client\RecruitmentController@changeActive');
 
 
 Route::resource('candidates', 'Client\CandidateController');
 Route::get('getcandidateorder', 'Client\CandidateController@getCandidateOrder');
 Route::get('getinfocandidatebyuserid/{id}', 'Client\CandidateController@getCandidateByUserId');
 Route::get('getrecruitmentapplybyuserid/{id}', 'Client\CandidateController@getRecruitmentByUserId');
+Route::get('getcandidateadmin', 'Client\CandidateController@getCandidateAdmin');
+Route::put('changeactivecandidate/{id}', 'Client\CandidateController@changeActive');
 
 
 Route::resource('employers', 'Client\EmployerController');

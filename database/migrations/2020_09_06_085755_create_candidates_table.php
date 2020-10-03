@@ -24,7 +24,7 @@ class CreateCandidatesTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->boolean('active')->default(false);
-            $table->integer('order')->nullable();
+            $table->boolean('order')->default(false);
             $table->timestamps();
         });
     }

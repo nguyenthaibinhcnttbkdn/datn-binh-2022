@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Client;
 
 use App\Models\User;
+use App\Models\Candidate;
 use App\Repositories\Interfaces\CandidateRepositoryInterface;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -14,7 +15,7 @@ class CandidateController extends Controller
 
     public function __construct(CandidateRepositoryInterface $candidateRepository)
     {
-        $this->middleware(['auth:api', 'scope:candidate'], ['except' => ['index', 'show', 'addCandidate','getCandidateOrder']]);
+        $this->middleware(['auth:api', 'scope:candidate'], ['except' => ['index', 'show', 'addCandidate', 'getCandidateOrder','getCandidateAdmin']]);
         $this->candidateRepository = $candidateRepository;
     }
 
@@ -83,4 +84,34 @@ class CandidateController extends Controller
         $data = $this->candidateRepository->getRecruitmentByUserId($id)->get()->toArray();
         return $this->sendResult(true, 'Show Successfully', $data, 200);
     }
+
+    public function getCandidateAdmin(Request $request)
+    {
+        $data = $this->candidateRepository->getCandidateAdmin()->get()->toArray();
+        $datas = $this->candidateRepository->getCandidateAdmin();
+        if ($request->has('limit') && $request->has('page')) {
+            $paginate = $request->only('limit', 'page');
+            if (count($paginate) > 0) {
+                $data = $datas->paginate($paginate['limit'])->toArray();
+            }
+        }
+        return $this->sendResult(true, 'Show Successfully', $data, 200);
+    }
+
+    public function changeActive($id)
+    {
+        try {
+            $active = Candidate::where('id', $id)->get()->toArray()[0]['active'];
+            if ($active == 0) {
+                $data['active'] = 1;
+            } else {
+                $data['active'] = 0;
+            }
+            $result = $this->candidateRepository->update($id, $data);
+            return $this->sendResult(true, "Updated Successfully", [], 200);
+        } catch (Exception $e) {
+            return $this->sendError(false, "Updated Failed", [], 400);
+        }
+    }
+
 }
