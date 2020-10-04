@@ -17,7 +17,7 @@ class RecruitmentController extends Controller
 
     public function __construct(RecruitmentRepositoryInterface $recruitmentRepository)
     {
-        $this->middleware(['auth:api', 'scope:employer'], ['except' => ['index', 'show', 'getRecruitmentsByEmployerId', 'getRecruitmentOrder', 'store', 'update','getRecruitmentEdit','getRecruitmentAdmin']]);
+        $this->middleware(['auth:api', 'scope:employer'], ['except' => ['index', 'show', 'getRecruitmentsByEmployerId', 'getRecruitmentOrder', 'store', 'update','getRecruitmentEdit','getRecruitmentAdmin','changeActive','changeOrder']]);
         $this->recruitmentRepository = $recruitmentRepository;
     }
 
