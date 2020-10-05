@@ -8,6 +8,7 @@ use App\Repositories\Interfaces\CandidateRepositoryInterface;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Exception;
+use Illuminate\Support\Facades\Storage;
 
 class CandidateController extends Controller
 {
@@ -15,7 +16,7 @@ class CandidateController extends Controller
 
     public function __construct(CandidateRepositoryInterface $candidateRepository)
     {
-        $this->middleware(['auth:api', 'scope:candidate'], ['except' => ['index', 'show', 'addCandidate', 'getCandidateOrder','getCandidateAdmin','changeActive','changeOrder']]);
+        $this->middleware(['auth:api', 'scope:candidate'], ['except' => ['index', 'show', 'addCandidate', 'getCandidateOrder', 'getCandidateAdmin', 'changeActive', 'changeOrder']]);
         $this->candidateRepository = $candidateRepository;
     }
 
@@ -87,7 +88,7 @@ class CandidateController extends Controller
 
     public function getCandidateAdmin(Request $request)
     {
-        $data = $this->candidateRepository->getCandidateAdmin()->get()->toArray();
+        $data  = $this->candidateRepository->getCandidateAdmin()->get()->toArray();
         $datas = $this->candidateRepository->getCandidateAdmin();
         if ($request->has('limit') && $request->has('page')) {
             $paginate = $request->only('limit', 'page');
@@ -124,6 +125,43 @@ class CandidateController extends Controller
                 $data['order'] = 0;
             }
             $result = $this->candidateRepository->update($id, $data);
+            return $this->sendResult(true, "Updated Successfully", [], 200);
+        } catch (Exception $e) {
+            return $this->sendError(false, "Updated Failed", [], 400);
+        }
+    }
+
+    public function saveImgBase64($param, $folder)
+    {
+        list($extension, $content) = explode(';', $param);
+        $tmpExtension = explode('/', $extension);
+        preg_match('/.([0-9]+) /', microtime(), $m);
+        $fileName       = sprintf('img%s%s.%s', date('YmdHis'), $m[1], $tmpExtension[1]);
+        $content        = explode(',', $content)[1];
+        $storage        = Storage::disk('public');
+        $checkDirectory = $storage->exists($folder);
+        if (!$checkDirectory) {
+            $storage->makeDirectory($folder);
+        }
+        $storage->put($folder . '/' . $fileName, base64_decode($content), 'public');
+        return $fileName;
+    }
+
+    public function update(Request $request, $id)
+    {
+        try {
+            $avatar      = $request->all()['avatar'];
+            $name_avatar = $this->saveImgBase64($avatar, 'uploads');
+
+            $data['name']       = $request->all()['contact'];
+            $data['phone']      = $request->all()['company'];
+            $data['position']   = $request->all()['phone'];
+            $data['address']    = $request->all()['address'];
+            $data['experience'] = $request->all()['website'];
+            $data['avatar']     = 'http://103.200.20.171/storage/uploads/' . $name_avatar;
+
+            $result = $this->candidateRepository->update($id, $data);
+
             return $this->sendResult(true, "Updated Successfully", [], 200);
         } catch (Exception $e) {
             return $this->sendError(false, "Updated Failed", [], 400);
