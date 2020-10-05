@@ -153,11 +153,11 @@ class CandidateController extends Controller
             $avatar      = $request->all()['avatar'];
             $name_avatar = $this->saveImgBase64($avatar, 'uploads');
 
-            $data['name']       = $request->all()['contact'];
-            $data['phone']      = $request->all()['company'];
-            $data['position']   = $request->all()['phone'];
+            $data['name']       = $request->all()['name'];
+            $data['phone']      = $request->all()['phone'];
+            $data['position']   = $request->all()['position'];
             $data['address']    = $request->all()['address'];
-            $data['experience'] = $request->all()['website'];
+            $data['experience'] = $request->all()['experience'];
             $data['avatar']     = 'http://103.200.20.171/storage/uploads/' . $name_avatar;
 
             $result = $this->candidateRepository->update($id, $data);
