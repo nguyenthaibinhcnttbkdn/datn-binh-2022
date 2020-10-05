@@ -189,7 +189,7 @@ class EmployerSeeder extends Seeder
                 "company"     => "Vina Saver",
                 "phone"       => "0917410493",
                 "address"     => "Software Park, 02 - Quang Trung, Thach Thang, Hai Chau, Da Nang",
-                "avatar"      => "https://scontent-hkg4-2.xx.fbcdn.net/v/t1.0-9/118769362_327424101910349_7661027099679259395_n.jpg?_nc_cat=104&_nc_sid=e007fa&_nc_ohc=w4sXDDPuNG4AX_CIloe&_nc_ht=scontent-hkg4-2.xx&oh=4f4cced9f10131e247202508982c0879&oe=5F79F6CE",
+                "avatar"      => "https://scontent.fhan5-6.fna.fbcdn.net/v/t1.0-9/120603520_349681006351325_5306284240623613442_n.jpg?_nc_cat=107&_nc_sid=e007fa&_nc_ohc=kC90TnH_YPcAX9e2HfN&_nc_ht=scontent.fhan5-6.fna&oh=82302659da0f345dafc7c5934b4a0c23&oe=5FA12ACF",
                 "user_id"     => 14,
                 "website"     => "weibo.com",
                 "description" => "Gia công phần mềm cho thị trường Nhật ",
