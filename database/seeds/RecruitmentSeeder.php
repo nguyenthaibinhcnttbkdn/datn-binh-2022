@@ -109,7 +109,7 @@ class RecruitmentSeeder extends Seeder
                 "vacancy"             => "02 PHP Developers (MySQL,NoSQL)",
                 "quantity"            => 6,
                 "end_date"            => "2020-08-11",
-                "photo"               => "https://scontent-hkg4-1.xx.fbcdn.net/v/t1.0-9/118845847_327484671904292_8661862930424249413_n.jpg?_nc_cat=106&_nc_sid=e007fa&_nc_ohc=eS0gSoS4pjoAX-sL0_x&_nc_oc=AQnXy1I-O-6lWWD_iHC2n1DDZ4isAQdQEfMDWG_nz_9f-dVuziEpKKuCaomuBz389kjNxoL4ff4NXrKG3iCZ9Qbe&_nc_ht=scontent-hkg4-1.xx&oh=59d795bdaf249c1500d65c6a7462ccdd&oe=5F7A1345",
+                "photo"               => "https://scontent-hkt1-2.xx.fbcdn.net/v/t1.0-9/118953462_328803575105735_8091656253710563762_n.jpg?_nc_cat=110&_nc_sid=e007fa&_nc_ohc=fgtpDuvYVe4AX-ZFSxB&_nc_ht=scontent-hkt1-2.xx&oh=1e66cb20948092b822017940ccc22ea9&oe=5FA3A569",
                 "description"         => "- Thực hiện các dự án công nghệ của công ty, theo từng giai đoạn",
                 "entitlements"        => "- Lương thoả thuận khi phỏng vấn",
                 "job_requirements"    => "- Tốt nghiệp Cao đẳng / Đại học hoặc tương đương về chuyên ngành CNTT phần cứng, mạng, hoặc các bằng cấp liên quan.",
