@@ -16,7 +16,7 @@ class CandidateController extends Controller
 
     public function __construct(CandidateRepositoryInterface $candidateRepository)
     {
-        $this->middleware(['auth:api', 'scope:candidate'], ['except' => ['index', 'show', 'addCandidate', 'getCandidateOrder', 'getCandidateAdmin', 'changeActive', 'changeOrder']]);
+        $this->middleware(['auth:api', 'scope:candidate'], ['except' => ['index', 'show', 'addCandidate', 'getCandidateOrder', 'getCandidateAdmin', 'changeActive', 'changeOrder','getRecruitmentByUserId']]);
         $this->candidateRepository = $candidateRepository;
     }
 
@@ -80,9 +80,27 @@ class CandidateController extends Controller
         return $this->sendResult(true, 'Show Successfully', $data, 200);
     }
 
-    public function getRecruitmentByUserId($id)
+    public function getRecruitmentByUserId(Request $request,$id)
     {
         $data = $this->candidateRepository->getRecruitmentByUserId($id)->get()->toArray();
+
+        $datas = $this->candidateRepository->getRecruitmentByUserId($id);
+
+        if ($request->has('vacancy')) {
+            if (is_null($request->get('vacancy')) == false) {
+                $data = $datas->where('recruitments.vacancy', 'LIKE', '%' . $request->get('vacancy') . '%')->get()->toArray();
+            } else {
+                $data = $this->candidateRepository->getRecruitmentByUserId($id)->get()->toArray();
+            }
+        }
+
+        if ($request->has('limit') && $request->has('page')) {
+            $paginate = $request->only('limit', 'page');
+            if (count($paginate) > 0) {
+                $data = $datas->paginate($paginate['limit'])->toArray();
+            }
+        }
+
         return $this->sendResult(true, 'Show Successfully', $data, 200);
     }
 
