@@ -4,6 +4,7 @@
 namespace App\Repositories\Eloquent;
 
 use App\Models\Candidate;
+use App\Models\Recruitment;
 use App\Models\User;
 use App\Repositories\Eloquent\BaseRepository;
 use App\Repositories\Interfaces\EmployerRepositoryInterface;
@@ -104,5 +105,46 @@ class EmployerRepository extends BaseRepository implements EmployerRepositoryInt
             )
             ->orderBy('employers.id', 'desc');
         return $employers;
+    }
+
+    public function dashboardEmployer($id)
+    {
+        $imployerId                     = Employer::where('user_id', $id)->get()->toArray();
+        $quantity_recruitment           = DB::table('recruitments')
+            ->leftJoin('employers', 'recruitments.employer_id', '=', 'employers.id')
+            ->where('employers.id', $imployerId[0]['id'])
+            ->get();
+        $quantity_recruitment_active    = DB::table('recruitments')
+            ->leftJoin('employers', 'recruitments.employer_id', '=', 'employers.id')
+            ->where('employers.id', $imployerId[0]['id'])
+            ->where('recruitments.active', '=', 1)
+            ->get();
+        $quantity_recruitment_no_active = DB::table('recruitments')
+            ->leftJoin('employers', 'recruitments.employer_id', '=', 'employers.id')
+            ->where('employers.id', $imployerId[0]['id'])
+            ->where('recruitments.active', '=', 0)
+            ->get();
+
+        $jobs = Recruitment::select('id')
+            ->whereHas('employer', function ($query) use ($id) {
+                $query->where('user_id', $id);
+            })->get();
+
+        $recruimentIds = [];
+        foreach ($jobs as $key => $job) {
+            array_push($recruimentIds, $job->id);
+        }
+
+        $candidates = Candidate::with('user')
+            ->whereHas('recruitments', function ($query) use ($recruimentIds) {
+                $query->whereIn('recruitment_id', $recruimentIds);
+            })->get();
+
+        $data['quantity_recruitment']           = count($quantity_recruitment);
+        $data['quantity_recruitment_active']    = count($quantity_recruitment_active);
+        $data['quantity_recruitment_no_active'] = count($quantity_recruitment_no_active);
+        $data['quantity_candidate']             = count($candidates);
+
+        return $data;
     }
 }

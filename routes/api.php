@@ -59,6 +59,7 @@ Route::get('getcandidatesavesbyuserid/{id}', 'Client\EmployerController@getCandi
 Route::get('getemployeradmin', 'Client\EmployerController@getEmployerAdmin');
 Route::put('changeactiveemployer/{id}', 'Client\EmployerController@changeActive');
 Route::put('changeorderemployer/{id}', 'Client\EmployerController@changeOrder');
+Route::get('dashboardemployer/{id}', 'Client\EmployerController@dashboardEmployer');
 
 Route::resource('ranks', 'Client\RankController');
 Route::resource('cities', 'Client\CityController');
