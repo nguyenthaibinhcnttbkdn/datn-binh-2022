@@ -56,8 +56,8 @@ class EmployerRepository extends BaseRepository implements EmployerRepositoryInt
                 'company' => $data['company'],
                 'phone'   => $data['phone'],
                 'address' => $data['address'],
-                'avatar'  => 'https://scontent.fdad2-1.fna.fbcdn.net/v/t1.0-9/118692222_327425445243548_5214214997457116906_n.jpg?_nc_cat=109&_nc_sid=e007fa&_nc_ohc=seKeZmjEARkAX_wTpVx&_nc_ht=scontent.fdad2-1.fna&oh=a7d16d73b8773f06d07920ebbb15bbf2&oe=5F7E1511',
-                'photo'   => 'https://scontent-hkg4-2.xx.fbcdn.net/v/t1.0-9/117936800_318042479515178_5679268451815365577_o.jpg?_nc_cat=104&_nc_sid=8024bb&_nc_ohc=xSCel1s8dzoAX818c5t&_nc_ht=scontent-hkg4-2.xx&oh=240697b22745bf5c2f6ef47d8f6b1f0a&oe=5F6BA47B',
+                'avatar'  => 'https://lh3.googleusercontent.com/pw/ACtC-3eiRUuBNx6i77CFmWtbqrNfo5BMAtCSxwyiIu__bpNMJoFQjzoWx3s8ruzUoWLQQnF-rpEZD1BUfxLbRi-wENhkV2eqqfmiek02SZJYmAEBXRzAQTPuQ2NlXp_BK8GyVcn44ui3NJvy02Azg27H9Pd3=w219-h164-no',
+                'photo'   => 'https://lh3.googleusercontent.com/pw/ACtC-3cWYyqg22qB0hNyn-ap2ORo_HJsrEx8wwrtOW1kt8orDhn0jeVUN4bgqIehSy4C22UN8xsfJmytXURP00qX-Tb8D0WdWifk7yv-ILUEonRA2bTvcY-21yOpqcLB38gzSHKbTlkGvZjq0Eu63N6N2WoC=w1743-h979-no',
                 'user_id' => $userCreate->id,
             ]);
 

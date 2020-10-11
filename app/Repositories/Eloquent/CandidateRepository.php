@@ -53,7 +53,7 @@ class CandidateRepository extends BaseRepository implements CandidateRepositoryI
             $candidateCreate = Candidate::create([
                 'name'    => $data['name'],
                 'phone'   => $data['phone'],
-                'avatar'  => 'https://scontent-hkg4-1.xx.fbcdn.net/v/t1.0-9/117919076_318039892848770_6612572792333912945_n.jpg?_nc_cat=108&_nc_sid=8024bb&_nc_ohc=szo5eh0YxrAAX-8RevX&_nc_ht=scontent-hkg4-1.xx&oh=c6f8693b76c73889a3bdbf7cdb26496b&oe=5F696FA4',
+                'avatar'  => 'https://lh3.googleusercontent.com/pw/ACtC-3d6S8OCbG8Ez42boNCkDpAmzXiCFQUYi7nJk0oV0B97zzFFIkmH4pWDbjrtZH9myZXNu_FZzfQuj93a3FuF2nKTL_zR47RRKP12x8krEgDyTSI5bhHGDo75R9kYbOHiM4hZaXZESIrIU6Q17YDB99l9=w225-h224-no',
                 'user_id' => $userCreate->id,
             ]);
 

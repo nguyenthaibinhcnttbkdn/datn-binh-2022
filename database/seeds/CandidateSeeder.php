@@ -17,7 +17,7 @@ class CandidateSeeder extends Seeder
         $candidates = [
             [
                 "name"       => "Đặng Tuấn Anh",
-                "avatar"     => "https://scontent.fhan5-3.fna.fbcdn.net/v/t1.0-9/120487262_348984906420935_5644514053839872932_n.jpg?_nc_cat=106&_nc_sid=e007fa&_nc_ohc=vwGuklYgbFoAX_AFRux&_nc_ht=scontent.fhan5-3.fna&oh=4203520799d4d4ecdffe827a86b95a08&oe=5F9D90B6",
+                "avatar"     => "https://lh3.googleusercontent.com/pw/ACtC-3cuSFZnWmjpNjixbbKOPfR02zQZxpBhT-vIN5n1KPO4piv_aHYQARoZpjUcVhNeGBSDksYgAPW1btXbozJroJMBIvuCSZGs8qHAtYnQ2Tf8nnsV6gUvazQ3kTLmVrCs3Lj004_XK05mtkjSCYmuH7EP=w600-h798-no",
                 "phone"      => "0982527982",
                 "user_id"    => 31,
                 "position"   => "Senior",
@@ -28,7 +28,7 @@ class CandidateSeeder extends Seeder
             ],
             [
                 "name"       => "Hoàng Đức Anh",
-                "avatar"     => "https://scontent.fhan5-2.fna.fbcdn.net/v/t1.0-9/s960x960/120943801_348984936420932_6304141319117074716_o.jpg?_nc_cat=102&_nc_sid=e007fa&_nc_ohc=i7If-U40_VMAX88q-e6&_nc_ht=scontent.fhan5-2.fna&tp=7&oh=fbb6210b7d3c1c31e23b542a506b7428&oe=5FA0BDEF",
+                "avatar"     => "https://lh3.googleusercontent.com/pw/ACtC-3dQo1PmydbVzDjrrDAkyHMQwS0Ocgu8dqg7rjXg-Jm7A0XGE4q5H3SPSZtIDlgLsiF3FjENAK-zfQ_TFu0UG51gtjClzr30Z-aoiG8QdSmg5vG2PRcBd78AkiKEM5WSVS4wrMJiKKv2ZgwulQVwoFbs=w640-h959-no",
                 "phone"      => "0973776072",
                 "user_id"    => 32,
                 "position"   => "Internship",
@@ -39,7 +39,7 @@ class CandidateSeeder extends Seeder
             ],
             [
                 "name"       => "Lưu Trang Anh",
-                "avatar"     => "https://scontent-hkg4-1.xx.fbcdn.net/v/t1.0-9/120373749_348984883087604_8645934304848420024_n.jpg?_nc_cat=109&_nc_sid=e007fa&_nc_ohc=VhZ4lss2siAAX8bm6Ku&_nc_ht=scontent-hkg4-1.xx&oh=4dcfe0f72ba74ffabc8f93dee4c23ab8&oe=5F9DAECB",
+                "avatar"     => "https://lh3.googleusercontent.com/pw/ACtC-3e4t2NUYkvBwWaI3UBuZZa9oyKyfP3kekQqTCUHnye1hy2G2lC5oCXmz2LSOctByuB7Xovkfob0Toh9EZB6Hlwgxftn319337NguJAl6rdaEeb4MUa3PbtRjI4Re4daB-IaDex5wnQ5eXJeozwMJP45=w635-h725-no",
                 "phone"      => "0917749254",
                 "user_id"    => 33,
                 "position"   => "Fresher",
@@ -50,7 +50,7 @@ class CandidateSeeder extends Seeder
             ],
             [
                 "name"       => "Phạm Hoàng Anh",
-                "avatar"     => "https://scontent-hkg4-2.xx.fbcdn.net/v/t1.0-9/120765673_348984926420933_5781378414966637910_n.jpg?_nc_cat=111&_nc_sid=e007fa&_nc_ohc=l0vxrPaM1VYAX-BLROb&_nc_ht=scontent-hkg4-2.xx&oh=08cb609fba1a0391c1eb9ce1ba12fae6&oe=5F9DF426",
+                "avatar"     => "https://lh3.googleusercontent.com/pw/ACtC-3fegRNisZHGddhETypOfQCk9hS9iDab9dYezfxiPbrUM8mdHgFlmauGYNOw_Fd4F-ILNi-vY8TdZBPiP2-kPnfplAqjAz_ffQepFBTXwmcn4iPZBLE-Q9i0mw5cqCzZ9SOI3Vw8JxG34DogQkvyPShV=w960-h959-no",
                 "phone"      => "0904770053",
                 "user_id"    => 34,
                 "position"   => "Senior",
@@ -61,7 +61,7 @@ class CandidateSeeder extends Seeder
             ],
             [
                 "name"       => "Phạm Thị Hiền Anh",
-                "avatar"     => "https://scontent-hkg4-1.xx.fbcdn.net/v/t1.0-9/120840953_348984946420931_6432259914690414694_n.jpg?_nc_cat=103&_nc_sid=e007fa&_nc_ohc=L35o3l-b9O0AX9v2OhN&_nc_oc=AQl159vhY5YgztDHZW8d3FJNhY_FqG546oGcU1yblSq-vO0By5AznoiPYMcxMHU6NYg&_nc_ht=scontent-hkg4-1.xx&oh=734871e9935106c41156c1fa0d34a12d&oe=5F9E2F6B",
+                "avatar"     => "https://lh3.googleusercontent.com/pw/ACtC-3fouP6wL0lINt-of5u8bx3Ko-oleitbzweeA-rUSs0A09UODRD8tM4jrH8crVNA5larZ1Yf2cY6lvxBLHYMvhmd8ORNr9jMC6oXylUzVAlq8L4pXgITDciwAOT3k9wR49TKWVC6itbb7ebT_igS9aBF=w341-h512-no",
                 "phone"      => "0974880788",
                 "user_id"    => 35,
                 "position"   => "Junior",
@@ -72,7 +72,7 @@ class CandidateSeeder extends Seeder
             ],
             [
                 "name"       => "Phạm Khắc Việt Anh",
-                "avatar"     => "https://scontent.fhan5-6.fna.fbcdn.net/v/t1.0-9/120479491_348984986420927_810413887400143425_n.jpg?_nc_cat=105&_nc_sid=e007fa&_nc_ohc=-Vvp4H71DksAX8QqT_X&_nc_ht=scontent.fhan5-6.fna&oh=64b8b5ad54971026689249c0b2111fad&oe=5F9E6743",
+                "avatar"     => "https://lh3.googleusercontent.com/pw/ACtC-3fW5je2EnqCGc6yxC-wcAhiphgbglUYyhQUgED9FP6703e7wfhZrzFkn7mAHSgRcApk9ouCXUk7Jgus4n_qjrqRf2Mt6UX4V6I6rjQP2V3i1_405-h3FLbwc2gbnMyO3dShDbocUAu1tMAj-mA6ncix=s600-no",
                 "phone"      => "0983888611",
                 "user_id"    => 36,
                 "position"   => "Team Leader",
@@ -83,7 +83,7 @@ class CandidateSeeder extends Seeder
             ],
             [
                 "name"       => "Đỗ Hoàng Gia Bảo",
-                "avatar"     => "https://scontent.fhan5-5.fna.fbcdn.net/v/t1.0-9/s960x960/120539180_348985043087588_399007671342460459_o.jpg?_nc_cat=101&_nc_sid=e007fa&_nc_ohc=hKnsOKmCp00AX99SaKK&_nc_ht=scontent.fhan5-5.fna&tp=7&oh=183793948f2e9a34f7c6cd3665738ce3&oe=5F9E4379",
+                "avatar"     => "https://lh3.googleusercontent.com/pw/ACtC-3eQXqKr2tCNBVmQez_p8AusKMXmNG2ukFG_8NBudfpTkDcoVhNv7pLxNTW1Y3Yhnwj7r9bxvgj8rT21yyMskeVRTtGujsMu3cwC4_DgeHtwbH86DywgNDERg_BcJCXtwCX5gngUwmS0VsPCuH_BcyAV=w451-h558-no",
                 "phone"      => "0984603663",
                 "user_id"    => 37,
                 "position"   => "Internship",
@@ -94,7 +94,7 @@ class CandidateSeeder extends Seeder
             ],
             [
                 "name"       => "Trần Thị Minh Châu",
-                "avatar"     => "https://scontent.fhan5-7.fna.fbcdn.net/v/t1.0-0/p640x640/120809038_348985006420925_495625115695762871_o.jpg?_nc_cat=100&_nc_sid=e007fa&_nc_ohc=1pIlzAmynvsAX-A2gyz&_nc_ht=scontent.fhan5-7.fna&tp=6&oh=2ee27b82b3103f5b6274d833f5344b42&oe=5FA0A371",
+                "avatar"     => "https://lh3.googleusercontent.com/pw/ACtC-3fo9-Au3_EGtj9eQnroLUnWnSXSx33iI9kR1bj4IMoItTLdOWDnDxMp0BRF2T9NF-UKygp6qJP7XAEK5dPlJcsFWe79fbip0QjSGJpj0KjIC4MC67yZyobIQb4RVkTHlMGboYZV4hDCs0-MPHl-zLc5=w600-h590-no",
                 "phone"      => "0986375176",
                 "user_id"    => 38,
                 "position"   => "Internship",
@@ -105,7 +105,7 @@ class CandidateSeeder extends Seeder
             ],
             [
                 "name"       => "Tăng Phương Chi",
-                "avatar"     => "https://scontent.fhan5-2.fna.fbcdn.net/v/t1.0-9/120478954_348985016420924_7833757094659233814_n.jpg?_nc_cat=102&_nc_sid=e007fa&_nc_ohc=rTDdHivLAK8AX-4Xv3N&_nc_ht=scontent.fhan5-2.fna&oh=bd013c2040cedbe1a9223c4358b1d8e3&oe=5F9FECD5",
+                "avatar"     => "https://lh3.googleusercontent.com/pw/ACtC-3fPjrhMHNowMaxD-WNbtH4E8LfLf6UebERWkErlDbXkxKtgkvwjifYgGSe55SkVguPwySN63BcauZQemJEb3Xick-vtAiO94JCcUEW_P1TWMgs5sNecjka6TCxNPS7WhOM1C6XTFhdWry5-t7qotQY8=w341-h512-no",
                 "phone"      => "0914770545",
                 "user_id"    => 39,
                 "position"   => "Internship",
@@ -116,7 +116,7 @@ class CandidateSeeder extends Seeder
             ],
             [
                 "name"       => "Gan Feng Du",
-                "avatar"     => "https://scontent.fhan5-4.fna.fbcdn.net/v/t1.0-9/120477815_348985056420920_2999308791506341804_n.jpg?_nc_cat=104&_nc_sid=e007fa&_nc_ohc=oiSN224twf0AX-lF-D4&_nc_ht=scontent.fhan5-4.fna&oh=ba68cf021a075769264b7cb81889001a&oe=5F9D60C0",
+                "avatar"     => "https://lh3.googleusercontent.com/pw/ACtC-3cozGPAiZZIP9YAzn1N-4lkn-r-EQP_7QAZTbHjAcrlVyK2Bj5mWvYq6FY7q8Y2VmvWifhuwnvW-s_W3JrqGE1Ev0VKX723CoxRNgwZ93xmyb2sb2__1VVNd3n-bapzezc1AErfvbCwspcE3qN8uhlb=w750-h910-no",
                 "phone"      => "0986253482",
                 "user_id"    => 40,
                 "position"   => "Internship",
@@ -127,7 +127,7 @@ class CandidateSeeder extends Seeder
             ],
             [
                 "name"       => "Phạm Tiến Dũng",
-                "avatar"     => "https://scontent-hkg4-2.xx.fbcdn.net/v/t1.0-9/120657624_348985079754251_6489525408248865933_n.jpg?_nc_cat=111&_nc_sid=e007fa&_nc_ohc=ExrVLtZbdXUAX_rfLui&_nc_ht=scontent-hkg4-2.xx&oh=cbda913b246b6939adc14911d223e2ee&oe=5FA06E53",
+                "avatar"     => "https://lh3.googleusercontent.com/pw/ACtC-3eKKDf7lJSy7yVD4YR-nREEo5472OmOm0SNAO47YiAP58K10u2XJrO1lMILwHTv937b_pbuqJ1aB9Pt_4nyvKDDppf0LDb05OXkN7Wo7otgpRNE_gtm35LbG4DxyFZTwyHdhzI2bxi1G1sJYhF5TszN=w341-h512-no",
                 "phone"      => "0944545232",
                 "user_id"    => 41,
                 "position"   => "Internship",
@@ -138,7 +138,7 @@ class CandidateSeeder extends Seeder
             ],
             [
                 "name"       => "Nguyễn Thái Dương",
-                "avatar"     => "https://scontent.fhan5-7.fna.fbcdn.net/v/t1.0-0/p640x640/120811310_348985109754248_6334031232972151651_o.jpg?_nc_cat=100&_nc_sid=e007fa&_nc_ohc=tX31yo3LogAAX9WhOSC&_nc_ht=scontent.fhan5-7.fna&tp=6&oh=81f08920788563528eaa384263572380&oe=5F9EB42D",
+                "avatar"     => "https://lh3.googleusercontent.com/pw/ACtC-3es6MUx77aEyxL1779Tkgj7xTsL9rIJxuUocfSywtH9P1z7LhhIIaHNL-777eeNjDWG8y2K4NJx1eOA60xQz2_POY7487MZrwStk1o5XvRK-q5L6c7VbuttJw2LNmQk7RR4eUCE3c7imH6hn_GYL4pD=w500-h670-no",
                 "phone"      => "0912644784",
                 "user_id"    => 42,
                 "position"   => "Internship",
@@ -149,7 +149,7 @@ class CandidateSeeder extends Seeder
             ],
             [
                 "name"       => "Trần Kim Ngân",
-                "avatar"     => "https://scontent.fhan5-6.fna.fbcdn.net/v/t1.0-9/120427509_348985156420910_1793265865542225071_n.jpg?_nc_cat=105&_nc_sid=e007fa&_nc_ohc=iOChActHO2cAX97RHMK&_nc_ht=scontent.fhan5-6.fna&oh=6e3d35dba87b9a08b9088b58c6062352&oe=5F9F5123",
+                "avatar"     => "https://lh3.googleusercontent.com/pw/ACtC-3cvLFpe-LF3uiJbf1TFRI1ljxQVK4D9Z9tw4SgyzQyVhS7EesOSbABJeAYmdaUTcDpJ0njejRJ5R65FbcMecAo7fu9JJCyqiCckOaPIH-4ejkuTFYobCnOiCsT0x_2KkHXm1X7wcdNA2GMsTGA9BK-L=w600-h850-no",
                 "phone"      => "0912644784",
                 "user_id"    => 43,
                 "position"   => "Internship",
@@ -160,7 +160,7 @@ class CandidateSeeder extends Seeder
             ],
             [
                 "name"       => "Đỗ Minh Ngọc",
-                "avatar"     => "https://scontent.fhan5-4.fna.fbcdn.net/v/t1.0-9/120395084_348985119754247_5370760546796171356_n.jpg?_nc_cat=104&_nc_sid=e007fa&_nc_ohc=LWtW-_zNCKkAX-ItN0D&_nc_ht=scontent.fhan5-4.fna&oh=8fbe1ef00ac32637e0aa57fc84e58a67&oe=5FA086BD",
+                "avatar"     => "https://lh3.googleusercontent.com/pw/ACtC-3cV-aoEOelmhCIMXF8DezlAhFVQq9N8WsjCTxAyUU249uKXJ5u_1LokXiLefnmINt98E-EXIs47osB6T9maiwmFjcKa6DwGajTKYBwD-Lwoleei2m-bVyUFZGEJHX9NYdEg3aJ25P0gQb5UyXLRmqw4=s800-no",
                 "phone"      => "0912644784",
                 "user_id"    => 44,
                 "position"   => "Internship",
@@ -171,7 +171,7 @@ class CandidateSeeder extends Seeder
             ],
             [
                 "name"       => "Bùi Khánh Ngọc",
-                "avatar"     => "https://scontent.fhan5-6.fna.fbcdn.net/v/t1.0-9/120558669_348985149754244_2556558261342328973_n.jpg?_nc_cat=105&_nc_sid=e007fa&_nc_ohc=cdYlUrc81z8AX_u6jzv&_nc_ht=scontent.fhan5-6.fna&oh=e688863c768b566cd4081309103837d1&oe=5F9D2951",
+                "avatar"     => "https://lh3.googleusercontent.com/pw/ACtC-3cnhLitkcz9_HLP2Fuhc3kZnHpLN0op-v6UazCmunwnjeUhteav4uO9phKd2CRnIIFpnNVosTC7QoPDgkUGrlFNlghjF-G0722Ks4FZ_ZK0dtT9kAPDfh5it2-NZPC9Tvuv1B-n14x13pK3QvyHY3wt=w653-h979-no",
                 "phone"      => "0912644784",
                 "user_id"    => 45,
                 "position"   => "Internship",
@@ -182,7 +182,7 @@ class CandidateSeeder extends Seeder
             ],
             [
                 "name"       => "Trần Uyên Nhi",
-                "avatar"     => "https://scontent.fhan5-5.fna.fbcdn.net/v/t1.0-9/120880557_348985183087574_3640749720895060544_n.jpg?_nc_cat=101&_nc_sid=e007fa&_nc_ohc=HWXWPX92ROUAX820dpJ&_nc_ht=scontent.fhan5-5.fna&oh=3067fd8091d1acaff803844b4fec9c26&oe=5FA0ED19",
+                "avatar"     => "https://lh3.googleusercontent.com/pw/ACtC-3dej-R6hsOixqBzAml2gTKDhojXC7n3TNYEl01aM5e6b9DQ0dhn_jbhV5r9g5ksi0qMYn-OgM50j18io0izo-p4_e6ANr_50xMQWhfIUHfaCOMVmIFHL-yH0mFNcdJSZ_Gk-WP_2QtrgmArIMP7cfWP=w364-h533-no",
                 "phone"      => "0912644784",
                 "user_id"    => 46,
                 "position"   => "Internship",
@@ -193,7 +193,7 @@ class CandidateSeeder extends Seeder
             ],
             [
                 "name"       => "Phạm Đặng Gia Như",
-                "avatar"     => "https://scontent-hkg4-1.xx.fbcdn.net/v/t1.0-9/120555013_348985209754238_709890331052089028_n.jpg?_nc_cat=110&_nc_sid=e007fa&_nc_ohc=9lEk7hjGGFEAX9os3zP&_nc_ht=scontent-hkg4-1.xx&oh=5f3a7cdb5d3219ebdbf495de9a9b44dd&oe=5F9F5ADE",
+                "avatar"     => "https://lh3.googleusercontent.com/pw/ACtC-3dq5Nt5XZy7ZTgYiqQ0s9W6gaJkiC1WNgmcl7ASNereJ4-5GZ4lMpcy8hGcMIcNmpLmUyumy_gHrD450iuHuUGirLifY0nNfjDmfe6D89bF7JLsC--K70jA1t9v4bDlOjOgdU5Gcm50U3UrCh5LlEHz=w572-h673-no",
                 "phone"      => "0912644784",
                 "user_id"    => 47,
                 "position"   => "Internship",
@@ -204,7 +204,7 @@ class CandidateSeeder extends Seeder
             ],
             [
                 "name"       => "Lê Tất Hoàng Phát",
-                "avatar"     => "https://scontent.fhan5-2.fna.fbcdn.net/v/t1.0-9/120507062_348985246420901_8420875474506834600_n.jpg?_nc_cat=102&_nc_sid=e007fa&_nc_ohc=IXGiiCEsFW4AX9TB_Yq&_nc_ht=scontent.fhan5-2.fna&oh=1d03596f16cad2695fa7f18a6c279b1a&oe=5F9DC149",
+                "avatar"     => "https://lh3.googleusercontent.com/pw/ACtC-3cTVH6U-ELzQ6ya1PqWMk3JMJeII3usPnhuFtjatkTy8Jt2i0U9Eik3ZG6kcy7g-pJdoKklNanUoJid192B1CQW_2H8AwTfSCfFCZLOA45t_NMAwzuE_S2LZiaMgdejB_KhY8O1AOUypnDF1X3v0s3a=w472-h709-no",
                 "phone"      => "0912644784",
                 "user_id"    => 48,
                 "position"   => "Internship",
@@ -215,7 +215,7 @@ class CandidateSeeder extends Seeder
             ],
             [
                 "name"       => "Đào Tuấn Phong",
-                "avatar"     => "https://scontent-hkg4-1.xx.fbcdn.net/v/t1.0-9/120388664_348985226420903_961929744540379633_n.jpg?_nc_cat=107&_nc_sid=e007fa&_nc_ohc=KHjRYZgI3VQAX_RjlFa&_nc_ht=scontent-hkg4-1.xx&oh=fc37cb34193f9f7ec4f6d49f5c606816&oe=5F9D4956",
+                "avatar"     => "https://lh3.googleusercontent.com/pw/ACtC-3f1jzs8jUqyPfK5NBh2g0lDIzPvQziJWuGObvGIhle8zkUZ_NecOdSaK4SHcG2Z3FiSXSEXDn1qZw18I0lfMEEpaTls2zwRCS0lxbKSogr1ALDg2-BAOK0fM5cTOR-6_xO86xxGEQWwQ6BYhiih3xVZ=w653-h979-no",
                 "phone"      => "0912644784",
                 "user_id"    => 49,
                 "position"   => "Internship",
@@ -226,7 +226,7 @@ class CandidateSeeder extends Seeder
             ],
             [
                 "name"       => "Nguyễn Hoàng Tùng",
-                "avatar"     => "https://scontent-hkg4-1.xx.fbcdn.net/v/t1.0-9/120574884_348985303087562_4328504703149533499_n.jpg?_nc_cat=109&_nc_sid=e007fa&_nc_ohc=K9-ik-IudUEAX_kv5L9&_nc_oc=AQnK6VWxDrDRABE16Nuuz67K3mtSQH2rCUlL367IcFFxIzL6Wf8eUtp2Hv_CvEd-vJI&_nc_ht=scontent-hkg4-1.xx&oh=59a92d93f04b846bf8704ddf001d3d20&oe=5F9FF0D5",
+                "avatar"     => "https://lh3.googleusercontent.com/pw/ACtC-3esSX20GHcyDtf33e6v-5tklaWpsLkJjdEd3NnV8BaRBeODdn_iCVqNBEmLpcEtHTFccHApStSOczdxzHNUd32a6comSEyBJE6VQYLnKd9iWeias8teL0PJLzLz1l53ft9_gB0y93eg6XHkmJWiPFpr=w784-h979-no",
                 "phone"      => "0912644784",
                 "user_id"    => 50,
                 "position"   => "Internship",
@@ -237,7 +237,7 @@ class CandidateSeeder extends Seeder
             ],
             [
                 "name"       => "Nguyễn Hoàng Tùng",
-                "avatar"     => "https://scontent-hkg4-1.xx.fbcdn.net/v/t1.0-9/120844054_348985273087565_7109782540275888896_n.jpg?_nc_cat=110&_nc_sid=e007fa&_nc_ohc=CU2GDvQNwDAAX-0BC47&_nc_ht=scontent-hkg4-1.xx&oh=022a0dc20defdf7c5460816ce27f6e6f&oe=5F9DF149",
+                "avatar"     => "https://lh3.googleusercontent.com/pw/ACtC-3eHY1FlU19pchMOV47J-I7ROnNg1ZZ8KojXs_JTRPfj96t89I1SZreUlg4hXQ4C1kx1W_zmkDeQmET3kKxN0rTfjY4kdKREYp-JhHUMT-d0S88KaZIarO0Hj8x84zcvnOgjdb8vVJD3sq79slEmLN2p=w580-h881-no",
                 "phone"      => "0912644784",
                 "user_id"    => 51,
                 "position"   => "Internship",
@@ -248,7 +248,7 @@ class CandidateSeeder extends Seeder
             ],
             [
                 "name"       => "Nguyễn Hoàng Tùng",
-                "avatar"     => "https://scontent.fhan5-7.fna.fbcdn.net/v/t1.0-9/120883264_348985289754230_259473960489029278_n.jpg?_nc_cat=100&_nc_sid=e007fa&_nc_ohc=_CMsiitsWdgAX-EaUcF&_nc_ht=scontent.fhan5-7.fna&oh=c6405ed90598a425716cb4b742eff72e&oe=5F9D7AB4",
+                "avatar"     => "https://lh3.googleusercontent.com/pw/ACtC-3fvFHiqxpOzLWQxpGvNC5ZiEaFnvwKXvy2-1ZeoysFV54yPoGTrXmUJKmkcwDUQ-rdjxlDIvgHqWGpL88iH7CPRV5sAtYztRlZ_jNuA7801dABQZh23Zz6fsFZIhWyMIx2FWvcldoXacvITyO0ZyhFn=w427-h640-no",
                 "phone"      => "0912644784",
                 "user_id"    => 52,
                 "position"   => "Internship",
@@ -259,7 +259,7 @@ class CandidateSeeder extends Seeder
             ],
             [
                 "name"       => "Nguyễn Hoàng Tùng",
-                "avatar"     => "https://scontent-hkg4-1.xx.fbcdn.net/v/t1.0-9/120789584_348985319754227_5664670553729914846_n.jpg?_nc_cat=106&_nc_sid=e007fa&_nc_ohc=P93lW3qR73kAX9iFteM&_nc_ht=scontent-hkg4-1.xx&oh=0a3b735e2e2c72d746e058272a2dc893&oe=5F9FEC5E",
+                "avatar"     => "https://lh3.googleusercontent.com/pw/ACtC-3eA2sKTFqs_eu5qJYz1Pu7kX9DctWCxvLXrz7k30Req-suoD_bi5ylXetZiDUzN2rWcoIBeYGuD3S8EsOikm88heg5zf9JEVpVP47udw5VeJMEb6uRd38k40gCPNHXAh3vuBD1i8lwBSLIe9UfTA3X6=w600-h901-no",
                 "phone"      => "0912644784",
                 "user_id"    => 53,
                 "position"   => "Internship",
@@ -270,7 +270,7 @@ class CandidateSeeder extends Seeder
             ],
             [
                 "name"       => "Nguyễn Hoàng Tùng",
-                "avatar"     => "https://scontent-hkg4-2.xx.fbcdn.net/v/t1.0-9/120655562_348985343087558_3169475366950587067_n.jpg?_nc_cat=111&_nc_sid=e007fa&_nc_ohc=FgSZP6oqqWcAX9fCL81&_nc_ht=scontent-hkg4-2.xx&oh=233badd4aa52d2409677471e87ee3d44&oe=5F9EB224",
+                "avatar"     => "https://lh3.googleusercontent.com/pw/ACtC-3e07mm82bRfczhQfbzoV4ai7RqJ_7Dvh8fzkPXEkDUzm2UrkwFGWBsvaabi7xrzWr0aqhRMrreves17icsMJ9kXd-Hdo47vMVzpOb35Rc8f_Q2GcoWSArjvNrzZk4nrJot_MZaGs7eBPl_SljDqGBui=s640-no",
                 "phone"      => "0912644784",
                 "user_id"    => 54,
                 "position"   => "Internship",
@@ -281,7 +281,7 @@ class CandidateSeeder extends Seeder
             ],
             [
                 "name"       => "Nguyễn Hoàng Tùng",
-                "avatar"     => "https://scontent-hkg4-2.xx.fbcdn.net/v/t1.0-9/120566228_348985369754222_3111837322392960315_n.jpg?_nc_cat=104&_nc_sid=e007fa&_nc_ohc=sjXfLXQJXMcAX8lksly&_nc_ht=scontent-hkg4-2.xx&oh=6cd108b28256858cc0bc9f13bbefcfa3&oe=5F9E6684",
+                "avatar"     => "https://lh3.googleusercontent.com/pw/ACtC-3chD_uWVjL1zVTQ60SAG3XAC90dbCdpemFeNNtySbiuGCSnqbJ2ddihPhMt70bUhBIl7Ddd9Tg2HwtYLnkha6USEeNQmpQDVejWzZwlOdCKsAsZ5MQawwnGI-EH-b8p2NGTeRxxlY9axPfOfSfFRDIa=w747-h979-no",
                 "phone"      => "0912644784",
                 "user_id"    => 55,
                 "position"   => "Internship",
@@ -292,7 +292,7 @@ class CandidateSeeder extends Seeder
             ],
             [
                 "name"       => "Nguyễn Hoàng Tùng",
-                "avatar"     => "https://scontent.fhan5-3.fna.fbcdn.net/v/t1.0-9/120487262_348984906420935_5644514053839872932_n.jpg?_nc_cat=106&_nc_sid=e007fa&_nc_ohc=vwGuklYgbFoAX_AFRux&_nc_ht=scontent.fhan5-3.fna&oh=4203520799d4d4ecdffe827a86b95a08&oe=5F9D90B6",
+                "avatar"     => "https://lh3.googleusercontent.com/pw/ACtC-3chD_uWVjL1zVTQ60SAG3XAC90dbCdpemFeNNtySbiuGCSnqbJ2ddihPhMt70bUhBIl7Ddd9Tg2HwtYLnkha6USEeNQmpQDVejWzZwlOdCKsAsZ5MQawwnGI-EH-b8p2NGTeRxxlY9axPfOfSfFRDIa=w747-h979-no",
                 "phone"      => "0912644784",
                 "user_id"    => 56,
                 "position"   => "Internship",
@@ -303,7 +303,7 @@ class CandidateSeeder extends Seeder
             ],
             [
                 "name"       => "Nguyễn Hoàng Tùng",
-                "avatar"     => "https://scontent.fhan5-2.fna.fbcdn.net/v/t1.0-9/s960x960/120943801_348984936420932_6304141319117074716_o.jpg?_nc_cat=102&_nc_sid=e007fa&_nc_ohc=i7If-U40_VMAX88q-e6&_nc_ht=scontent.fhan5-2.fna&tp=7&oh=fbb6210b7d3c1c31e23b542a506b7428&oe=5FA0BDEF",
+                "avatar"     => "https://lh3.googleusercontent.com/pw/ACtC-3eA2sKTFqs_eu5qJYz1Pu7kX9DctWCxvLXrz7k30Req-suoD_bi5ylXetZiDUzN2rWcoIBeYGuD3S8EsOikm88heg5zf9JEVpVP47udw5VeJMEb6uRd38k40gCPNHXAh3vuBD1i8lwBSLIe9UfTA3X6=w600-h901-no",
                 "phone"      => "0912644784",
                 "user_id"    => 57,
                 "position"   => "Internship",
@@ -314,7 +314,7 @@ class CandidateSeeder extends Seeder
             ],
             [
                 "name"       => "Nguyễn Hoàng Tùng",
-                "avatar"     => "https://scontent-hkg4-1.xx.fbcdn.net/v/t1.0-9/120373749_348984883087604_8645934304848420024_n.jpg?_nc_cat=109&_nc_sid=e007fa&_nc_ohc=VhZ4lss2siAAX8bm6Ku&_nc_ht=scontent-hkg4-1.xx&oh=4dcfe0f72ba74ffabc8f93dee4c23ab8&oe=5F9DAECB",
+                "avatar"     => "https://lh3.googleusercontent.com/pw/ACtC-3eA2sKTFqs_eu5qJYz1Pu7kX9DctWCxvLXrz7k30Req-suoD_bi5ylXetZiDUzN2rWcoIBeYGuD3S8EsOikm88heg5zf9JEVpVP47udw5VeJMEb6uRd38k40gCPNHXAh3vuBD1i8lwBSLIe9UfTA3X6=w600-h901-no",
                 "phone"      => "0912644784",
                 "user_id"    => 58,
                 "position"   => "Internship",
@@ -325,7 +325,7 @@ class CandidateSeeder extends Seeder
             ],
             [
                 "name"       => "Nguyễn Hoàng Tùng",
-                "avatar"     => "https://scontent-hkg4-2.xx.fbcdn.net/v/t1.0-9/120765673_348984926420933_5781378414966637910_n.jpg?_nc_cat=111&_nc_sid=e007fa&_nc_ohc=l0vxrPaM1VYAX-BLROb&_nc_ht=scontent-hkg4-2.xx&oh=08cb609fba1a0391c1eb9ce1ba12fae6&oe=5F9DF426",
+                "avatar"     => "https://lh3.googleusercontent.com/pw/ACtC-3eHY1FlU19pchMOV47J-I7ROnNg1ZZ8KojXs_JTRPfj96t89I1SZreUlg4hXQ4C1kx1W_zmkDeQmET3kKxN0rTfjY4kdKREYp-JhHUMT-d0S88KaZIarO0Hj8x84zcvnOgjdb8vVJD3sq79slEmLN2p=w580-h881-no",
                 "phone"      => "0912644784",
                 "user_id"    => 59,
                 "position"   => "Internship",
@@ -336,7 +336,7 @@ class CandidateSeeder extends Seeder
             ],
             [
                 "name"       => "Nguyễn Hoàng Tùng",
-                "avatar"     => "https://scontent-hkg4-1.xx.fbcdn.net/v/t1.0-9/120840953_348984946420931_6432259914690414694_n.jpg?_nc_cat=103&_nc_sid=e007fa&_nc_ohc=L35o3l-b9O0AX9v2OhN&_nc_oc=AQl159vhY5YgztDHZW8d3FJNhY_FqG546oGcU1yblSq-vO0By5AznoiPYMcxMHU6NYg&_nc_ht=scontent-hkg4-1.xx&oh=734871e9935106c41156c1fa0d34a12d&oe=5F9E2F6B  ",
+                "avatar"     => "https://lh3.googleusercontent.com/pw/ACtC-3esSX20GHcyDtf33e6v-5tklaWpsLkJjdEd3NnV8BaRBeODdn_iCVqNBEmLpcEtHTFccHApStSOczdxzHNUd32a6comSEyBJE6VQYLnKd9iWeias8teL0PJLzLz1l53ft9_gB0y93eg6XHkmJWiPFpr=w784-h979-no",
                 "phone"      => "0912644784",
                 "user_id"    => 60,
                 "position"   => "Internship",
