@@ -18,7 +18,7 @@ class CreateCandidateRecruitmentsTable extends Migration
             $table->unsignedBigInteger('candidate_id');
             $table->foreign('candidate_id')->references('id')->on('candidates');
             $table->unsignedBigInteger('recruitment_id');
-            $table->foreign('recruitment_id')->references('id')->on('recruitments');
+            $table->foreign('recruitment_id')->references('id')->on('recruitments')->onDelete('cascade');;
             $table->timestamps();
         });
     }

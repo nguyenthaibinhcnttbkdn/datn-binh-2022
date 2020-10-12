@@ -53,8 +53,8 @@ abstract class BaseRepository implements RepositoryInterface
     public function find($id, $collums = ['*'])
     {
         $result = $this->model->find($id, $collums);
-        if (is_null($result)){
-            return ['message',trans('common.errors.not_found_model')];
+        if (is_null($result)) {
+            return ['message', trans('common.errors.not_found_model')];
         }
         return $result;
     }
@@ -77,10 +77,10 @@ abstract class BaseRepository implements RepositoryInterface
      */
     public function update($id, array $attributes)
     {
-        $data = null;
+        $data   = null;
         $result = $this->find($id);
         if ($result) {
-            $data =   $result->update($attributes);
+            $data = $result->update($attributes);
             return $data;
         }
         return $data;
@@ -94,7 +94,7 @@ abstract class BaseRepository implements RepositoryInterface
      */
     public function delete($id)
     {
-        $data = null;
+        $data   = null;
         $result = $this->find($id);
         if ($result) {
             $data = $result->delete();

@@ -38,6 +38,7 @@ class CreateRecruitmentsTable extends Migration
             $table->boolean('active')->default(false);
             $table->boolean('order')->default(false);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

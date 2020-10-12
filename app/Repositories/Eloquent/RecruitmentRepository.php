@@ -85,6 +85,7 @@ class RecruitmentRepository extends BaseRepository implements RecruitmentReposit
                 'employers.company as company',
                 'employers.avatar as avatar'
             )
+            ->where('recruitments.deleted_at', null)
             ->where('recruitments.active', 1)
             ->orderBy('recruitments.id', 'desc');
 
@@ -152,6 +153,7 @@ class RecruitmentRepository extends BaseRepository implements RecruitmentReposit
                 'employers.company as company',
                 'employers.avatar as avatar'
             )
+            ->where('recruitments.deleted_at', null)
             ->where('recruitments.active', 1)
             ->where('employers.id', $id)
             ->orderBy('recruitments.id', 'desc');
@@ -187,6 +189,7 @@ class RecruitmentRepository extends BaseRepository implements RecruitmentReposit
                 'employers.company as company',
                 'employers.avatar as avatar'
             )
+            ->where('recruitments.deleted_at', null)
             ->where('employers.id', $imployerId[0]['id'])
             ->orderBy('recruitments.id', 'desc');
         return $recruitments;
@@ -272,6 +275,7 @@ class RecruitmentRepository extends BaseRepository implements RecruitmentReposit
                 'employers.company as company',
                 'employers.avatar as avatar'
             )
+            ->where('recruitments.deleted_at', null)
             ->orderBy('recruitments.id', 'desc');
 
         return $recruitments;

@@ -17,7 +17,21 @@ class RecruitmentController extends Controller
 
     public function __construct(RecruitmentRepositoryInterface $recruitmentRepository)
     {
-        $this->middleware(['auth:api', 'scope:employer'], ['except' => ['index', 'show', 'getRecruitmentsByEmployerId', 'getRecruitmentOrder', 'store', 'update','getRecruitmentEdit','getRecruitmentAdmin','changeActive','changeOrder']]);
+        $this->middleware(['auth:api', 'scope:employer'], [
+            'except' => [
+                'index',
+                'show',
+                'getRecruitmentsByEmployerId',
+                'getRecruitmentOrder',
+                'store',
+                'update',
+                'getRecruitmentEdit',
+                'getRecruitmentAdmin',
+                'changeActive',
+                'changeOrder',
+                'destroy',
+            ],
+        ]);
         $this->recruitmentRepository = $recruitmentRepository;
     }
 
@@ -187,8 +201,9 @@ class RecruitmentController extends Controller
         return $this->sendResult(true, 'Show Successfully', $data, 200);
     }
 
-    public function getRecruitmentAdmin(Request $request){
-        $data = $this->recruitmentRepository->getRecruitmentAdmin()->get()->toArray();
+    public function getRecruitmentAdmin(Request $request)
+    {
+        $data  = $this->recruitmentRepository->getRecruitmentAdmin()->get()->toArray();
         $datas = $this->recruitmentRepository->getRecruitmentAdmin();
         if ($request->has('limit') && $request->has('page')) {
             $paginate = $request->only('limit', 'page');
@@ -228,6 +243,16 @@ class RecruitmentController extends Controller
             return $this->sendResult(true, "Updated Successfully", [], 200);
         } catch (Exception $e) {
             return $this->sendError(false, "Updated Failed", [], 400);
+        }
+    }
+
+    public function destroy($id)
+    {
+        try {
+            $this->recruitmentRepository->delete($id);
+            return $this->sendResult(true, "Delete Successfully", [], 200);
+        } catch (Exception $e) {
+            return $this->sendError(false, "Delete Failed", [], 400);
         }
     }
 }
