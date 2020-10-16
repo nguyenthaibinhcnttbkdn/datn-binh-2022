@@ -86,9 +86,19 @@ class RecruitmentController extends Controller
         return $this->sendResult(true, 'Show Successfully', $data, 200);
     }
 
-    public function getRecruitmentsByEmployerId($id)
+    public function getRecruitmentsByEmployerId($id, Request $request)
     {
         $data = $this->recruitmentRepository->getRecruitmentsByEmployerId($id)->get()->toArray();
+
+        $datas = $this->recruitmentRepository->getRecruitmentsByEmployerId($id);
+
+        if ($request->has('limit') && $request->has('page')) {
+            $paginate = $request->only('limit', 'page');
+            if (count($paginate) > 0) {
+                $data = $datas->paginate($paginate['limit'])->toArray();
+            }
+        }
+
         return $this->sendResult(true, 'Show Successfully', $data, 200);
     }
 
