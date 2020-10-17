@@ -35,7 +35,7 @@ class EmployerRepository extends BaseRepository implements EmployerRepositoryInt
     public function getEmployer()
     {
         $employers = DB::table('employers')
-            ->select()
+            ->select('employers.*', DB::raw('(SELECT COUNT(recruitments.id) FROM recruitments WHERE recruitments.employer_id = employers.id) AS jobs'))
             ->where('employers.active', 1)
             ->orderBy('employers.id', 'desc');
         return $employers;
