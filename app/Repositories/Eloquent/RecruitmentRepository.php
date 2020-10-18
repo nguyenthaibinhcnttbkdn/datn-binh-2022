@@ -118,7 +118,12 @@ class RecruitmentRepository extends BaseRepository implements RecruitmentReposit
                 'careers.name as career',
                 'salaries.name as salary',
                 'employers.company as company',
-                'employers.avatar as avatar'
+                'employers.avatar as avatar',
+                'employers.phone as phone',
+                'employers.address as address',
+                'employers.website as website',
+                'employers.description as description',
+                'employers.contact as contact'
             )
             ->where('recruitments.id', $id);
 
