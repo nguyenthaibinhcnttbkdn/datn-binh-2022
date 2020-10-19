@@ -30,7 +30,7 @@ class RecruitmentController extends Controller
                 'changeActive',
                 'changeOrder',
                 'destroy',
-                'dashboard'
+                'dashboard',
             ],
         ]);
         $this->recruitmentRepository = $recruitmentRepository;
@@ -178,14 +178,16 @@ class RecruitmentController extends Controller
     public function store(Request $request)
     {
         try {
-            $data                = $request->except('user_id', 'photo');
+            $data                = $request->except('user_id', 'photo', 'end_date');
+            $date                = $request->all()['end_date'];
+            $data[end_date]      = new Date ($date);
             $employerId          = Employer::where('user_id', $request->only('user_id'))->get()->toArray();
             $data['employer_id'] = strval($employerId[0]['id']);
             $avatar              = $request->all()['photo'];
             $name_photo          = $this->saveImgBase64($avatar, 'uploads');
             $data['photo']       = 'http://103.200.20.171/storage/uploads/' . $name_photo;
             dd($data);
-            $result              = $this->recruitmentRepository->create($data);
+            $result = $this->recruitmentRepository->create($data);
             return $this->sendResult(true, "Create Successfully", [], 200);
         } catch (Exception $e) {
             return $this->sendError(false, "Create Failed", [], 400);
@@ -268,7 +270,8 @@ class RecruitmentController extends Controller
         }
     }
 
-    public function dashboard(){
+    public function dashboard()
+    {
         $data = $this->recruitmentRepository->dashboard();
         return $this->sendResult(true, 'Show Successfully', $data, 200);
     }
