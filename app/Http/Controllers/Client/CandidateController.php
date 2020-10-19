@@ -60,7 +60,7 @@ class CandidateController extends Controller
     {
         $user_exist = User::where('email', $request->get('email'))->get()->toArray();
         if (count($user_exist) > 0) {
-            return $this->sendError(false, "Tài khoản đã tồn tại !", [], 403);
+            return $this->sendError(false, "Tài khoản đã tồn tại !", [], 201);
         }
 
         $data         = $request->all();
@@ -70,7 +70,7 @@ class CandidateController extends Controller
             $data = $this->candidateRepository->addCandidate($data);
             return $this->sendResult(true, 'Insert Successfully', [], 200);
         } catch (Exception $e) {
-            return $this->sendError(false, "Insert Failed", [], 401);
+            return $this->sendError(false, "Insert Failed", [], 400);
         }
     }
 
