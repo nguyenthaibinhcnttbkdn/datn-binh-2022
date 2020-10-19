@@ -54,7 +54,7 @@ class AuthController extends Controller
             }
 
         } else {
-            return $this->sendError(false, "Email hoặc mật khẩu không chính xác!", [], 401);
+            return $this->sendError(false, "Email hoặc mật khẩu không chính xác!", [], 400);
         }
     }
 
