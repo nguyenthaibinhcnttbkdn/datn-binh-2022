@@ -184,6 +184,7 @@ class RecruitmentController extends Controller
             $avatar              = $request->all()['photo'];
             $name_photo          = $this->saveImgBase64($avatar, 'uploads');
             $data['photo']       = 'http://103.200.20.171/storage/uploads/' . $name_photo;
+            dd($data);
             $result              = $this->recruitmentRepository->create($data);
             return $this->sendResult(true, "Create Successfully", [], 200);
         } catch (Exception $e) {
