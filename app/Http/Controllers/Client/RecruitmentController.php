@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Client;
 use App\Models\Employer;
 use App\Models\Recruitment;
 use App\Repositories\Interfaces\RecruitmentRepositoryInterface;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
@@ -179,14 +180,13 @@ class RecruitmentController extends Controller
     {
         try {
             $data                = $request->except('user_id', 'photo', 'end_date');
-//            $date                = $request->all()['end_date'];
-//            $data[end_date]      = new Date ($date);
+            $date                = $request->all()['end_date'];
+            $data[end_date]      = Carbon::parse($date, 'UTC');
             $employerId          = Employer::where('user_id', $request->only('user_id'))->get()->toArray();
             $data['employer_id'] = strval($employerId[0]['id']);
             $avatar              = $request->all()['photo'];
             $name_photo          = $this->saveImgBase64($avatar, 'uploads');
             $data['photo']       = 'http://103.200.20.171/storage/uploads/' . $name_photo;
-            //
             $result = $this->recruitmentRepository->create($data);
             return $this->sendResult(true, "Create Successfully", [], 200);
         } catch (Exception $e) {
