@@ -30,6 +30,7 @@ class RecruitmentController extends Controller
                 'changeActive',
                 'changeOrder',
                 'destroy',
+                'dashboard'
             ],
         ]);
         $this->recruitmentRepository = $recruitmentRepository;
@@ -264,5 +265,10 @@ class RecruitmentController extends Controller
         } catch (Exception $e) {
             return $this->sendError(false, "Delete Failed", [], 400);
         }
+    }
+
+    public function dashboard(){
+        $data = $this->recruitmentRepository->dashboard();
+        return $this->sendResult(true, 'Show Successfully', $data, 200);
     }
 }

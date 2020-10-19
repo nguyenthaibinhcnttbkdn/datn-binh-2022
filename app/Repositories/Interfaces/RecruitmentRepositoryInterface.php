@@ -21,4 +21,6 @@ interface RecruitmentRepositoryInterface
     public function getRecruitmentEdit($id);
 
     public function getRecruitmentAdmin();
+
+    public function dashboard();
 }

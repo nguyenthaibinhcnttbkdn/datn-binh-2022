@@ -285,4 +285,17 @@ class RecruitmentRepository extends BaseRepository implements RecruitmentReposit
 
         return $recruitments;
     }
+
+    public function dashboard()
+    {
+        $recruitments = DB::table('recruitments')->where('recruitments.active', 1)->where('recruitments.deleted_at', null)->get();
+        $employers    = DB::table('employers')->where('employers.active', 1)->get();
+        $candidates   = DB::table('candidates')->where('candidates.active', 1)->get();
+
+        $data['recruitments'] = count($recruitments);
+        $data['employers']    = count($employers);
+        $data['candidates']   = count($candidates);
+
+        return $data;
+    }
 }

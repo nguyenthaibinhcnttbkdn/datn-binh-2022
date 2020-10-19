@@ -41,6 +41,7 @@ Route::get('getrecruitmentedit/{id}', 'Client\RecruitmentController@getRecruitme
 Route::get('getrecruitmentadmin', 'Client\RecruitmentController@getRecruitmentAdmin');
 Route::put('changeactiverecruitment/{id}', 'Client\RecruitmentController@changeActive');
 Route::put('changeorderrecruitment/{id}', 'Client\RecruitmentController@changeOrder');
+Route::get('dashboard', 'Client\RecruitmentController@dashboard');
 
 
 Route::resource('candidates', 'Client\CandidateController');
