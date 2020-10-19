@@ -181,7 +181,7 @@ class RecruitmentController extends Controller
         try {
             $data                = $request->except('user_id', 'photo', 'end_date');
             $date                = $request->all()['end_date'];
-            $data['end_date']      = Carbon::parse($date, 'UTC');
+            $data['end_date']      = Carbon::parse($date)->setTimezone('Asia/Ho_Chi_Minh')->format('Y-m-d h:i:s');
             $employerId          = Employer::where('user_id', $request->only('user_id'))->get()->toArray();
             $data['employer_id'] = strval($employerId[0]['id']);
             $avatar              = $request->all()['photo'];
