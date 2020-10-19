@@ -36,7 +36,7 @@ class AuthController extends Controller
                     $success['avatar']      = $active[0]['avatar'];
                     return $this->sendResult(true, "Đăng nhập thành công!", $success, 200);
                 } else {
-                    return $this->sendError(false, "Tài khoản chưa được kích hoạt !", [], 401);
+                    return $this->sendError(false, "Tài khoản chưa được kích hoạt !", [], 201);
                 }
             }
 
@@ -49,7 +49,7 @@ class AuthController extends Controller
                     $success['avatar']      = $active[0]['avatar'];
                     return $this->sendResult(true, "Đăng nhập thành công!", $success, 200);
                 } else {
-                    return $this->sendError(false, "Tài khoản chưa được kích hoạt !", [], 401);
+                    return $this->sendError(false, "Tài khoản chưa được kích hoạt !", [], 201);
                 }
             }
 
