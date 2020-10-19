@@ -197,7 +197,9 @@ class RecruitmentController extends Controller
     public function update(Request $request, $id)
     {
         try {
-            $data           = $request->except('photo');
+            $data           = $request->except('photo','end_date');
+            $date                = $request->all()['end_date'];
+            $data['end_date']      = Carbon::parse($date)->setTimezone('Asia/Ho_Chi_Minh')->format('Y-m-d');
             $data['active'] = 0;
             $avatar         = $request->all()['photo'];
             $name_photo     = $this->saveImgBase64($avatar, 'uploads');
