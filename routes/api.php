@@ -62,7 +62,10 @@ Route::put('changeactiveemployer/{id}', 'Client\EmployerController@changeActive'
 Route::put('changeorderemployer/{id}', 'Client\EmployerController@changeOrder');
 Route::get('dashboardemployer/{id}', 'Client\EmployerController@dashboardEmployer');
 
+
 Route::resource('cv', 'Client\CurriculumVitaeController');
+Route::get('getcv/{id}', 'Client\CurriculumVitaeController@getCurriculumVitaeByCandidateId');
+
 
 Route::resource('ranks', 'Client\RankController');
 Route::resource('cities', 'Client\CityController');

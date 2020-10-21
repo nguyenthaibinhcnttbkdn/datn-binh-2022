@@ -16,7 +16,7 @@ class CurriculumVitaeController extends Controller
 
     public function __construct(CurriculumVitaeRepositoryInterface $curriculumVitaeRepository)
     {
-        $this->middleware(['auth:api', 'scope:candidate'], ['except' => ['store']]);
+        $this->middleware(['auth:api', 'scope:candidate'], ['except' => ['store','show','getCurriculumVitaeByCandidateId','update']]);
         $this->curriculumVitaeRepository = $curriculumVitaeRepository;
     }
 
@@ -52,6 +52,30 @@ class CurriculumVitaeController extends Controller
         } catch (Exception $e) {
             return $this->sendError(false, "Create Failed", [], 400);
         }
+    }
 
+    public function show($id){
+        $data = $this->curriculumVitaeRepository->getCurriculumVitaeByUserId($id);
+        return $this->sendResult(true, 'Show Successfully', $data, 200);
+    }
+
+    public function getCurriculumVitaeByCandidateId($id){
+        $data = $this->curriculumVitaeRepository->getCurriculumVitaeByCandidateId($id);
+        return $this->sendResult(true, 'Show Successfully', $data, 200);
+    }
+
+    public function update(Request $request, $id){
+        try {
+            $avatar      = $request->all()['avatar'];
+            $name_avatar = $this->saveImgBase64($avatar, 'uploads');
+
+            $data['title']        = $request->all()['title'];
+            $data['object']       = json_encode($request->all()['object'], true);
+            $data['avatar']       = 'http://103.200.20.171/storage/uploads/' . $name_avatar;
+            $result               = $this->curriculumVitaeRepository->update($id, $data);
+            return $this->sendResult(true, "Updated Successfully", [], 200);
+        } catch (Exception $e) {
+            return $this->sendError(false, "Updated Failed", [], 400);
+        }
     }
 }
