@@ -12,6 +12,7 @@ use App\Repositories\Eloquent\CityRepository;
 use App\Repositories\Eloquent\CareerRepository;
 use App\Repositories\Eloquent\SalaryRepository;
 use App\Repositories\Eloquent\TypeOfWorkRepository;
+use App\Repositories\Eloquent\CurriculumVitaeRepository;
 use App\Repositories\Interfaces\CandidateRepositoryInterface;
 use App\Repositories\Interfaces\EmployerRepositoryInterface;
 use App\Repositories\Interfaces\RecruitmentRepositoryInterface;
@@ -20,6 +21,7 @@ use App\Repositories\Interfaces\CityRepositoryInterface;
 use App\Repositories\Interfaces\CareerRepositoryInterface;
 use App\Repositories\Interfaces\SalaryRepositoryInterface;
 use App\Repositories\Interfaces\TypeOfWorkRepositoryInterface;
+use App\Repositories\Interfaces\CurriculumVitaeRepositoryInterface;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -41,6 +43,7 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(CareerRepositoryInterface::class, CareerRepository::class);
         $this->app->bind(SalaryRepositoryInterface::class, SalaryRepository::class);
         $this->app->bind(TypeOfWorkRepositoryInterface::class, TypeOfWorkRepository::class);
+        $this->app->bind(CurriculumVitaeRepositoryInterface::class, CurriculumVitaeRepository::class);
     }
 
     /**
