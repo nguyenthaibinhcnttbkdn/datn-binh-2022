@@ -16,7 +16,7 @@ class CurriculumVitaeController extends Controller
 
     public function __construct(CurriculumVitaeRepositoryInterface $curriculumVitaeRepository)
     {
-        $this->middleware(['auth:api', 'scope:candidate'], ['except' => ['store','show','getCurriculumVitaeByCandidateId','update']]);
+        $this->middleware(['auth:api', 'scope:candidate'], ['except' => ['store','show','getCurriculumVitaeByCandidateId','update','destroy']]);
         $this->curriculumVitaeRepository = $curriculumVitaeRepository;
     }
 
