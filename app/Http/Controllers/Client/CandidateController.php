@@ -16,7 +16,7 @@ class CandidateController extends Controller
 
     public function __construct(CandidateRepositoryInterface $candidateRepository)
     {
-        $this->middleware(['auth:api', 'scope:candidate'], ['except' => ['index', 'show', 'addCandidate', 'getCandidateOrder', 'getCandidateAdmin', 'changeActive', 'changeOrder','getRecruitmentByUserId']]);
+        $this->middleware(['auth:api', 'scope:candidate'], ['except' => ['index', 'show', 'addCandidate', 'getCandidateOrder', 'getCandidateAdmin', 'changeActive', 'changeOrder','getRecruitmentByUserId','getCandidateByUserId']]);
         $this->candidateRepository = $candidateRepository;
     }
 

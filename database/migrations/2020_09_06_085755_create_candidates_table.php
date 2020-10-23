@@ -15,12 +15,13 @@ class CreateCandidatesTable extends Migration
     {
         Schema::create('candidates', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name')->nullable();;
+            $table->string('name')->nullable();
             $table->text('avatar')->nullable();
-            $table->string('phone')->nullable();;
-            $table->string('position')->nullable();;
-            $table->string('address')->nullable();;
-            $table->string('experience')->nullable();;
+            $table->string('phone')->nullable();
+            $table->string('position')->nullable();
+            $table->string('address')->nullable();
+            $table->string('experience')->nullable();
+            $table->date('birthday')->nullable();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->boolean('active')->default(false);

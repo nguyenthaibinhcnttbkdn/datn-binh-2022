@@ -17,7 +17,7 @@ class CreateRecruitmentsTable extends Migration
             $table->bigIncrements('id');
             $table->string('vacancy')->nullable();
             $table->integer('quantity')->nullable();
-            $table->dateTime('end_date')->nullable();
+            $table->date('end_date')->nullable();
             $table->text('photo')->nullable();
             $table->text('description')->nullable();
             $table->text('entitlements')->nullable();
