@@ -67,6 +67,9 @@ Route::resource('cv', 'Client\CurriculumVitaeController');
 Route::get('getcv/{id}', 'Client\CurriculumVitaeController@getCurriculumVitaeByCandidateId');
 
 
+Route::post('removeapply', 'Client\CandidateRecruitmentController@removeApply');
+
+
 Route::resource('ranks', 'Client\RankController');
 Route::resource('cities', 'Client\CityController');
 Route::resource('careers', 'Client\CareerController');

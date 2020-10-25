@@ -25,6 +25,7 @@ class RecruitmentRepository extends BaseRepository implements RecruitmentReposit
 
     public function getRecruitmentOrder()
     {
+        $nows = date(now()->toDateString());
         $recruitments = DB::table('recruitments')
             ->leftJoin('ranks', 'recruitments.rank_id', '=', 'ranks.id')
             ->leftJoin('type_of_works', 'recruitments.type_of_work_id', '=', 'type_of_works.id')
@@ -52,6 +53,7 @@ class RecruitmentRepository extends BaseRepository implements RecruitmentReposit
                 'employers.avatar as avatar'
             )
             ->where('recruitments.order', 1)
+            ->where('recruitments.end_date','>', $nows)
             ->orderBy('recruitments.id', 'asc');;
 
         return $recruitments;
@@ -59,6 +61,7 @@ class RecruitmentRepository extends BaseRepository implements RecruitmentReposit
 
     public function getRecruitment()
     {
+        $nows = date(now()->toDateString());
         $recruitments = DB::table('recruitments')
             ->leftJoin('ranks', 'recruitments.rank_id', '=', 'ranks.id')
             ->leftJoin('type_of_works', 'recruitments.type_of_work_id', '=', 'type_of_works.id')
@@ -87,6 +90,7 @@ class RecruitmentRepository extends BaseRepository implements RecruitmentReposit
             )
             ->where('recruitments.deleted_at', null)
             ->where('recruitments.active', 1)
+            ->where('recruitments.end_date','>', $nows)
             ->orderBy('recruitments.id', 'desc');
 
         return $recruitments;
@@ -132,6 +136,7 @@ class RecruitmentRepository extends BaseRepository implements RecruitmentReposit
 
     public function getRecruitmentsByEmployerId($id)
     {
+        $nows = date(now()->toDateString());
         $recruitments = DB::table('recruitments')
             ->leftJoin('ranks', 'recruitments.rank_id', '=', 'ranks.id')
             ->leftJoin('type_of_works', 'recruitments.type_of_work_id', '=', 'type_of_works.id')
@@ -161,6 +166,7 @@ class RecruitmentRepository extends BaseRepository implements RecruitmentReposit
             ->where('recruitments.deleted_at', null)
             ->where('recruitments.active', 1)
             ->where('employers.id', $id)
+            ->where('recruitments.end_date','>', $nows)
             ->orderBy('recruitments.id', 'desc');
         return $recruitments;
     }
