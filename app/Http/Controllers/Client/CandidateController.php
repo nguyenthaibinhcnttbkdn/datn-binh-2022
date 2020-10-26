@@ -9,6 +9,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Exception;
 use Illuminate\Support\Facades\Storage;
+use Carbon\Carbon;
+
 
 class CandidateController extends Controller
 {
@@ -16,7 +18,8 @@ class CandidateController extends Controller
 
     public function __construct(CandidateRepositoryInterface $candidateRepository)
     {
-        $this->middleware(['auth:api', 'scope:candidate'], ['except' => ['index', 'show', 'addCandidate', 'getCandidateOrder', 'getCandidateAdmin', 'changeActive', 'changeOrder','getRecruitmentByUserId','getCandidateByUserId']]);
+        $this->middleware(['auth:api', 'scope:candidate'],
+            ['except' => ['index', 'show', 'addCandidate', 'getCandidateOrder', 'getCandidateAdmin', 'changeActive', 'changeOrder', 'getRecruitmentByUserId', 'getCandidateByUserId']]);
         $this->candidateRepository = $candidateRepository;
     }
 
@@ -80,7 +83,7 @@ class CandidateController extends Controller
         return $this->sendResult(true, 'Show Successfully', $data, 200);
     }
 
-    public function getRecruitmentByUserId(Request $request,$id)
+    public function getRecruitmentByUserId(Request $request, $id)
     {
         $data = $this->candidateRepository->getRecruitmentByUserId($id)->get()->toArray();
 
@@ -176,6 +179,7 @@ class CandidateController extends Controller
             $data['position']   = $request->all()['position'];
             $data['address']    = $request->all()['address'];
             $data['experience'] = $request->all()['experience'];
+            $data['birthday']   = Carbon::parse($request->all()['birthday'])->setTimezone('Asia/Ho_Chi_Minh')->format('Y-m-d');
             $data['avatar']     = 'http://103.200.20.171/storage/uploads/' . $name_avatar;
 
             $result = $this->candidateRepository->update($id, $data);
