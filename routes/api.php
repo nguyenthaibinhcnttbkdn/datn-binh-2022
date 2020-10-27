@@ -65,6 +65,7 @@ Route::get('dashboardemployer/{id}', 'Client\EmployerController@dashboardEmploye
 
 Route::resource('cv', 'Client\CurriculumVitaeController');
 Route::get('getcv/{id}', 'Client\CurriculumVitaeController@getCurriculumVitaeByCandidateId');
+Route::get('getcvbyuserid/{id}', 'Client\CurriculumVitaeController@getCurriculumVitaeByUserId');
 
 
 Route::post('removeapply', 'Client\CandidateRecruitmentController@removeApply');
