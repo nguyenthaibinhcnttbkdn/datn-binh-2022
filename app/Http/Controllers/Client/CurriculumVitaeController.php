@@ -55,7 +55,7 @@ class CurriculumVitaeController extends Controller
     }
 
     public function show($id){
-        $data = $this->curriculumVitaeRepository->find($id);
+        $data = $this->curriculumVitaeRepository->getCurriculumVitaeById($id);
         return $this->sendResult(true, 'Show Successfully', $data, 200);
     }
 

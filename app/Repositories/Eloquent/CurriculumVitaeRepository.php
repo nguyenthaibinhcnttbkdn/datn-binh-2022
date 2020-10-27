@@ -33,4 +33,10 @@ class CurriculumVitaeRepository extends BaseRepository implements CurriculumVita
         $curriculumVitae = CurriculumVitae::where('candidate_id', $id)->get()->toArray();
         return $curriculumVitae;
     }
+
+    public function getCurriculumVitaeById($id)
+    {
+        $curriculumVitae = CurriculumVitae::where('id', $id)->get()->toArray();
+        return $curriculumVitae;
+    }
 }

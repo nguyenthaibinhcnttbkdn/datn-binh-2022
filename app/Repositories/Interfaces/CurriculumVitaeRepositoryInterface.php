@@ -9,4 +9,6 @@ interface CurriculumVitaeRepositoryInterface
     public function getCurriculumVitaeByUserId($id);
 
     public function getCurriculumVitaeByCandidateId($id);
+
+    public function getCurriculumVitaeById($id);
 }
