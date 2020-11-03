@@ -322,7 +322,7 @@ class RecruitmentRepository extends BaseRepository implements RecruitmentReposit
             ->leftJoin('recruitments', 'recruitments.id', '=', 'cvrecruitments.recruitment_id')
             ->leftJoin('curriculumvitaes', 'curriculumvitaes.id', '=', 'cvrecruitments.cv_id')
             ->leftJoin('candidates', 'candidates.id', '=', 'curriculumvitaes.candidate_id')
-            ->select('cvrecruitments.id as cv_id',
+            ->select('cvrecruitments.cv_id',
                 'candidates.id as candidate_id',
                 'candidates.name',
                 'candidates.avatar',
