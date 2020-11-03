@@ -23,4 +23,6 @@ interface RecruitmentRepositoryInterface
     public function getRecruitmentAdmin();
 
     public function dashboard();
+
+    public function getCvByUserId($id);
 }

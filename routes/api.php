@@ -37,6 +37,7 @@ Route::get('getrecruitmentorder', 'Client\RecruitmentController@getRecruitmentOr
 Route::get('getrecruitmentsbyemployerid/{id}', 'Client\RecruitmentController@getRecruitmentsByEmployerId');
 Route::get('getrecruitmentsbyuserid/{id}', 'Client\RecruitmentController@getRecruitmentByUserId');
 Route::get('getcandidatesbyuserid/{id}', 'Client\RecruitmentController@getCandidateByUserId');
+Route::get('getcvsbyuserid/{id}', 'Client\RecruitmentController@getCvByUserId');
 Route::get('getrecruitmentedit/{id}', 'Client\RecruitmentController@getRecruitmentEdit');
 Route::get('getrecruitmentadmin', 'Client\RecruitmentController@getRecruitmentAdmin');
 Route::put('changeactiverecruitment/{id}', 'Client\RecruitmentController@changeActive');

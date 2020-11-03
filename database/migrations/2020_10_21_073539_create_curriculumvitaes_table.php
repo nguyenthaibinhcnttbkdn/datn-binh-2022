@@ -13,7 +13,7 @@ class CreateCurriculumVitaesTable extends Migration
      */
     public function up()
     {
-        Schema::create('curriculum_vitaes', function (Blueprint $table) {
+        Schema::create('curriculumvitaes', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('title');
             $table->text('avatar')->nullable();

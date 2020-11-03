@@ -22,5 +22,7 @@ class DatabaseSeeder extends Seeder
         $this->call(RecruitmentSeeder::class);
         $this->call(CandidateRecruitmentSeeder::class);
         $this->call(EmployerCandidateSeeder::class);
+        $this->call(CurriculumVitaeSeeder::class);
+        $this->call(CvRecruitmentSeeder::class);
     }
 }

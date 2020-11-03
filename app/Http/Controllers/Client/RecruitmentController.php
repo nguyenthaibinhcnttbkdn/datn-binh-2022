@@ -32,6 +32,8 @@ class RecruitmentController extends Controller
                 'changeOrder',
                 'destroy',
                 'dashboard',
+                'getCvByUserId',
+                'getCandidateByUserId'
             ],
         ]);
         $this->recruitmentRepository = $recruitmentRepository;
@@ -147,6 +149,30 @@ class RecruitmentController extends Controller
                 $data = $datas->where('candidates.name', 'LIKE', '%' . $request->get('name') . '%')->get()->toArray();
             } else {
                 $data = $this->recruitmentRepository->getCandidateByUserId($id)->get()->toArray();
+            }
+        }
+
+        if ($request->has('limit') && $request->has('page')) {
+            $paginate = $request->only('limit', 'page');
+            if (count($paginate) > 0) {
+                $data = $datas->paginate($paginate['limit'])->toArray();
+            }
+        }
+
+        return $this->sendResult(true, 'Show Successfully', $data, 200);
+    }
+
+    public function getCvByUserId($id, Request $request)
+    {
+        $data = $this->recruitmentRepository->getCvByUserId($id)->get()->toArray();
+
+        $datas = $this->recruitmentRepository->getCvByUserId($id);
+
+        if ($request->has('name')) {
+            if (is_null($request->get('name')) == false) {
+                $data = $datas->where('candidates.name', 'LIKE', '%' . $request->get('name') . '%')->get()->toArray();
+            } else {
+                $data = $this->recruitmentRepository->getCvByUserId($id)->get()->toArray();
             }
         }
 

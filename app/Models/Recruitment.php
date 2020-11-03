@@ -45,4 +45,9 @@ class Recruitment extends Model
     {
         return $this->belongsToMany(\App\Models\Candidate::class, 'candidate_recruitments');
     }
+
+    public function curriculumvitaes()
+    {
+        return $this->belongsToMany(\App\Models\Curriculumvitae::class, 'cvrecruitments');
+    }
 }

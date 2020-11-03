@@ -4,6 +4,7 @@
 namespace App\Repositories\Eloquent;
 
 use App\Models\Candidate;
+use App\Models\Curriculumvitae;
 use App\Models\Employer;
 use App\Repositories\Eloquent\BaseRepository;
 use App\Repositories\Interfaces\RecruitmentRepositoryInterface;
@@ -25,7 +26,7 @@ class RecruitmentRepository extends BaseRepository implements RecruitmentReposit
 
     public function getRecruitmentOrder()
     {
-        $nows = date(now()->toDateString());
+        $nows         = date(now()->toDateString());
         $recruitments = DB::table('recruitments')
             ->leftJoin('ranks', 'recruitments.rank_id', '=', 'ranks.id')
             ->leftJoin('type_of_works', 'recruitments.type_of_work_id', '=', 'type_of_works.id')
@@ -53,7 +54,7 @@ class RecruitmentRepository extends BaseRepository implements RecruitmentReposit
                 'employers.avatar as avatar'
             )
             ->where('recruitments.order', 1)
-            ->where('recruitments.end_date','>', $nows)
+            ->where('recruitments.end_date', '>', $nows)
             ->orderBy('recruitments.id', 'asc');;
 
         return $recruitments;
@@ -61,7 +62,7 @@ class RecruitmentRepository extends BaseRepository implements RecruitmentReposit
 
     public function getRecruitment()
     {
-        $nows = date(now()->toDateString());
+        $nows         = date(now()->toDateString());
         $recruitments = DB::table('recruitments')
             ->leftJoin('ranks', 'recruitments.rank_id', '=', 'ranks.id')
             ->leftJoin('type_of_works', 'recruitments.type_of_work_id', '=', 'type_of_works.id')
@@ -90,7 +91,7 @@ class RecruitmentRepository extends BaseRepository implements RecruitmentReposit
             )
             ->where('recruitments.deleted_at', null)
             ->where('recruitments.active', 1)
-            ->where('recruitments.end_date','>', $nows)
+            ->where('recruitments.end_date', '>', $nows)
             ->orderBy('recruitments.id', 'desc');
 
         return $recruitments;
@@ -136,7 +137,7 @@ class RecruitmentRepository extends BaseRepository implements RecruitmentReposit
 
     public function getRecruitmentsByEmployerId($id)
     {
-        $nows = date(now()->toDateString());
+        $nows         = date(now()->toDateString());
         $recruitments = DB::table('recruitments')
             ->leftJoin('ranks', 'recruitments.rank_id', '=', 'ranks.id')
             ->leftJoin('type_of_works', 'recruitments.type_of_work_id', '=', 'type_of_works.id')
@@ -166,7 +167,7 @@ class RecruitmentRepository extends BaseRepository implements RecruitmentReposit
             ->where('recruitments.deleted_at', null)
             ->where('recruitments.active', 1)
             ->where('employers.id', $id)
-            ->where('recruitments.end_date','>', $nows)
+            ->where('recruitments.end_date', '>', $nows)
             ->orderBy('recruitments.id', 'desc');
         return $recruitments;
     }
@@ -208,7 +209,7 @@ class RecruitmentRepository extends BaseRepository implements RecruitmentReposit
 
     public function getCandidateByUserId($id)
     {
-        $jobs= Recruitment::select('id')
+        $jobs = Recruitment::select('id')
             ->whereHas('employer', function ($query) use ($id) {
                 $query->where('user_id', $id);
             })->get();
@@ -303,5 +304,37 @@ class RecruitmentRepository extends BaseRepository implements RecruitmentReposit
         $data['candidates']   = count($candidates);
 
         return $data;
+    }
+
+    public function getCvByUserId($id)
+    {
+        $jobs = Recruitment::select('id')
+            ->whereHas('employer', function ($query) use ($id) {
+                $query->where('user_id', $id);
+            })->get();
+
+        $recruimentIds = [];
+        foreach ($jobs as $key => $job) {
+            array_push($recruimentIds, $job->id);
+        }
+
+        $cvs = DB::table('cvrecruitments')
+            ->leftJoin('recruitments', 'recruitments.id', '=', 'cvrecruitments.recruitment_id')
+            ->leftJoin('curriculumvitaes', 'curriculumvitaes.id', '=', 'cvrecruitments.cv_id')
+            ->leftJoin('candidates', 'candidates.id', '=', 'curriculumvitaes.candidate_id')
+            ->select('cvrecruitments.id as cv_id',
+                'candidates.id as candidate_id',
+                'candidates.name',
+                'candidates.avatar',
+                'candidates.phone',
+                'candidates.position',
+                'candidates.address',
+                'candidates.experience',
+                'candidates.birthday',
+                'candidates.user_id',
+                'recruitments.vacancy'
+                )
+            ->whereIn('cvrecruitments.recruitment_id', $recruimentIds);
+        return $cvs;
     }
 }
