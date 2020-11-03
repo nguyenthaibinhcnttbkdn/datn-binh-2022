@@ -79,5 +79,7 @@ Route::resource('salaries', 'Client\SalaryController');
 Route::resource('typeofworks', 'Client\TypeOfWorkController');
 
 
+Route::resource('applyjob', 'Client\CvrecruitmentController');
+
 
 
