@@ -25,4 +25,14 @@ class CvrecruitmentController extends Controller
             return $this->sendError(false, "Create Failed", [], 400);
         }
     }
+
+    public function destroy($id)
+    {
+        try {
+            $this->cvRecruitmentRepository->delete($id);
+            return $this->sendResult(true, "Delete Successfully", [], 200);
+        } catch (Exception $e) {
+            return $this->sendError(false, "Delete Failed", [], 400);
+        }
+    }
 }
