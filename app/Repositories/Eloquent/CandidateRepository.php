@@ -117,6 +117,7 @@ class CandidateRepository extends BaseRepository implements CandidateRepositoryI
             ->leftJoin('cvrecruitments', 'cvrecruitments.cv_id', '=', 'curriculumvitaes.id')
             ->leftJoin('recruitments', 'recruitments.id', '=', 'cvrecruitments.recruitment_id')
             ->select(
+                'cvrecruitments.id as ids',
                 'recruitments.id',
                 'recruitments.vacancy',
                 'recruitments.quantity',
