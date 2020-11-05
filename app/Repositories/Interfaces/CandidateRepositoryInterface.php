@@ -17,4 +17,6 @@ interface CandidateRepositoryInterface
     public function getRecruitmentByUserId($id);
 
     public function getCandidateAdmin();
+
+    public function getJobApplyByUserId($id);
 }

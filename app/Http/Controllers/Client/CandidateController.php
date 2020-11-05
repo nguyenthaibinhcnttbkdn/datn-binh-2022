@@ -19,7 +19,20 @@ class CandidateController extends Controller
     public function __construct(CandidateRepositoryInterface $candidateRepository)
     {
         $this->middleware(['auth:api', 'scope:candidate'],
-            ['except' => ['index', 'show', 'addCandidate', 'getCandidateOrder', 'getCandidateAdmin', 'changeActive', 'changeOrder', 'getRecruitmentByUserId', 'getCandidateByUserId']]);
+            [
+                'except' => [
+                    'index',
+                    'show',
+                    'addCandidate',
+                    'getCandidateOrder',
+                    'getCandidateAdmin',
+                    'changeActive',
+                    'changeOrder',
+                    'getRecruitmentByUserId',
+                    'getCandidateByUserId',
+                    'getJobApplyByUserId',
+                ],
+            ]);
         $this->candidateRepository = $candidateRepository;
     }
 
@@ -188,5 +201,29 @@ class CandidateController extends Controller
         } catch (Exception $e) {
             return $this->sendError(false, "Updated Failed", [], 400);
         }
+    }
+
+    public function getJobApplyByUserId(Request $request, $id)
+    {
+        $data = $this->candidateRepository->getJobApplyByUserId($id)->get()->toArray();
+
+        $datas = $this->candidateRepository->getJobApplyByUserId($id);
+
+        if ($request->has('vacancy')) {
+            if (is_null($request->get('vacancy')) == false) {
+                $data = $datas->where('recruitments.vacancy', 'LIKE', '%' . $request->get('vacancy') . '%')->get()->toArray();
+            } else {
+                $data = $this->candidateRepository->getJobApplyByUserId($id)->get()->toArray();
+            }
+        }
+
+        if ($request->has('limit') && $request->has('page')) {
+            $paginate = $request->only('limit', 'page');
+            if (count($paginate) > 0) {
+                $data = $datas->paginate($paginate['limit'])->toArray();
+            }
+        }
+
+        return $this->sendResult(true, 'Show Successfully', $data, 200);
     }
 }
