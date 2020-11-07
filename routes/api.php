@@ -43,6 +43,7 @@ Route::get('getrecruitmentadmin', 'Client\RecruitmentController@getRecruitmentAd
 Route::put('changeactiverecruitment/{id}', 'Client\RecruitmentController@changeActive');
 Route::put('changeorderrecruitment/{id}', 'Client\RecruitmentController@changeOrder');
 Route::get('dashboard', 'Client\RecruitmentController@dashboard');
+Route::get('dashboardadmin', 'Client\RecruitmentController@dashboardAdmin');
 
 
 Route::resource('candidates', 'Client\CandidateController');
@@ -71,6 +72,7 @@ Route::get('getcvbyuserid/{id}', 'Client\CurriculumVitaeController@getCurriculum
 
 
 Route::post('removeapply', 'Client\CandidateRecruitmentController@removeApply');
+
 
 
 Route::resource('ranks', 'Client\RankController');

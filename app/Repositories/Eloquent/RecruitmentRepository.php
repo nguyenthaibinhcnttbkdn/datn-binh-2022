@@ -335,8 +335,29 @@ class RecruitmentRepository extends BaseRepository implements RecruitmentReposit
                 'candidates.birthday',
                 'candidates.user_id',
                 'recruitments.vacancy'
-                )
+            )
             ->whereIn('cvrecruitments.recruitment_id', $recruimentIds);
         return $cvs;
+    }
+
+    public function dashboardAdmin()
+    {
+        $recruitments = DB::table('recruitments')->where('recruitments.active', 1)->where('recruitments.deleted_at', null)->get();
+        $employers    = DB::table('employers')->where('employers.active', 1)->get();
+        $candidates   = DB::table('candidates')->where('candidates.active', 1)->get();
+
+        $recruitments_no_active = DB::table('recruitments')->where('recruitments.active', 0)->where('recruitments.deleted_at', null)->get();
+        $employers_no_active    = DB::table('employers')->where('employers.active', 0)->get();
+        $candidates_no_active   = DB::table('candidates')->where('candidates.active', 0)->get();
+
+        $data['recruitments'] = count($recruitments);
+        $data['employers']    = count($employers);
+        $data['candidates']   = count($candidates);
+
+        $data['recruitments_no_active'] = count($recruitments_no_active);
+        $data['employers_no_active']    = count($employers_no_active);
+        $data['candidates_no_active']   = count($candidates_no_active);
+
+        return $data;
     }
 }

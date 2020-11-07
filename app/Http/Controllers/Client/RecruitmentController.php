@@ -33,7 +33,8 @@ class RecruitmentController extends Controller
                 'destroy',
                 'dashboard',
                 'getCvByUserId',
-                'getCandidateByUserId'
+                'getCandidateByUserId',
+                'dashboardAdmin'
             ],
         ]);
         $this->recruitmentRepository = $recruitmentRepository;
@@ -301,6 +302,12 @@ class RecruitmentController extends Controller
     public function dashboard()
     {
         $data = $this->recruitmentRepository->dashboard();
+        return $this->sendResult(true, 'Show Successfully', $data, 200);
+    }
+
+    public function dashboardAdmin()
+    {
+        $data = $this->recruitmentRepository->dashboardAdmin();
         return $this->sendResult(true, 'Show Successfully', $data, 200);
     }
 }
