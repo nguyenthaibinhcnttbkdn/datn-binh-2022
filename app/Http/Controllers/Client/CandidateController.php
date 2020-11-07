@@ -31,6 +31,7 @@ class CandidateController extends Controller
                     'getRecruitmentByUserId',
                     'getCandidateByUserId',
                     'getJobApplyByUserId',
+                    'dashboardCandidate'
                 ],
             ]);
         $this->candidateRepository = $candidateRepository;
@@ -224,6 +225,11 @@ class CandidateController extends Controller
             }
         }
 
+        return $this->sendResult(true, 'Show Successfully', $data, 200);
+    }
+
+    public function dashboardCandidate($id){
+        $data = $this->candidateRepository->dashboardCandidate($id);
         return $this->sendResult(true, 'Show Successfully', $data, 200);
     }
 }

@@ -54,6 +54,7 @@ Route::get('getcandidateadmin', 'Client\CandidateController@getCandidateAdmin');
 Route::get('getjobapplybyuserid/{id}', 'Client\CandidateController@getJobApplyByUserId');
 Route::put('changeactivecandidate/{id}', 'Client\CandidateController@changeActive');
 Route::put('changeordercandidate/{id}', 'Client\CandidateController@changeOrder');
+Route::get('dashboardcandidate/{id}', 'Client\CandidateController@dashboardCandidate');
 
 
 Route::resource('employers', 'Client\EmployerController');

@@ -3,6 +3,8 @@
 
 namespace App\Repositories\Eloquent;
 
+use App\Models\Curriculumvitae;
+use App\Models\Employer;
 use App\Models\Recruitment;
 use App\Models\User;
 use App\Repositories\Eloquent\BaseRepository;
@@ -129,7 +131,37 @@ class CandidateRepository extends BaseRepository implements CandidateRepositoryI
                 'recruitments.requested_documents'
             )
             ->where('candidates.id', $candidateId);
-        ;
         return $candidate;
+    }
+
+    public function dashboardCandidate($id)
+    {
+        $candidateId = Candidate::where('user_id', $id)->get()->toArray()[0]['id'];
+
+        $job = DB::table('candidates')
+            ->leftJoin('curriculumvitaes', 'candidates.id', '=', 'curriculumvitaes.candidate_id')
+            ->leftJoin('cvrecruitments', 'cvrecruitments.cv_id', '=', 'curriculumvitaes.id')
+            ->leftJoin('recruitments', 'recruitments.id', '=', 'cvrecruitments.recruitment_id')
+            ->select(
+                'cvrecruitments.id as ids',
+                'recruitments.id',
+                'recruitments.vacancy',
+                'recruitments.quantity',
+                'recruitments.end_date',
+                'recruitments.photo',
+                'recruitments.description',
+                'recruitments.entitlements',
+                'recruitments.job_requirements',
+                'recruitments.requested_documents'
+            )
+            ->where('candidates.id', $candidateId)
+            ->get();
+
+        $cv = Curriculumvitae::where('candidate_id', $candidateId)->get();
+
+        $data['job'] = count($job);
+        $data['cv']  = count($cv);
+
+        return $data;
     }
 }
