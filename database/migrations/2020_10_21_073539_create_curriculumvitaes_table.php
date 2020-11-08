@@ -21,6 +21,7 @@ class CreateCurriculumVitaesTable extends Migration
             $table->unsignedBigInteger('candidate_id');
             $table->foreign('candidate_id')->references('id')->on('candidates');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

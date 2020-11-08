@@ -23,14 +23,14 @@ class CurriculumVitaeRepository extends BaseRepository implements CurriculumVita
 
     public function getCurriculumVitaeByUserId($id)
     {
-        $candidateId = Candidate::where('user_id', $id)->get()->toArray()[0]['id'];
-        $curriculumVitae = Curriculumvitae::where('candidate_id', $candidateId)->get()->toArray();
+        $candidateId     = Candidate::where('user_id', $id)->get()->toArray()[0]['id'];
+        $curriculumVitae = Curriculumvitae::where('candidate_id', '=', $candidateId)->get()->toArray();
         return $curriculumVitae;
     }
 
     public function getCurriculumVitaeByCandidateId($id)
     {
-        $curriculumVitae = Curriculumvitae::where('candidate_id', $id)->get()->toArray();
+        $curriculumVitae = Curriculumvitae::where('candidate_id', '=', $id)->get()->toArray();
         return $curriculumVitae;
     }
 
