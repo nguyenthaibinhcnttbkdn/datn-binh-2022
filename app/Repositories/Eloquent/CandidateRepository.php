@@ -164,4 +164,27 @@ class CandidateRepository extends BaseRepository implements CandidateRepositoryI
 
         return $data;
     }
+
+    public function getCandidateById($id)
+    {
+        $candidate = DB::table('candidates')
+            ->leftJoin('users', 'users.id', '=', 'candidates.user_id')
+            ->select('candidates.id',
+                'candidates.name',
+                'candidates.avatar',
+                'candidates.phone',
+                'candidates.position',
+                'candidates.address',
+                'candidates.experience',
+                'candidates.birthday',
+                'users.email as email',
+                'candidates.user_id',
+                'candidates.active',
+                'candidates.order',
+                'candidates.created_at',
+                'candidates.updated_at'
+            )
+            ->where('candidates.id', $id)->get();
+        return $candidate;
+    }
 }

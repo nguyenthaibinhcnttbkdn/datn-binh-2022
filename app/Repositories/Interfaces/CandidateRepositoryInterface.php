@@ -4,7 +4,7 @@ namespace App\Repositories\Interfaces;
 
 interface CandidateRepositoryInterface
 {
-    //public function getCandidateById($id);
+    public function getCandidateById($id);
 
     public function getCandidateOrder();
 
