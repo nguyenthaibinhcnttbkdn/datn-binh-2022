@@ -70,7 +70,7 @@ class CandidateController extends Controller
     public function show($id)
     {
         $data = $this->candidateRepository->getCandidateById($id)->toArray();
-        return $this->sendResult(true, 'Show Successfully', [$data], 200);
+        return $this->sendResult(true, 'Show Successfully', $data, 200);
     }
 
     public function addCandidate(Request $request)
