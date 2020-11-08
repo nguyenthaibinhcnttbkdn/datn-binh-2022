@@ -114,10 +114,28 @@ class CandidateRepository extends BaseRepository implements CandidateRepositoryI
     {
         $candidateId = Candidate::where('user_id', $id)->get()->toArray()[0]['id'];
 
-        $candidate = DB::table('candidates')
-            ->leftJoin('curriculumvitaes', 'candidates.id', '=', 'curriculumvitaes.candidate_id')
-            ->leftJoin('cvrecruitments', 'cvrecruitments.cv_id', '=', 'curriculumvitaes.id')
-            ->leftJoin('recruitments', 'recruitments.id', '=', 'cvrecruitments.recruitment_id')
+        //        $candidate = DB::table('candidates')
+        //            ->leftJoin('curriculumvitaes', 'candidates.id', '=', 'curriculumvitaes.candidate_id')
+        //            ->leftJoin('cvrecruitments', 'cvrecruitments.cv_id', '=', 'curriculumvitaes.id')
+        //            ->leftJoin('recruitments', 'recruitments.id', '=', 'cvrecruitments.recruitment_id')
+        //            ->select(
+        //                'cvrecruitments.id as ids',
+        //                'recruitments.id',
+        //                'recruitments.vacancy',
+        //                'recruitments.quantity',
+        //                'recruitments.end_date',
+        //                'recruitments.photo',
+        //                'recruitments.description',
+        //                'recruitments.entitlements',
+        //                'recruitments.job_requirements',
+        //                'recruitments.requested_documents'
+        //            )
+        //            ->where('candidates.id', $candidateId);
+
+        $recruitments = DB::table('recruitments')
+            ->Join('cvrecruitments', 'recruitments.id', '=', 'cvrecruitments.recruitment_id')
+            ->Join('curriculumvitaes', 'cvrecruitments.cv_id', '=', 'curriculumvitaes.id')
+            ->Join('candidates', 'candidates.id', '=', 'curriculumvitaes.candidate_id')
             ->select(
                 'cvrecruitments.id as ids',
                 'recruitments.id',
@@ -131,7 +149,7 @@ class CandidateRepository extends BaseRepository implements CandidateRepositoryI
                 'recruitments.requested_documents'
             )
             ->where('candidates.id', $candidateId);
-        return $candidate;
+        return $recruitments;
     }
 
     public function dashboardCandidate($id)
