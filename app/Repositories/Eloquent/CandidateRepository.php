@@ -136,6 +136,11 @@ class CandidateRepository extends BaseRepository implements CandidateRepositoryI
             ->Join('cvrecruitments', 'recruitments.id', '=', 'cvrecruitments.recruitment_id')
             ->Join('curriculumvitaes', 'cvrecruitments.cv_id', '=', 'curriculumvitaes.id')
             ->Join('candidates', 'candidates.id', '=', 'curriculumvitaes.candidate_id')
+            ->leftJoin('cities', 'cities.id', '=', 'recruitments.city_id')
+            ->leftJoin('type_of_works', 'type_of_works.id', '=', 'recruitments.type_of_work_id')
+            ->leftJoin('salaries', 'salaries.id', '=', 'recruitments.salary_id')
+            ->leftJoin('careers', 'careers.id', '=', 'recruitments.career_id')
+            ->leftJoin('ranks', 'ranks.id', '=', 'recruitments.rank_id')
             ->select(
                 'cvrecruitments.id as ids',
                 'recruitments.id',
@@ -146,7 +151,12 @@ class CandidateRepository extends BaseRepository implements CandidateRepositoryI
                 'recruitments.description',
                 'recruitments.entitlements',
                 'recruitments.job_requirements',
-                'recruitments.requested_documents'
+                'recruitments.requested_documents',
+                'ranks.name as rank',
+                'type_of_works.name as type_of_work',
+                'cities.name as city',
+                'careers.name as career',
+                'salaries.name as salary',
             )
             ->where('candidates.id', $candidateId);
         return $recruitments;
