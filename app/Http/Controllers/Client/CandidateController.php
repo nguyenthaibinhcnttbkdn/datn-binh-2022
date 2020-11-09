@@ -10,7 +10,8 @@ use Illuminate\Http\Request;
 use Exception;
 use Illuminate\Support\Facades\Storage;
 use Carbon\Carbon;
-
+use App\Http\Requests\CandidateStoreRequest;
+use App\Http\Requests\CandidateUpdateRequest;
 
 class CandidateController extends Controller
 {
@@ -28,10 +29,10 @@ class CandidateController extends Controller
                     'getCandidateAdmin',
                     'changeActive',
                     'changeOrder',
-                    'getRecruitmentByUserId',
-                    'getCandidateByUserId',
-                    'getJobApplyByUserId',
-                    'dashboardCandidate'
+//                    'getRecruitmentByUserId',
+//                    'getCandidateByUserId',
+//                    'getJobApplyByUserId',
+//                    'dashboardCandidate'
                 ],
             ]);
         $this->candidateRepository = $candidateRepository;
@@ -73,7 +74,7 @@ class CandidateController extends Controller
         return $this->sendResult(true, 'Show Successfully', $data, 200);
     }
 
-    public function addCandidate(Request $request)
+    public function addCandidate(CandidateStoreRequest $request)
     {
         $user_exist = User::where('email', $request->get('email'))->get()->toArray();
         if (count($user_exist) > 0) {
@@ -182,7 +183,7 @@ class CandidateController extends Controller
         return $fileName;
     }
 
-    public function update(Request $request, $id)
+    public function update(CandidateUpdateRequest $request, $id)
     {
         try {
             $avatar      = $request->all()['avatar'];

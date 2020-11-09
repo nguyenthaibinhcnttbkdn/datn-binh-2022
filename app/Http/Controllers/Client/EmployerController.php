@@ -8,6 +8,8 @@ use App\Repositories\Interfaces\EmployerRepositoryInterface;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use App\Http\Requests\EmployerStoreRequest;
+use App\Http\Requests\EmployerUpdateRequest;
 
 
 class EmployerController extends Controller
@@ -16,7 +18,21 @@ class EmployerController extends Controller
 
     public function __construct(EmployerRepositoryInterface $employerRepository)
     {
-        $this->middleware(['auth:api', 'scope:employer'], ['except' => ['index', 'show', 'addEmployer', 'getEmployerOrder', 'update', 'getEmployerByUserId', 'getEmployerAdmin', 'changeActive','changeOrder','dashboardEmployer']]);
+        $this->middleware(['auth:api', 'scope:employer'],
+            [
+                'except' => [
+                    'index',
+                    'show',
+                    'addEmployer',
+                    'getEmployerOrder',
+                    //'update',
+                    //'getEmployerByUserId',
+                    'getEmployerAdmin',
+                    'changeActive',
+                    'changeOrder',
+                    //'dashboardEmployer'
+                ]
+            ]);
         $this->employerRepository = $employerRepository;
     }
 
@@ -56,7 +72,7 @@ class EmployerController extends Controller
         return $this->sendResult(true, 'Show Successfully', [$data], 200);
     }
 
-    public function addEmployer(Request $request)
+    public function addEmployer(EmployerStoreRequest $request)
     {
         $user_exist = User::where('email', $request->get('email'))->get()->toArray();
         if (count($user_exist) > 0) {
@@ -120,7 +136,7 @@ class EmployerController extends Controller
         return $fileName;
     }
 
-    public function update(Request $request, $id)
+    public function update(EmployerUpdateRequest $request, $id)
     {
         try {
             $avatar      = $request->all()['avatar'];
@@ -148,7 +164,7 @@ class EmployerController extends Controller
 
     public function getEmployerAdmin(Request $request)
     {
-        $data = $this->employerRepository->getEmployerAdmin()->get()->toArray();
+        $data  = $this->employerRepository->getEmployerAdmin()->get()->toArray();
         $datas = $this->employerRepository->getEmployerAdmin();
         if ($request->has('limit') && $request->has('page')) {
             $paginate = $request->only('limit', 'page');
@@ -191,7 +207,8 @@ class EmployerController extends Controller
         }
     }
 
-    public function dashboardEmployer($id){
+    public function dashboardEmployer($id)
+    {
         $data = $this->employerRepository->dashboardEmployer($id);
         return $this->sendResult(true, 'Show Successfully', $data, 200);
     }

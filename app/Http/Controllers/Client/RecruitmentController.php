@@ -10,6 +10,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 use Exception;
+use App\Http\Requests\RecruimentStoreRequest;
+use App\Http\Requests\RecruitmentUpdateRequest;
 
 
 class RecruitmentController extends Controller
@@ -24,17 +26,17 @@ class RecruitmentController extends Controller
                 'show',
                 'getRecruitmentsByEmployerId',
                 'getRecruitmentOrder',
-                'store',
-                'update',
-                'getRecruitmentEdit',
+                //  'store',
+                // 'update',
+                //   'getRecruitmentEdit',
                 'getRecruitmentAdmin',
                 'changeActive',
                 'changeOrder',
-                'destroy',
+                // 'destroy',
                 'dashboard',
-                'getCvByUserId',
-                'getCandidateByUserId',
-                'dashboardAdmin'
+                // 'getCvByUserId',
+                //'getCandidateByUserId',
+                'dashboardAdmin',
             ],
         ]);
         $this->recruitmentRepository = $recruitmentRepository;
@@ -203,35 +205,35 @@ class RecruitmentController extends Controller
         return $fileName;
     }
 
-    public function store(Request $request)
+    public function store(RecruimentStoreRequest $request)
     {
         try {
             $data                = $request->except('user_id', 'photo', 'end_date');
             $date                = $request->all()['end_date'];
-            $data['end_date']      = Carbon::parse($date)->setTimezone('Asia/Ho_Chi_Minh')->format('Y-m-d');
+            $data['end_date']    = Carbon::parse($date)->setTimezone('Asia/Ho_Chi_Minh')->format('Y-m-d');
             $employerId          = Employer::where('user_id', $request->only('user_id'))->get()->toArray();
             $data['employer_id'] = strval($employerId[0]['id']);
             $avatar              = $request->all()['photo'];
             $name_photo          = $this->saveImgBase64($avatar, 'uploads');
             $data['photo']       = 'http://103.200.20.171/storage/uploads/' . $name_photo;
-            $result = $this->recruitmentRepository->create($data);
+            $result              = $this->recruitmentRepository->create($data);
             return $this->sendResult(true, "Create Successfully", [], 200);
         } catch (Exception $e) {
             return $this->sendError(false, "Create Failed", [], 400);
         }
     }
 
-    public function update(Request $request, $id)
+    public function update(RecruitmentUpdateRequest $request, $id)
     {
         try {
-            $data           = $request->except('photo','end_date');
-            $date                = $request->all()['end_date'];
-            $data['end_date']      = Carbon::parse($date)->setTimezone('Asia/Ho_Chi_Minh')->format('Y-m-d');
-            $data['active'] = 0;
-            $avatar         = $request->all()['photo'];
-            $name_photo     = $this->saveImgBase64($avatar, 'uploads');
-            $data['photo']  = 'http://103.200.20.171/storage/uploads/' . $name_photo;
-            $result         = $this->recruitmentRepository->update($id, $data);
+            $data             = $request->except('photo', 'end_date');
+            $date             = $request->all()['end_date'];
+            $data['end_date'] = Carbon::parse($date)->setTimezone('Asia/Ho_Chi_Minh')->format('Y-m-d');
+            $data['active']   = 0;
+            $avatar           = $request->all()['photo'];
+            $name_photo       = $this->saveImgBase64($avatar, 'uploads');
+            $data['photo']    = 'http://103.200.20.171/storage/uploads/' . $name_photo;
+            $result           = $this->recruitmentRepository->update($id, $data);
             return $this->sendResult(true, "Create Successfully", [], 200);
         } catch (Exception $e) {
             return $this->sendError(false, "Create Failed", [], 400);
