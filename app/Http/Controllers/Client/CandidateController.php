@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers\Client;
 
+use App\Mail\ConfirmMail;
 use App\Models\User;
 use App\Models\Candidate;
 use App\Repositories\Interfaces\CandidateRepositoryInterface;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Exception;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 use Carbon\Carbon;
 use App\Http\Requests\CandidateStoreRequest;
@@ -29,10 +32,11 @@ class CandidateController extends Controller
                     'getCandidateAdmin',
                     'changeActive',
                     'changeOrder',
+                    'verifyEmail'
 //                    'getRecruitmentByUserId',
 //                    'getCandidateByUserId',
 //                    'getJobApplyByUserId',
-//                    'dashboardCandidate'
+//                    'dashboardCandidate',
                 ],
             ]);
         $this->candidateRepository = $candidateRepository;
@@ -81,11 +85,14 @@ class CandidateController extends Controller
             return $this->sendError(false, "Tài khoản đã tồn tại !", [], 201);
         }
 
-        $data         = $request->all();
+        $data  = $request->all();
+        $data['email_verified_at'] = random_int(8888,9999);
         $data['role'] = 3;
-
+        $emailSend = $data['email'];
+        $codeEmail = $data['email_verified_at'];
         try {
             $data = $this->candidateRepository->addCandidate($data);
+            Mail::to($emailSend)->send(new ConfirmMail($codeEmail));
             return $this->sendResult(true, 'Insert Successfully', [], 200);
         } catch (Exception $e) {
             return $this->sendError(false, "Insert Failed", [], 400);
@@ -232,5 +239,16 @@ class CandidateController extends Controller
     public function dashboardCandidate($id){
         $data = $this->candidateRepository->dashboardCandidate($id);
         return $this->sendResult(true, 'Show Successfully', $data, 200);
+    }
+
+    public function verifyEmail(Request $request)
+    {
+        $code = $request->only('code');
+
+        $user = User::where('email_verified_at', $code)->first();
+        if ($user) {
+            $user->update(['email_verified_at' => 1]);
+            return $this->sendResult(true, "ok", [], 200);
+        }
     }
 }
