@@ -22,7 +22,7 @@ header('Access-Control-Allow-Headers: Origin, Content-Type,X-Requested-With,Auth
 //    return $request->user();
 //});
 
-Auth::routes(['verify' => true]);
+//Auth::routes(['verify' => true]);
 
 Route::post('login', 'Client\AuthController@login');
 Route::post('registerCandidate', 'Client\CandidateController@addCandidate');
@@ -87,7 +87,7 @@ Route::resource('typeofworks', 'Client\TypeOfWorkController');
 
 Route::resource('applyjob', 'Client\CvrecruitmentController');
 
-Route::get('/verify-email', 'Client\CandidateController@verifyEmail')->name('email.verify');
+//Route::get('/verify-email', 'Client\CandidateController@verifyEmail')->name('email.verify');
 
 
 

@@ -50,7 +50,7 @@ class CandidateRepository extends BaseRepository implements CandidateRepositoryI
                 'email'             => $data['email'],
                 'password'          => bcrypt($data['password']),
                 'role'              => $data['role'],
-                'email_verified_at' => $data['email_verified_at'],
+                //'email_verified_at' => $data['email_verified_at'],
             ]);
 
             $candidateCreate = Candidate::create([

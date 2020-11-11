@@ -33,10 +33,10 @@ class CandidateController extends Controller
                     'changeActive',
                     'changeOrder',
                     'verifyEmail'
-//                    'getRecruitmentByUserId',
-//                    'getCandidateByUserId',
-//                    'getJobApplyByUserId',
-//                    'dashboardCandidate',
+                    //                    'getRecruitmentByUserId',
+                    //                    'getCandidateByUserId',
+                    //                    'getJobApplyByUserId',
+                    //                    'dashboardCandidate',
                 ],
             ]);
         $this->candidateRepository = $candidateRepository;
@@ -85,14 +85,14 @@ class CandidateController extends Controller
             return $this->sendError(false, "Tài khoản đã tồn tại !", [], 201);
         }
 
-        $data  = $request->all();
-        $data['email_verified_at'] = random_int(8888,9999);
-        $data['role'] = 3;
-        $emailSend = $data['email'];
-        $codeEmail = $data['email_verified_at'];
+        $data                      = $request->all();
+        //$data['email_verified_at'] = random_int(8888, 9999);
+        $data['role']              = 3;
+        //$emailSend                 = $data['email'];
+        //$codeEmail                 = $data['email_verified_at'];
         try {
             $data = $this->candidateRepository->addCandidate($data);
-            Mail::to($emailSend)->send(new ConfirmMail($codeEmail));
+            //Mail::to($emailSend)->send(new ConfirmMail($codeEmail));
             return $this->sendResult(true, 'Insert Successfully', [], 200);
         } catch (Exception $e) {
             return $this->sendError(false, "Insert Failed", [], 400);
@@ -236,7 +236,8 @@ class CandidateController extends Controller
         return $this->sendResult(true, 'Show Successfully', $data, 200);
     }
 
-    public function dashboardCandidate($id){
+    public function dashboardCandidate($id)
+    {
         $data = $this->candidateRepository->dashboardCandidate($id);
         return $this->sendResult(true, 'Show Successfully', $data, 200);
     }
@@ -249,7 +250,6 @@ class CandidateController extends Controller
         if ($user) {
             $user->update(['email_verified_at' => 1]);
             return $this->sendResult(true, "ok", [], 200);
-
         }
     }
 }
