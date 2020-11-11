@@ -249,6 +249,7 @@ class CandidateController extends Controller
         if ($user) {
             $user->update(['email_verified_at' => 1]);
             return $this->sendResult(true, "ok", [], 200);
+
         }
     }
 }
