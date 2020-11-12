@@ -27,4 +27,6 @@ interface RecruitmentRepositoryInterface
     public function getCvByUserId($id);
 
     public function dashboardAdmin();
+
+    public function deleteRecruitment($id);
 }

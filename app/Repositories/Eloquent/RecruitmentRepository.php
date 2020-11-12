@@ -360,4 +360,17 @@ class RecruitmentRepository extends BaseRepository implements RecruitmentReposit
 
         return $data;
     }
+
+    public function deleteRecruitment($id)
+    {
+        try {
+            DB::beginTransaction();
+            //code ở đây nè
+            DB::commit();
+            return true;
+        } catch (Exception $ex) {
+            DB::rollback();
+            return false;
+        }
+    }
 }

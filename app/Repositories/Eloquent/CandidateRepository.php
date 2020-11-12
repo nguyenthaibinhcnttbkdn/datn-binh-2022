@@ -159,7 +159,8 @@ class CandidateRepository extends BaseRepository implements CandidateRepositoryI
                 'careers.name as career',
                 'salaries.name as salary',
             )
-            ->where('candidates.id', $candidateId);
+            ->where('candidates.id', $candidateId)
+            ->where('recruitments.deleted_at', null);
         return $recruitments;
     }
 
