@@ -62,6 +62,14 @@ class CandidateController extends Controller
             }
         }
 
+        if ($request->has('position')) {
+            if (is_null($request->get('position')) == false) {
+                $data = $datas->where('candidates.position', 'LIKE', '%' . $request->get('position') . '%')->get()->toArray();
+            } else {
+                $data = $this->candidateRepository->getCandidate()->get()->toArray();
+            }
+        }
+
         if ($request->has('limit') && $request->has('page')) {
             $paginate = $request->only('limit', 'page');
             if (count($paginate) > 0) {
