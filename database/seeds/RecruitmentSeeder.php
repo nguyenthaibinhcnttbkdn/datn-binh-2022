@@ -1316,9 +1316,13 @@ class RecruitmentSeeder extends Seeder
                 "quantity"            => 10,
                 "end_date"            => "2021-01-02",
                 "photo"               => "https://lh3.googleusercontent.com/pw/ACtC-3dclsSsaSzCOtA2AnRdrdsv57fVK-JK-ybi3SVUndyXZANlIW5IVvxwwbD1Xp7eKT_GB4iwHL4A4wuC2kMgGFAX4lVuNfLojKeShYirycsR8u8VdcQQA1jjCtuJwalWpdOOhvYHwVj3i0asIX0cPbsF=s979-no?authuser=0",
-                "description"         => "- Thực hiện các dự án công nghệ của công ty, theo từng giai đoạn",
-                "entitlements"        => "- Lương thoả thuận khi phỏng vấn",
-                "job_requirements"    => "- Tốt nghiệp Cao đẳng / Đại học hoặc tương đương về chuyên ngành CNTT phần cứng, mạng, hoặc các bằng cấp liên quan.",
+                "description"         => "- Thực hiện các dự án công nghệ của công ty, theo từng giai đoạn.
+                                          - Đào tạo vận hành sản phẩm dịch vụ, chuyển giao công nghệ.",
+                "entitlements"        => "- Lương thoả thuận khi phỏng vấn.
+                                          - Hỗ trợ 100% chi phí ăn trưa tại Công ty với những bữa cơm đủ dinh dưỡng, ngon lành, sạch sẽ, đảm bảo ATVSTP.",
+                "job_requirements"    => "- Tốt nghiệp Cao đẳng / Đại học hoặc tương đương về chuyên ngành CNTT phần cứng, mạng, hoặc các bằng cấp liên quan.
+                                          - Có kinh nghiệm về Log framework (Log back, log4j, …).
+                                          - Có kiến thức tốt về Design Patterns (IOC, Singleton, Proxy, MVC, etc. …)",
                 "requested_documents" => "- Đơn xin việc hoặc CV xin viêc",
                 "employer_id"         => 27,
                 "rank_id"             => 1,
@@ -1352,9 +1356,15 @@ class RecruitmentSeeder extends Seeder
                 "quantity"            => 10,
                 "end_date"            => "2020-12-29",
                 "photo"               => "https://lh3.googleusercontent.com/pw/ACtC-3enpofUtnXfkxmNUhZPzzT1FI9xOOpDHFze87cbG0GUHB_UZD0C_trDvxcUCsHCMN3uGEKYC91rCu_GJLH_iSQnh6aDKi5Nvn6Ct9QsOdO5SOHjeriKdOfUQKvBFxEqeERBxxOWCHpaVYHset_o6UUK=s225-no?authuser=0",
-                "description"         => "- Thực hiện các dự án công nghệ của công ty, theo từng giai đoạn",
-                "entitlements"        => "- Lương thoả thuận khi phỏng vấn",
-                "job_requirements"    => "- Tốt nghiệp Cao đẳng / Đại học hoặc tương đương về chuyên ngành CNTT phần cứng, mạng, hoặc các bằng cấp liên quan.",
+                "description"         => "- Thực hiện các dự án công nghệ của công ty, theo từng giai đoạn.
+                                          - Maintain hệ thống đang được vận hành (fix bug,…).
+                                          - Đọc & tìm hiểu tài liệu về hệ thống đang vận hành.",
+                "entitlements"        => "- Lương thoả thuận khi phỏng vấn.
+                                          - Lương tháng 13.
+                                          - Định kỳ review lương 6 tháng/1 lần.",
+                "job_requirements"    => "- Tốt nghiệp Cao đẳng / Đại học hoặc tương đương về chuyên ngành CNTT phần cứng, mạng, hoặc các bằng cấp liên quan.
+                                          - Có kinh nghiệm với Java ít nhất 1 năm.
+                                          - Biết cơ bản về JavaScript, HTML, CSS.",
                 "requested_documents" => "- Đơn xin việc hoặc CV xin viêc",
                 "employer_id"         => 28,
                 "rank_id"             => 1,
@@ -1370,9 +1380,16 @@ class RecruitmentSeeder extends Seeder
                 "quantity"            => 10,
                 "end_date"            => "2020-12-28",
                 "photo"               => "https://lh3.googleusercontent.com/pw/ACtC-3dDsBDo3u8lPAVvj4UVju92I9OJk513V8FNt-WrBnGVWxo1OCY1NPXDPZkMohvrSHvq7jGqdYnlf12Bt2hEFEJdmm3GykhprHdIJ5nBPRWzIAjSmsJYEpIDgyVgy2PEMzSQHdFnNfcMt3aaHVq0c0pk=s550-no?authuser=0",
-                "description"         => "- Thực hiện các dự án công nghệ của công ty, theo từng giai đoạn",
-                "entitlements"        => "- Lương thoả thuận khi phỏng vấn",
-                "job_requirements"    => "- Tốt nghiệp Cao đẳng / Đại học hoặc tương đương về chuyên ngành CNTT phần cứng, mạng, hoặc các bằng cấp liên quan.",
+                "description"         => "- Thực hiện các dự án công nghệ của công ty, theo từng giai đoạn.
+                                          - Xây dựng các tài liệu phân tích, hướng dẫn người dùng đối với các ứng dụng công nghệ thông tin trong công ty.
+                                          - Hỗ trợ người dùng công nghệ thông tin để xử ý, hướng dẫn, các vấn đề phát sinh trong quá trình sử dụng.",
+                "entitlements"        => "- Lương thoả thuận khi phỏng vấn.
+                                          - Tham dự các hoạt động ngoại khóa của công ty.
+                                          - Thưởng lễ, tết theo thâm niên làm việc của nhân viên.
+                                          - Tham gia các khóa đào tạo chuyên môn & kỹ năng phát triển nghề nghiệp.",
+                "job_requirements"    => "- Tốt nghiệp Cao đẳng / Đại học hoặc tương đương về chuyên ngành CNTT phần cứng, mạng, hoặc các bằng cấp liên quan.
+                                          - Có kinh nghiệm làm việc với ngôn ngữ lập trình: .NET, Java, Web React, PL/SQL (có kinh nghiệm nhiều hơn 01 ngôn ngữ hoặc một framework phổ biến là lợi thế).
+                                          - Có kinh nghiệm làm việc và thiết kế CSDL trên DB MS SQL …",
                 "requested_documents" => "- Đơn xin việc hoặc CV xin viêc",
                 "employer_id"         => 29,
                 "rank_id"             => 1,
@@ -1388,9 +1405,15 @@ class RecruitmentSeeder extends Seeder
                 "quantity"            => 10,
                 "end_date"            => "2020-12-27",
                 "photo"               => "https://lh3.googleusercontent.com/pw/ACtC-3fxnJU50os1nCzo62PeyNkTw-w2E9mZETYyRV02xjFsvhCwEnrMU9Y6URDoBF7B9pFWexceHsIl0uUEAwZuvjd0qh_91dAC8r9fox7KjLrnnz3vueDC2QuCVfZrhMBjdX7OUHILAhVJ185MLLNrtgar=s400-no?authuser=0",
-                "description"         => "- Thực hiện các dự án công nghệ của công ty, theo từng giai đoạn",
-                "entitlements"        => "- Lương thoả thuận khi phỏng vấn",
-                "job_requirements"    => "- Tốt nghiệp Cao đẳng / Đại học hoặc tương đương về chuyên ngành CNTT phần cứng, mạng, hoặc các bằng cấp liên quan.",
+                "description"         => "- Thực hiện các dự án công nghệ của công ty, theo từng giai đoạn
+                                          - Phân tích và đưa ra kết luận về tính khả thi và thời gian hoàn thành.
+                                          - Tiếp nhận, làm rõ yêu cầu điều chỉnh/phát triển phần mềm từ trưởng nhóm/bộ phận kinh doanh.",
+                "entitlements"        => "- Lương thoả thuận khi phỏng vấn.
+                                          - Cơ hội đạt được mức thưởng tài chính cao với kết quả làm việc tốt.
+                                          - Chế độ phúc lợi cạnh tranh.",
+                "job_requirements"    => "- Tốt nghiệp Cao đẳng / Đại học hoặc tương đương về chuyên ngành CNTT phần cứng, mạng, hoặc các bằng cấp liên quan.
+                                          - Có kỹ năng làm việc nhóm, có tinh thần trách nhiệm cao.
+                                          - Có kinh nghiệm lập trình native (Android hoặc iOS) tối thiểu 1 năm.",
                 "requested_documents" => "- Đơn xin việc hoặc CV xin viêc",
                 "employer_id"         => 29,
                 "rank_id"             => 3,
@@ -1406,9 +1429,13 @@ class RecruitmentSeeder extends Seeder
                 "quantity"            => 10,
                 "end_date"            => "2020-12-26",
                 "photo"               => "https://lh3.googleusercontent.com/pw/ACtC-3dTc_75ukpvo5y41G2ghZBlZDLKaggFq1JQymkxD6nrdzXXMjgLSj1XWyhzNPANTHZ7MoPvF5_vQFTRjAYOFiSBMoSjk-hCzMQxnN6JOKTnbLcVMokbffrAYr9U88v_7mDA09MbbUk84l11m6bQoaVp=s400-no?authuser=0",
-                "description"         => "- Thực hiện các dự án công nghệ của công ty, theo từng giai đoạn",
-                "entitlements"        => "- Lương thoả thuận khi phỏng vấn",
-                "job_requirements"    => "- Tốt nghiệp Cao đẳng / Đại học hoặc tương đương về chuyên ngành CNTT phần cứng, mạng, hoặc các bằng cấp liên quan.",
+                "description"         => "- Thực hiện các dự án công nghệ của công ty, theo từng giai đoạn.
+                                          - Đề xuất giải pháp phát triển, tối ưu hiệu năng cho sản phẩm, thực hiện nghiên cứu các kỹ thuật và công nghệ mới cho sản phẩm.",
+                "entitlements"        => "- Lương thoả thuận khi phỏng vấn.
+                                          - Gói chăm sóc sức khỏe cao cấp và các hoạt động tập thể được thiết kế để đảm bảo sức khỏe thể chất và tinh thần cho bạn.",
+                "job_requirements"    => "- Tốt nghiệp Cao đẳng / Đại học hoặc tương đương về chuyên ngành CNTT phần cứng, mạng, hoặc các bằng cấp liên quan.
+                                          - Có thể sử dụng thành thạo 1 số công cụ như SVN, Git, Mantis.
+                                          - Hiểu biết về lập trình an toàn (security), lập trình tối ưu (high performance).",
                 "requested_documents" => "- Đơn xin việc hoặc CV xin viêc",
                 "employer_id"         => 30,
                 "rank_id"             => 6,
@@ -1424,10 +1451,13 @@ class RecruitmentSeeder extends Seeder
                 "quantity"            => 10,
                 "end_date"            => "2020-12-25",
                 "photo"               => "https://lh3.googleusercontent.com/pw/ACtC-3cAoONIKqzci1sELKMDK0Zz-q8HaCtB6BSWBe5nNmPLukGDTF8I6nOzn_irSxyhAg4SrngGmm3Xg8Lwlo8wuPcgYEu06x8qTSaG6eO4-ZzhmWKRF7FoDCYH0mRTtIDsf6cxlDbY8PmVfxoTuhU1nEJN=s205-no?authuser=0",
-                "description"         => "- Thực hiện các dự án công nghệ của công ty, theo từng giai đoạn
-                                          -Phát triển các ứng dụng phục vụ hàng triệu người dùng lĩnh vực truyền hình/video.",
-                "entitlements"        => "- Lương thoả thuận khi phỏng vấn",
-                "job_requirements"    => "- Tốt nghiệp Cao đẳng / Đại học hoặc tương đương về chuyên ngành CNTT phần cứng, mạng, hoặc các bằng cấp liên quan.",
+                "description"         => "- Thực hiện các dự án công nghệ của công ty, theo từng giai đoạn.
+                                          - Phát triển các ứng dụng phục vụ hàng triệu người dùng lĩnh vực truyền hình/video.
+                                          - Phối hợp với bộ phận phát triển sản phẩm thiết kế luồng nghiệp vụ người dùng.",
+                "entitlements"        => "- Lương thoả thuận khi phỏng vấn.
+                                          - Môi trường thân thiện, cởi mở và năng động giúp bạn thể hiện bản thân và cống hiến cho xã hội.",
+                "job_requirements"    => "- Tốt nghiệp Cao đẳng / Đại học hoặc tương đương về chuyên ngành CNTT phần cứng, mạng, hoặc các bằng cấp liên quan.
+                                          - Khả năng làm việc độc lập hoặc làm việc theo nhóm.",
                 "requested_documents" => "- Đơn xin việc hoặc CV xin viêc",
                 "employer_id"         => 30,
                 "rank_id"             => 1,
