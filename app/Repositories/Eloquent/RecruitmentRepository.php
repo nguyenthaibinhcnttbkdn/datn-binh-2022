@@ -54,6 +54,7 @@ class RecruitmentRepository extends BaseRepository implements RecruitmentReposit
                 'employers.avatar as avatar'
             )
             ->where('recruitments.order', 1)
+            ->where('recruitments.active', 1)
             ->where('recruitments.end_date', '>', $nows)
             ->orderBy('recruitments.id', 'asc');;
 
