@@ -77,6 +77,14 @@ class RecruitmentController extends Controller
             }
         }
 
+        if ($request->has('career')) {
+            if (is_null($request->get('career')) == false) {
+                $data = $datas->where('recruitments.career_id', '=', $request->get('career'))->get()->toArray();
+            } else {
+                $data = $this->recruitmentRepository->getRecruitment()->get()->toArray();
+            }
+        }
+
         if ($request->has('limit') && $request->has('page')) {
             $paginate = $request->only('limit', 'page');
             if (count($paginate) > 0) {
