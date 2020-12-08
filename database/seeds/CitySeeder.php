@@ -18,10 +18,6 @@ class CitySeeder extends Seeder
             ["name" => "Đà Nẵng"],
             ["name" => "Hà Nội"],
             ["name" => "Tp Hồ Chí Minh"],
-            ["name" => "Vũng Tàu"],
-            ["name" => "Cần Thơ"],
-            ["name" => "Tam Kỳ"],
-            ["name" => "Đà Lạt"],
         ];
         foreach ($cities as $item) {
             App\Models\City::create([
