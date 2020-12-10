@@ -69,4 +69,5 @@ class AuthController extends Controller
         return $this->sendResult(true, "Đăng xuất thành công", [], 200);
     }
 
+
 }
