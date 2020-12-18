@@ -92,6 +92,7 @@ class RecruitmentRepository extends BaseRepository implements RecruitmentReposit
             )
             ->where('recruitments.deleted_at', null)
             ->where('recruitments.active', 1)
+            ->where('employers.active', 1)
             ->where('recruitments.end_date', '>', $nows)
             ->orderBy('recruitments.id', 'desc');
 
