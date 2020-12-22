@@ -114,15 +114,18 @@ class EmployerRepository extends BaseRepository implements EmployerRepositoryInt
         $quantity_recruitment           = DB::table('recruitments')
             ->leftJoin('employers', 'recruitments.employer_id', '=', 'employers.id')
             ->where('employers.id', $imployerId[0]['id'])
+            ->where('recruitments.deleted_at', null)
             ->get();
         $quantity_recruitment_active    = DB::table('recruitments')
             ->leftJoin('employers', 'recruitments.employer_id', '=', 'employers.id')
             ->where('employers.id', $imployerId[0]['id'])
+            ->where('recruitments.deleted_at', null)
             ->where('recruitments.active', '=', 1)
             ->get();
         $quantity_recruitment_no_active = DB::table('recruitments')
             ->leftJoin('employers', 'recruitments.employer_id', '=', 'employers.id')
             ->where('employers.id', $imployerId[0]['id'])
+            ->where('recruitments.deleted_at', null)
             ->where('recruitments.active', '=', 0)
             ->get();
 
