@@ -18,7 +18,7 @@ class RecruitmentSeeder extends Seeder
             [
                 "vacancy"             => "Senior PHP Developer (English)",
                 "quantity"            => 6,
-                "end_date"            => "2021-03-16",
+                "end_date"            => "2021-09-16",
                 "photo"               => "https://lh3.googleusercontent.com/pw/ACtC-3cSYIoux-wpKUFcrRWemEIghk4R8rK4JDtVizj2Qya2lSpDlT0k3FVK_07iwxSGrmE6FzADcV2ilsFnFjxcxYEYznBAZXUhh1NxA05ZALQPxtkfwC55vKnWxj4nO5yN3DGRrs7ndeJNVn4h0gnS4O3_=w630-h380-no",
                 "description"         => "- Thực hiện các dự án công nghệ của công ty, theo từng giai đoạn",
                 "entitlements"        => "- Lương thoả thuận khi phỏng vấn",
