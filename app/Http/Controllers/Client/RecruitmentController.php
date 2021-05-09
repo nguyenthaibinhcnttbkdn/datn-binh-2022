@@ -223,7 +223,7 @@ class RecruitmentController extends Controller
             $data['employer_id'] = strval($employerId[0]['id']);
             $avatar              = $request->all()['photo'];
             $name_photo          = $this->saveImgBase64($avatar, 'uploads');
-            $data['photo']       = 'http://103.200.20.171/storage/uploads/' . $name_photo;
+            $data['photo']       = 'http://127.0.0.1:8000/storage/uploads/' . $name_photo;
             $result              = $this->recruitmentRepository->create($data);
             return $this->sendResult(true, "Create Successfully", [], 200);
         } catch (Exception $e) {
@@ -240,7 +240,7 @@ class RecruitmentController extends Controller
             $data['active']   = 0;
             $avatar           = $request->all()['photo'];
             $name_photo       = $this->saveImgBase64($avatar, 'uploads');
-            $data['photo']    = 'http://103.200.20.171/storage/uploads/' . $name_photo;
+            $data['photo']    = 'http://127.0.0.1:8000/storage/uploads/' . $name_photo;
             $result           = $this->recruitmentRepository->update($id, $data);
             return $this->sendResult(true, "Create Successfully", [], 200);
         } catch (Exception $e) {

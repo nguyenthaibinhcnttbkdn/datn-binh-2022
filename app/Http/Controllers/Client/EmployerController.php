@@ -151,8 +151,8 @@ class EmployerController extends Controller
             $data['address']     = $request->all()['address'];
             $data['website']     = $request->all()['website'];
             $data['description'] = $request->all()['description'];
-            $data['avatar']      = 'http://103.200.20.171/storage/uploads/' . $name_avatar;
-            $data['photo']       = 'http://103.200.20.171/storage/uploads/' . $name_photo;
+            $data['avatar']      = 'http://127.0.0.1:8000/storage/uploads/' . $name_avatar;
+            $data['photo']       = 'http://127.0.0.1:8000/storage/uploads/' . $name_photo;
 
             $result = $this->employerRepository->update($id, $data);
 
