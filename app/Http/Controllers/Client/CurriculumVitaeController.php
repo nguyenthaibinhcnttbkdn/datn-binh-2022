@@ -46,7 +46,7 @@ class CurriculumVitaeController extends Controller
             $data['title']        = $request->all()['title'];
             $data['candidate_id'] = strval($candidateId[0]['id']);
             $data['object']       = json_encode($request->all()['object'], true);
-            $data['avatar']       = 'http://103.200.20.171/storage/uploads/' . $name_avatar;
+            $data['avatar']       = 'http://127.0.0.1:8000/storage/uploads/' . $name_avatar;
             $result               = $this->curriculumVitaeRepository->create($data);
             return $this->sendResult(true, "Create Successfully", [], 200);
         } catch (Exception $e) {
@@ -76,7 +76,7 @@ class CurriculumVitaeController extends Controller
 
             $data['title']        = $request->all()['title'];
             $data['object']       = json_encode($request->all()['object'], true);
-            $data['avatar']       = 'http://103.200.20.171/storage/uploads/' . $name_avatar;
+            $data['avatar']       = 'http://127.0.0.1:8000/storage/uploads/' . $name_avatar;
             $result               = $this->curriculumVitaeRepository->update($id, $data);
             return $this->sendResult(true, "Updated Successfully", [], 200);
         } catch (Exception $e) {
