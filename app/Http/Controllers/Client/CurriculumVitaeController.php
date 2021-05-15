@@ -40,13 +40,16 @@ class CurriculumVitaeController extends Controller
     {
         try {
             $avatar      = $request->all()['avatar'];
-            $name_avatar = $this->saveImgBase64($avatar, 'uploads');
-
+            if($avatar){
+                $data['avatar'] = $request->all()['avatar'];
+            }else {
+                $name_avatar = $this->saveImgBase64($avatar, 'uploads');
+                $data['avatar']       = 'http://127.0.0.1:8000/storage/uploads/' . $name_avatar;
+            }
             $candidateId          = Candidate::where('user_id', $request->only('user_id'))->get()->toArray();
             $data['title']        = $request->all()['title'];
             $data['candidate_id'] = strval($candidateId[0]['id']);
             $data['object']       = json_encode($request->all()['object'], true);
-            $data['avatar']       = 'http://127.0.0.1:8000/storage/uploads/' . $name_avatar;
             $result               = $this->curriculumVitaeRepository->create($data);
             return $this->sendResult(true, "Create Successfully", [], 200);
         } catch (Exception $e) {
