@@ -75,8 +75,13 @@ class CurriculumVitaeController extends Controller
     public function update(Request $request, $id){
         try {
             $avatar      = $request->all()['avatar'];
+            if(strpos($avatar,'http') !== false){
+                $data['avatar'] = $request->all()['avatar'];
+            }else {
+                $name_avatar = $this->saveImgBase64($avatar, 'uploads');
+                $data['avatar']       = 'http://127.0.0.1:8000/storage/uploads/' . $name_avatar;
+            }
             $name_avatar = $this->saveImgBase64($avatar, 'uploads');
-
             $data['title']        = $request->all()['title'];
             $data['object']       = json_encode($request->all()['object'], true);
             $data['avatar']       = 'http://127.0.0.1:8000/storage/uploads/' . $name_avatar;
