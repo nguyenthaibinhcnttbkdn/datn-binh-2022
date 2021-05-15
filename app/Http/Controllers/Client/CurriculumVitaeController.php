@@ -40,7 +40,7 @@ class CurriculumVitaeController extends Controller
     {
         try {
             $avatar      = $request->all()['avatar'];
-            if($avatar){
+            if(strpos($avatar,'http') !== false){
                 $data['avatar'] = $request->all()['avatar'];
             }else {
                 $name_avatar = $this->saveImgBase64($avatar, 'uploads');
