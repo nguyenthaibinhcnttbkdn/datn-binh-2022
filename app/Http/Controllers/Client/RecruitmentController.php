@@ -234,13 +234,18 @@ class RecruitmentController extends Controller
     public function update(RecruitmentUpdateRequest $request, $id)
     {
         try {
+
+            $photo      = $request->all()['photo'];
+            if(strpos($photo,'http') !== false){
+                $data['photo'] = $request->all()['photo'];
+            }else {
+                $name_photo = $this->saveImgBase64($photo, 'uploads');
+                $data['photo']       = 'http://127.0.0.1:8000/storage/uploads/' . $name_photo;
+            }
             $data             = $request->except('photo', 'end_date');
             $date             = $request->all()['end_date'];
             $data['end_date'] = Carbon::parse($date)->setTimezone('Asia/Ho_Chi_Minh')->format('Y-m-d');
             $data['active']   = 0;
-            $avatar           = $request->all()['photo'];
-            $name_photo       = $this->saveImgBase64($avatar, 'uploads');
-            $data['photo']    = 'http://127.0.0.1:8000/storage/uploads/' . $name_photo;
             $result           = $this->recruitmentRepository->update($id, $data);
             return $this->sendResult(true, "Create Successfully", [], 200);
         } catch (Exception $e) {

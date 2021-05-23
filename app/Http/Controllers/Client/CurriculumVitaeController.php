@@ -81,10 +81,8 @@ class CurriculumVitaeController extends Controller
                 $name_avatar = $this->saveImgBase64($avatar, 'uploads');
                 $data['avatar']       = 'http://127.0.0.1:8000/storage/uploads/' . $name_avatar;
             }
-            $name_avatar = $this->saveImgBase64($avatar, 'uploads');
             $data['title']        = $request->all()['title'];
             $data['object']       = json_encode($request->all()['object'], true);
-            $data['avatar']       = 'http://127.0.0.1:8000/storage/uploads/' . $name_avatar;
             $result               = $this->curriculumVitaeRepository->update($id, $data);
             return $this->sendResult(true, "Updated Successfully", [], 200);
         } catch (Exception $e) {
