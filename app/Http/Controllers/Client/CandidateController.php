@@ -202,7 +202,12 @@ class CandidateController extends Controller
     {
         try {
             $avatar      = $request->all()['avatar'];
-            $name_avatar = $this->saveImgBase64($avatar, 'uploads');
+            if(strpos($avatar,'http') !== false){
+                $data['avatar'] = $request->all()['avatar'];
+            }else {
+                $name_avatar = $this->saveImgBase64($avatar, 'uploads');
+                $data['avatar']       = 'http://127.0.0.1:8000/storage/uploads/' . $name_avatar;
+            }
 
             $data['name']       = $request->all()['name'];
             $data['phone']      = $request->all()['phone'];
@@ -210,7 +215,6 @@ class CandidateController extends Controller
             $data['address']    = $request->all()['address'];
             $data['experience'] = $request->all()['experience'];
             $data['birthday']   = Carbon::parse($request->all()['birthday'])->setTimezone('Asia/Ho_Chi_Minh')->format('Y-m-d');
-            $data['avatar']     = 'http://127.0.0.1:8000/storage/uploads/' . $name_avatar;
 
             $result = $this->candidateRepository->update($id, $data);
 

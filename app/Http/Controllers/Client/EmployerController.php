@@ -139,11 +139,22 @@ class EmployerController extends Controller
     public function update(EmployerUpdateRequest $request, $id)
     {
         try {
+
             $avatar      = $request->all()['avatar'];
-            $name_avatar = $this->saveImgBase64($avatar, 'uploads');
+            if(strpos($avatar,'http') !== false){
+                $data['avatar'] = $request->all()['avatar'];
+            }else {
+                $name_avatar = $this->saveImgBase64($avatar, 'uploads');
+                $data['avatar']       = 'http://127.0.0.1:8000/storage/uploads/' . $name_avatar;
+            }
 
             $photo      = $request->all()['photo'];
-            $name_photo = $this->saveImgBase64($photo, 'uploads');
+            if(strpos($photo,'http') !== false){
+                $data['photo'] = $request->all()['photo'];
+            }else {
+                $name_photo = $this->saveImgBase64($photo, 'uploads');
+                $data['photo']       = 'http://127.0.0.1:8000/storage/uploads/' . $name_photo;
+            }
 
             $data['contact']     = $request->all()['contact'];
             $data['company']     = $request->all()['company'];
@@ -151,9 +162,6 @@ class EmployerController extends Controller
             $data['address']     = $request->all()['address'];
             $data['website']     = $request->all()['website'];
             $data['description'] = $request->all()['description'];
-            $data['avatar']      = 'http://127.0.0.1:8000/storage/uploads/' . $name_avatar;
-            $data['photo']       = 'http://127.0.0.1:8000/storage/uploads/' . $name_photo;
-
             $result = $this->employerRepository->update($id, $data);
 
             return $this->sendResult(true, "Updated Successfully", [], 200);
