@@ -87,6 +87,13 @@ Route::resource('typeofworks', 'Client\TypeOfWorkController');
 
 Route::resource('applyjob', 'Client\CvrecruitmentController');
 
+Route::resource('savecv', 'Client\EmployerCvController');
+Route::get('getcvsavebyuserid/{id}', 'Client\EmployerCvController@getcvsavebyuserid');
+Route::get('getinfoemployer/{id}', 'Client\EmployerCvController@getinfoemployer');
+Route::post('delelecvsave', 'Client\EmployerCvController@delelecvsave');
+
+
+
 //Route::get('/verify-email', 'Client\CandidateController@verifyEmail')->name('email.verify');
 
 

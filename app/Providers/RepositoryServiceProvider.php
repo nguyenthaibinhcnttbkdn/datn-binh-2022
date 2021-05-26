@@ -15,6 +15,7 @@ use App\Repositories\Eloquent\TypeOfWorkRepository;
 use App\Repositories\Eloquent\CurriculumVitaeRepository;
 use App\Repositories\Eloquent\CandidateRecruitmentRepository;
 use App\Repositories\Eloquent\CvrecruitmentRepository;
+use App\Repositories\Eloquent\EmployerCvRepository;
 use App\Repositories\Interfaces\CandidateRepositoryInterface;
 use App\Repositories\Interfaces\EmployerRepositoryInterface;
 use App\Repositories\Interfaces\RecruitmentRepositoryInterface;
@@ -26,6 +27,7 @@ use App\Repositories\Interfaces\TypeOfWorkRepositoryInterface;
 use App\Repositories\Interfaces\CurriculumVitaeRepositoryInterface;
 use App\Repositories\Interfaces\CandidateRecruitmentRepositoryInterface;
 use App\Repositories\Interfaces\CvrecruitmentRepositoryInterface;
+use App\Repositories\Interfaces\EmployerCvRepositoryInterface;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -50,6 +52,7 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(CurriculumVitaeRepositoryInterface::class, CurriculumVitaeRepository::class);
         $this->app->bind(CandidateRecruitmentRepositoryInterface::class, CandidateRecruitmentRepository::class);
         $this->app->bind(CvrecruitmentRepositoryInterface::class, CvrecruitmentRepository::class);
+        $this->app->bind(EmployerCvRepositoryInterface::class, EmployerCvRepository::class);
     }
 
     /**
