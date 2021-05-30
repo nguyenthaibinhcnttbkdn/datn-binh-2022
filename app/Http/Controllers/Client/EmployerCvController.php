@@ -34,9 +34,9 @@ class EmployerCvController extends Controller
     public function getcvsavebyuserid($id){
         $employerId = Employer::where('user_id', $id)->get()->toArray()[0]['id'];
         $listsvsaves = DB::table('employers')
-            ->leftJoin('employer_cvs', 'employers.id', '=', 'employer_cvs.employer_id')
-            ->leftJoin('curriculumvitaes', 'curriculumvitaes.id', '=', 'employer_cvs.cv_id')
-            ->leftJoin('candidates', 'candidates.id', '=', 'curriculumvitaes.candidate_id')
+            ->Join('employer_cvs', 'employers.id', '=', 'employer_cvs.employer_id')
+            ->Join('curriculumvitaes', 'curriculumvitaes.id', '=', 'employer_cvs.cv_id')
+            ->Join('candidates', 'candidates.id', '=', 'curriculumvitaes.candidate_id')
             ->where('employers.id',$employerId)
             ->select(
                 'employer_cvs.cv_id',
